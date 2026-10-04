@@ -1,0 +1,77 @@
+/* Kompletní interiéry page */
+
+/* 02 meaning – image + text */
+.c-meaning__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 110px); align-items: center; }
+.c-meaning__grid > * { min-width: 0; }
+.c-meaning__media { aspect-ratio: 4 / 3.6; overflow: hidden; }
+.c-meaning__media img { width: 100%; height: 100%; object-fit: cover; }
+.c-meaning__copy { display: flex; flex-direction: column; gap: 20px; }
+.c-meaning__copy .h2 { max-width: 16ch; margin-bottom: 6px; }
+.c-meaning__copy > p:not(.pull) { color: var(--muted-on-light); max-width: 52ch; }
+.c-meaning__copy .pull { margin-top: 8px; }
+
+/* 03 include – 4 cards */
+.c-include__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.c-card__link { display: flex; flex-direction: column; gap: 8px; height: 100%; }
+.c-card__img { display: block; aspect-ratio: 4 / 4.6; overflow: hidden; background: var(--warm); margin-bottom: 14px; }
+.c-card__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.c-card__title { font-family: var(--serif); font-size: 1.45rem; line-height: 1.25; }
+.c-card__text { font-size: 14px; color: var(--muted-on-light); max-width: 32ch; }
+.c-card .more { margin-top: 8px; color: var(--dark); }
+a.c-card__link:hover .c-card__img img { transform: scale(1.05); }
+a.c-card__link:hover .more { color: var(--gold-ink); }
+a.c-card__link:hover .more svg { transform: translateX(5px); }
+
+/* 04 home design – dark, text + list beside a material photo */
+.c-design__grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(40px, 7vw, 110px); align-items: center; }
+.c-design__grid > * { min-width: 0; }
+.c-design__copy { display: flex; flex-direction: column; gap: 22px; }
+.c-design__copy .eyebrow { margin-bottom: -4px; }
+.c-design__text { color: var(--muted-on-dark); max-width: 52ch; }
+.c-design__list { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line-dark); margin-top: 6px; }
+.c-design__list li {
+  position: relative; padding: 16px 16px 16px 22px; font-size: 14px; line-height: 1.5;
+  border-bottom: 1px solid var(--line-dark);
+}
+.c-design__list li::before {
+  content: ''; position: absolute; left: 0; top: 24px; width: 10px; height: 1px; background: var(--gold);
+}
+.c-design__media { aspect-ratio: 4 / 4.4; overflow: hidden; }
+.c-design__media img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 06 why one partner – strong typographic block on warm brown */
+.c-why { background: var(--warm); color: var(--white); }
+.c-why__head { margin-bottom: clamp(48px, 6vw, 80px); }
+.c-why__head .eyebrow { color: var(--gold); }
+.c-why__head .display { max-width: 18ch; }
+.c-why__list { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-dark); }
+.c-why__list li { padding: 32px 28px 8px 0; }
+.c-why__list li + li { padding-left: 28px; border-left: 1px solid var(--line-dark); }
+.c-why__num { display: block; font-family: var(--serif); color: var(--gold); font-size: 1rem; margin-bottom: 18px; }
+.c-why__list h3 {
+  font-size: 12px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold);
+  margin-bottom: 12px;
+}
+.c-why__list p { font-family: var(--serif); font-size: 1.3rem; line-height: 1.4; max-width: 18ch; }
+.c-why__list li { transition: opacity 1s var(--ease), transform 1s var(--ease); transition-delay: calc(var(--i) * .12s); }
+.c-why__list:not(.is-in) li { opacity: 0; transform: translateY(14px); }
+
+@media (max-width: 1080px) {
+  .c-include__grid { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+  .c-why__list { grid-template-columns: 1fr 1fr; }
+  .c-why__list li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .c-why__list li:nth-child(n + 3) { border-top: 1px solid var(--line-dark); margin-top: 24px; }
+}
+@media (max-width: 860px) {
+  .c-meaning__grid, .c-design__grid { grid-template-columns: minmax(0, 1fr); }
+  .c-design__media { order: -1; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 600px) {
+  .c-include__grid { grid-template-columns: 1fr; }
+  .c-card__img { aspect-ratio: 4 / 3.2; }
+  .c-design__list { grid-template-columns: 1fr; }
+  .c-why__list { grid-template-columns: 1fr; }
+  .c-why__list li, .c-why__list li + li { padding: 24px 0; border-left: 0; margin-top: 0; }
+  .c-why__list li + li { border-top: 1px solid var(--line-dark); }
+}
+@media (prefers-reduced-motion: reduce) { .c-why__list:not(.is-in) li { opacity: 1; transform: none; } }

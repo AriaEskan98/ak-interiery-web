@@ -1,0 +1,47 @@
+/* Shared by all detail pages (wardrobes, complete interiors, …) */
+
+/* hero: same as homepage hero, slightly shorter, no slider */
+.page-hero { height: 88svh; max-height: 900px; min-height: 600px; }
+.page-hero .hero__content { padding-bottom: clamp(56px, 9vh, 96px); }
+.page-hero__title { font-size: clamp(2.7rem, 5.6vw, 5rem); }
+.page-hero .hero__shade {
+  background:
+    linear-gradient(90deg, rgba(31,26,22,.88) 0%, rgba(31,26,22,.55) 40%, rgba(31,26,22,.05) 75%),
+    linear-gradient(0deg, rgba(31,26,22,.6) 0%, rgba(31,26,22,0) 40%),
+    linear-gradient(180deg, rgba(31,26,22,.55) 0%, rgba(31,26,22,0) 22%);
+}
+.crumbs {
+  display: flex; gap: 10px; align-items: center; margin-bottom: 26px;
+  font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted-on-dark);
+}
+.crumbs a { color: var(--gold); }
+.crumbs a:hover { color: var(--white); }
+.crumbs span[aria-hidden] { opacity: .5; }
+
+/* 06 process – six steps */
+.steps--6 { grid-template-columns: repeat(6, 1fr); }
+.steps--6 .step { padding-right: 20px; }
+.steps--6 .step + .step { padding-left: 20px; }
+
+
+/* real projects grid (only rendered with genuine AK photos) */
+.w-projects__text { color: var(--muted-on-dark); margin-top: 16px; max-width: 48ch; }
+.w-projects__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.w-projects__grid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+.w-projects__grid span { display: block; padding-top: 14px; font-family: var(--serif); }
+
+
+/* full-width image behind the contact section */
+.cta--image { background-color: var(--dark); background-size: cover; background-position: center; }
+
+@media (max-width: 1080px) {
+  .steps--6 { grid-template-columns: repeat(3, 1fr); }
+  .steps--6 .step, .steps--6 .step + .step { padding: 28px 24px 0 0; }
+}
+@media (max-width: 860px) { .w-projects__grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) {
+  .w-projects__grid { grid-template-columns: 1fr; }
+  .page-hero { height: auto; min-height: 92svh; }
+  .steps--6 { grid-template-columns: 1fr; }
+  .steps--6 .step, .steps--6 .step + .step { padding: 24px 0; }
+}

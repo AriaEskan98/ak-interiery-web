@@ -1,0 +1,46 @@
+/* Snap pages – active when <html> has .is-snap (set by snap.js) */
+
+/* every page fills at least one screen; content centred vertically */
+.is-snap .panel {
+  min-height: 100vh; min-height: 100svh;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.is-snap .panel > * { flex: none; }
+.is-snap .panel > .hero, .is-snap .panel > .b2b { flex: 1; }
+.is-snap .hero { max-height: none; }
+.is-snap .section { padding: max(104px, 12vh) 0 max(72px, 9vh); }
+
+/* page dots */
+.snap-dots {
+  position: fixed; right: 22px; top: 50%; transform: translateY(-50%); z-index: 40;
+  display: flex; flex-direction: column; gap: 6px;
+  --dot: var(--gold);
+}
+.snap-dots.on-light { --dot: var(--gold-ink); }
+.snap-dots button {
+  position: relative; width: 22px; height: 22px; display: grid; place-items: center;
+}
+.snap-dots button::before {
+  content: ''; width: 6px; height: 6px; border-radius: 50%;
+  border: 1px solid var(--dot); background: transparent;
+  transition: transform .4s var(--ease), background-color .4s var(--ease), border-color .4s;
+}
+.snap-dots button.is-active::before { background: var(--dot); transform: scale(1.5); }
+.snap-dots button:hover::before { background: var(--dot); }
+.snap-dots__label {
+  position: absolute; right: 30px; top: 50%; transform: translate(6px, -50%);
+  white-space: nowrap; pointer-events: none; opacity: 0;
+  font-size: 10.5px; font-weight: 500; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--white); background: rgba(31, 26, 22, .88); padding: 6px 10px; border-radius: 2px;
+  transition: opacity .3s var(--ease), transform .3s var(--ease);
+}
+.snap-dots button:hover .snap-dots__label,
+.snap-dots button:focus-visible .snap-dots__label { opacity: 1; transform: translate(0, -50%); }
+
+@media (max-width: 860px) {
+  .snap-dots { right: 6px; gap: 2px; }
+  .snap-dots__label { display: none; }
+  .is-snap .section { padding: 96px 0 64px; }
+}
+/* phones: no room beside the content – hide the dots */
+@media (max-width: 600px) { .snap-dots { display: none; } }

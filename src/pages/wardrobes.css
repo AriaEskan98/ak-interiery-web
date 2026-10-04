@@ -1,0 +1,47 @@
+/* Vestavné skříně page – builds on the homepage styles (same tokens, buttons, header). */
+
+/* 02 intro – light and spacious */
+.w-intro__grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(40px, 8vw, 120px); align-items: start; }
+.w-intro__grid > * { min-width: 0; }
+.w-intro__title { max-width: 13ch; color: var(--dark); }
+.w-intro__text { display: flex; flex-direction: column; gap: 22px; padding-top: 14px; border-top: 1px solid var(--line-light); }
+.w-intro__text p { color: var(--muted-on-light); font-size: 16px; line-height: 1.8; padding-top: 8px; }
+.w-intro__text .more { margin-top: 8px; color: var(--dark); }
+.w-intro__text .more:hover svg { transform: translateX(5px); }
+
+/* 03 types – 4 cards */
+.w-types__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+.w-type { display: flex; flex-direction: column; }
+.w-type__img { aspect-ratio: 4 / 4.8; overflow: hidden; background: var(--warm); margin-bottom: 22px; }
+.w-type__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.w-type:hover .w-type__img img { transform: scale(1.05); }
+.w-type__num { font-family: var(--serif); color: var(--gold-ink); font-size: 1rem; }
+.w-type__title { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; line-height: 1.25; margin: 4px 0 10px; }
+.w-type__text { font-size: 14px; color: var(--muted-on-light); max-width: 30ch; }
+
+/* 04 details – dark */
+.w-details__grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(40px, 7vw, 110px); align-items: center; }
+.w-details__grid > * { min-width: 0; }
+.w-details__main { aspect-ratio: 4 / 4.6; overflow: hidden; }
+.w-details__main img { width: 100%; height: 100%; object-fit: cover; }
+.w-details__copy { display: flex; flex-direction: column; gap: 22px; align-items: flex-start; }
+.w-details__copy .eyebrow { margin-bottom: -4px; }
+.w-details__text { color: var(--muted-on-dark); max-width: 52ch; }
+.w-details .pull { color: var(--white); }
+.w-details__wide { width: 100%; aspect-ratio: 2 / 1; overflow: hidden; margin-top: 10px; }
+.w-details__wide img { width: 100%; height: 100%; object-fit: cover; }
+
+/* 07 complete-interiors link – reuses the B2B layout */
+.w-complete .b2b__claim { font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
+
+@media (max-width: 1080px) {
+  .w-types__grid { grid-template-columns: repeat(2, 1fr); row-gap: 40px; }
+}
+@media (max-width: 860px) {
+  .w-intro__grid, .w-details__grid { grid-template-columns: minmax(0, 1fr); }
+  .w-details__main { aspect-ratio: 4 / 3.4; }
+}
+@media (max-width: 600px) {
+  .w-types__grid { grid-template-columns: 1fr; }
+  .w-type__img { aspect-ratio: 4 / 3.4; }
+}

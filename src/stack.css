@@ -1,0 +1,22 @@
+/* Stacked pages – only active when <html> has .is-stacked (set by stack.js). */
+.is-stacked { scroll-padding-top: 0; }
+.is-stacked .panel {
+  position: sticky;
+  overflow: clip;              /* clip, not hidden – keeps inner sticky elements working */
+  background: var(--panel-bg, var(--beige));
+  border-radius: calc(var(--enter, 0) * 28px) calc(var(--enter, 0) * 28px) 0 0;
+  /* shadow only while a page is mid-slide (0 when resting below or at the top) */
+  box-shadow: 0 -24px 48px -28px rgba(15, 12, 10, calc(var(--enter, 0) * (1 - var(--enter, 0)) * 4));
+  will-change: transform;
+}
+/* page underneath dims as the next one covers it */
+.is-stacked .panel::after {
+  content: ''; position: absolute; inset: 0; z-index: 5; pointer-events: none;
+  background: #14100D;
+  opacity: calc(var(--cover, 0) * .5);
+}
+.panel--dark { --panel-bg: var(--dark); }
+.panel--warm { --panel-bg: var(--warm); }
+.panel--light { --panel-bg: var(--beige); }
+/* backdrop behind shrinking pages */
+.is-stacked body { background: var(--dark); }

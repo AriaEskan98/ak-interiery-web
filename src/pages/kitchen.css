@@ -1,0 +1,20 @@
+/* Kuchyně na míru page – on top of shared.css + complete.css */
+
+.k-claim {
+  font-size: 11.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--gold-ink); padding-top: 18px; border-top: 1px solid var(--line-light); margin-top: 6px;
+}
+.k-num { font-family: var(--serif); color: var(--gold-ink); font-size: 1rem; }
+.k-pull { color: var(--white); margin-top: 4px; }
+
+/* three detail photos: one wide on top, two below */
+.k-mosaic { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.k-mosaic__item { overflow: hidden; }
+.k-mosaic__item img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.k-mosaic__item:hover img { transform: scale(1.04); }
+.k-mosaic__item--0 { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
+.k-mosaic__item--1, .k-mosaic__item--2 { aspect-ratio: 1 / 1; }
+
+@media (max-width: 860px) {
+  .k-mosaic { order: -1; }
+}
