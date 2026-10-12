@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useLang, useInView, prefersReducedMotion, preselectService, Rich } from '../lib.jsx'
+import { LANGS, useLang, useInView, prefersReducedMotion, preselectService, Rich, A11Y } from '../lib.jsx'
 import { Icon, Logo, PergolaArt, StoneArt } from './Icons.jsx'
 import { contact, heroSlides, services, completeInterior } from '../site.config.js'
 import { useRoute } from '../router.jsx'
@@ -26,8 +26,8 @@ export function Header() {
   }, [open])
 
   const LangSwitch = (
-    <div className="lang" role="group" aria-label="Jazyk / Language">
-      {['cz', 'en'].map((l) => (
+    <div className="lang" role="group" aria-label="Jazyk / Language / Sprache">
+      {LANGS.map((l) => (
         <button key={l} type="button" className={lang === l ? 'is-active' : ''} aria-pressed={lang === l} onClick={() => setLang(l)}>
           {l.toUpperCase()}
         </button>
@@ -38,9 +38,9 @@ export function Header() {
   return (
     <header className={`header${scrolled ? ' is-scrolled' : ''}${open ? ' is-open' : ''}`}>
       <div className="container header__inner">
-        <a href="/" className="header__logo" aria-label="AK Interiéry – domů"><Logo compact /></a>
-        <nav className="nav" aria-label="Hlavní menu">
-          {t.nav.items.map((i) => <a key={i.href} href={i.href}>{i.label}</a>)}
+        <a href="/" className="header__logo" aria-label={A11Y[lang].home}><Logo compact /></a>
+        <nav className="nav" aria-label={A11Y[lang].mainNav}>
+          {t.nav.items.map((i) => <a key={i.href} href={i.href} title={i.short ? i.label : undefined}>{i.short || i.label}</a>)}
         </nav>
         <div className="header__right">
           {LangSwitch}
@@ -53,7 +53,7 @@ export function Header() {
       </div>
 
       <div id="mobile-menu" className="mobile-menu" hidden={!open}>
-        <nav aria-label="Mobilní menu">
+        <nav aria-label={A11Y[lang].mobileNav}>
           {t.nav.items.map((i, n) => (
             <a key={i.href} href={i.href} onClick={() => setOpen(false)} style={{ '--i': n }}>{i.label}</a>
           ))}

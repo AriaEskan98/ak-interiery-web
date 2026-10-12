@@ -8,9 +8,39 @@ import { Icon } from './Icons.jsx'
 const L = {
   cz: { close: 'Zavřít', prev: 'Předchozí', next: 'Další' },
   en: { close: 'Close', prev: 'Previous', next: 'Next' },
+  de: { close: 'Schließen', prev: 'Zurück', next: 'Weiter' },
 }
 
-// items: [{ src, alt, caption, video?, poster? }] – video items play muted with controls
+const sources = (item) => <>
+  {item.webm && <source src={item.webm} type="video/webm" />}
+  <source src={item.src} type="video/mp4" />
+</>
+
+// Portrait (phone) videos: the full, uncropped video sits in the middle; a blurred, darkened copy of the same
+// video fills the rest of the screen and follows the main one (play, pause, seek).
+function VideoStage({ item }) {
+  const main = useRef(null)
+  const bg = useRef(null)
+  useEffect(() => {
+    const m = main.current; const b = bg.current
+    if (!m || !b) return
+    const sync = () => {
+      if (Math.abs(b.currentTime - m.currentTime) > 0.3) b.currentTime = m.currentTime
+      if (m.paused !== b.paused) (m.paused ? b.pause() : b.play().catch(() => {}))
+    }
+    const events = ['play', 'pause', 'seeked', 'timeupdate']
+    events.forEach((e) => m.addEventListener(e, sync))
+    return () => events.forEach((e) => m.removeEventListener(e, sync))
+  }, [item.src])
+  return (
+    <div className="lightbox__vstage">
+      <video ref={bg} className="lightbox__vbg" poster={item.poster} muted loop playsInline autoPlay aria-hidden="true" tabIndex={-1}>{sources(item)}</video>
+      <video ref={main} className="lightbox__vmain" poster={item.poster} autoPlay muted loop playsInline controls aria-label={item.alt}>{sources(item)}</video>
+    </div>
+  )
+}
+
+// items: [{ src, alt, caption, video?, webm?, poster? }] – video items play muted with controls
 export function Lightbox({ items, index, onIndex, onClose, action }) {
   const { lang } = useLang()
   const l = L[lang]
@@ -37,10 +67,7 @@ export function Lightbox({ items, index, onIndex, onClose, action }) {
       <button ref={closeRef} type="button" className="lightbox__close" onClick={onClose} aria-label={l.close}><Icon.close /></button>
       <figure>
         {item.video
-          ? <video key={item.src} poster={item.poster} autoPlay muted loop playsInline controls aria-label={item.alt}>
-              {item.webm && <source src={item.webm} type="video/webm" />}
-              <source src={item.src} type="video/mp4" />
-            </video>
+          ? <VideoStage key={item.src} item={item} />
           : <img key={item.src} src={item.src} alt={item.alt} />}
         <figcaption>
           <span>{item.caption}</span>

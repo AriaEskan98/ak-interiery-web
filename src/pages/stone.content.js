@@ -158,4 +158,78 @@ export const stoneContent = {
       text: 'Send us the dimensions, a drawing or a photo of the space. We will get back to you with a proposed solution and next steps.',
     },
   },
+  // German – MASTER DE 1.0, chapter 08 (mapped onto the existing page sections). Lines marked UI were not in the document.
+  de: {
+    crumb: ['Startseite', 'Stein und Steinverarbeitung'],
+    hero: {
+      eyebrow: 'Stein und Steinverarbeitung',
+      title: ['Ausdrucksstarke Materialien.', '*Präzise nach Maß verarbeitet.*'],
+      text: 'Wir bearbeiten Kunststein und Naturstein in unserer eigenen Fertigung. Aus Platten entstehen Arbeitsplatten und individuelle Elemente für Küchen, Bäder und weitere Innenraumprojekte.',
+      claim: 'Materialauswahl. Eigene Bearbeitung. Individuelle Fertigung.',
+      cta1: 'Steinprojekt anfragen',
+      cta2: 'Dekore ansehen',
+    },
+    technical: {
+      eyebrow: 'Kunststein',
+      title: 'Vom Plattenmaterial *zum fertigen Bauteil.*',
+      p1: 'Dekorative Plattenmaterialien für individuell gefertigte Arbeitsplatten und weitere Einrichtungselemente. Zusammensetzung, Oberfläche und Eignung richten sich nach dem jeweiligen Produkt.',
+      p2: 'Wir bieten ganze Platten sowie Zuschnitte und maßgefertigte Elemente an. Die Ausführung stimmen wir auf das gewählte Material, die erforderlichen Maße und den vorgesehenen Einsatz ab.',
+      specsTitle: 'Plattenformat und Bearbeitung',
+      specs: [['Länge', '3.200 mm'], ['Breite', '1.600 mm'], ['Stärke', '20 mm'], ['Fläche je Platte', '5,12 m²']],
+      specsNote: 'Format, Oberfläche und Verfügbarkeit bestätigen wir für das gewählte Material im Rahmen Ihres Angebots.',
+    },
+    natural: {
+      eyebrow: 'Naturstein',
+      title: 'Naturstein. *Jede Platte ein Unikat.*', // UI
+      p1: 'Individuelle Lösungen aus Naturstein, darunter Granit und Marmor. Material und Ausführung wählen wir passend zum jeweiligen Projekt.',
+      p2: 'Zum Leistungsumfang können Aufmaß, Bearbeitung, Transport und Montage gehören. Die konkreten Leistungen legen wir im Angebot fest.',
+      points: ['Jede Platte mit eigener Zeichnung', 'Material passend zu Projekt und Einsatz', 'Individuelle Bearbeitung und Montage'], // UI
+    },
+    decors: {
+      eyebrow: 'Kunststein-Kollektion',
+      title: 'Wählen Sie *nach Ihrem Stil.*',
+      text: 'Entdecken Sie unsere Auswahl an Dekoren. Wählen Sie das gewünschte Erscheinungsbild und senden Sie uns eine Anfrage. Die passende Ausführung und die erforderlichen Maße stimmen wir anschließend mit Ihnen ab.',
+      type: 'Kunststein',
+      label: 'Dekor',
+      enquire: 'Dieses Dekor anfragen',
+      view: 'Dekor vergrößern',
+      photosShort: 'Fotos', // UI
+      photoKinds: { warehouse: 'Platte im Lager', detail: 'Kantendetail' }, // UI
+      pendingTitle: 'Die Kollektion wird vorbereitet.', // UI
+      pendingText: 'Fotos und eine Übersicht aller Dekore veröffentlichen wir, sobald Muster und Verfügbarkeit bestätigt sind. Planen Sie bereits ein Projekt? Schreiben Sie uns – wir senden Ihnen gerne das aktuelle Angebot.', // UI
+      pendingCta: 'Aktuelles Angebot anfragen', // UI
+    },
+    fabrication: {
+      eyebrow: 'Eigene Steinbearbeitung',
+      title: 'Präzise bearbeitet *für Ihr Projekt.*',
+      text: 'Mit CNC-Steinbearbeitung und Brückensäge schneiden und bearbeiten wir Kunststein und Naturstein. Wir fertigen Arbeitsplatten nach Maß und bearbeiten Kanten sowie Ausschnitte für Spülen und Kochfelder.',
+      steps: [ // 08.10 – Von Ihrer Anfrage zum fertigen Element
+        { title: 'Anfrage', text: 'Sie senden uns Ihre Vorstellungen, Maße oder vorhandenen Unterlagen.' },
+        { title: 'Material und Einsatz', text: 'Wir besprechen das gewünschte Material und den vorgesehenen Einsatz.' },
+        { title: 'Aufmaß und Abstimmung', text: 'Wir klären Maße, Bearbeitung, Kanten und notwendige Ausschnitte.' },
+        { title: 'Angebot', text: 'Sie erhalten ein Angebot für den abgestimmten Leistungsumfang.' },
+        { title: 'Fertigung', text: 'Wir bearbeiten das Material entsprechend der vereinbarten Ausführung.' },
+        { title: 'Lieferung und Montage', text: 'Transport und Montage erfolgen nach dem vereinbarten Umfang.' },
+      ],
+    },
+    applications: {
+      eyebrow: 'Einsatzbereiche', // UI
+      title: 'Steinlösungen *für unterschiedliche Räume.*',
+      text: 'Wir fertigen Steinelemente einzeln oder als Teil einer gesamten Einrichtung bzw. eines Bauprojekts.', // UI
+      items: [
+        ['Küchenarbeitsplatten und Inseln', '/kuchyne-na-miru'],
+        ['Waschtischplatten und Badmöbel'],
+        ['Wandverkleidungen und ergänzende Elemente'],
+        ['Empfangsbereiche und gewerbliche Innenräume', '/pro-profesionaly'],
+      ],
+      customTitle: 'Sie haben eine eigene Vorgabe?', // UI
+      customText: 'Senden Sie uns eine Zeichnung, ein Foto oder eine Beschreibung. Wir prüfen, ob sich die Ausführung in Stein umsetzen lässt, und schlagen eine Lösung vor.', // UI
+      b2b: 'Für Geschäftskunden',
+    },
+    project: { eyebrow: 'Unsere Arbeiten', text: 'Steininsel und Arbeitsplatten in einer modernen Küche.', cta: 'Projekt ansehen' },
+    cta: {
+      title: 'Welches Steinprojekt *möchten Sie umsetzen?*',
+      text: 'Senden Sie uns eine Beschreibung, Maße oder eine Zeichnung. Wir prüfen die Möglichkeiten und besprechen den nächsten Schritt.',
+    },
+  },
 }

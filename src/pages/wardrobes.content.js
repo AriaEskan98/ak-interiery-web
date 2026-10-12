@@ -128,4 +128,67 @@ export const wardrobesContent = {
       button: 'Free consultation',
     },
   },
+  // German – MASTER DE 1.0, chapter 04. Lines marked UI were not in the document.
+  de: {
+    meta: 'Einbauschränke nach Maß | AK INTERIÉRY',
+    crumb: ['Startseite', 'Einbauschränke'],
+    hero: {
+      eyebrow: 'Einbauschränke nach Maß',
+      title: ['Mehr Platz', '*für das, was zählt.*'],
+      text: 'Wir planen Einbauschränke und Stauraumlösungen, die Ihren Raum sinnvoll nutzen und sich selbstverständlich in Ihre Einrichtung einfügen.',
+      claim: 'Innen durchdacht. Außen klar gestaltet.',
+      cta: 'Meinen Einbauschrank planen lassen',
+    },
+    intro: {
+      title: 'Stauraum, *der sich Ihnen anpasst.*',
+      p1: 'In jedem Zuhause werden andere Dinge aufbewahrt. Deshalb beginnen wir nicht mit einer fertigen Schrankkombination, sondern mit Ihrem Raum und Ihren Anforderungen.',
+      p2: 'Maße, Innenaufteilung, Materialien, Türen, Beleuchtung und praktische Details stimmen wir so aufeinander ab, dass der Schrank im Alltag funktioniert und zur gesamten Einrichtung passt.',
+    },
+    types: {
+      eyebrow: 'Lösungen für unterschiedliche Räume',
+      title: 'Vom Schlafzimmerschrank *bis zur Ankleide.*',
+      items: [
+        { title: 'Schiebetürenschränke', text: 'Durchdachter Stauraum auch dort, wo der Platz zum Öffnen von Drehtüren fehlt.' },
+        { title: 'Ankleiden und Schranksysteme', text: 'Übersichtliche Aufteilungen, in denen alles seinen Platz findet.' },
+        { title: 'Schlafzimmerschränke', text: 'Ruhige Gestaltung und Stauraum, abgestimmt auf Ihr Schlafzimmer.' },
+        { title: 'Stauraum für Flur und weitere Bereiche', text: 'Individuelle Lösungen für die Anforderungen des jeweiligen Raumes.' },
+      ],
+    },
+    details: {
+      eyebrow: 'Auf die Details kommt es an',
+      title: 'Bis ins Innere *durchdacht.*',
+      text: 'Die Innenaufteilung richtet sich danach, was Sie tatsächlich aufbewahren möchten. Einlegeböden, Schubladen, Kleiderstangen, Auszüge und Beleuchtung verbinden wir zu einem funktionalen Ganzen.',
+      extra: 'Genauso sorgfältig stimmen wir die sichtbaren Materialien, Oberflächen und Türdetails ab.',
+    },
+    projects: {
+      eyebrow: 'Unsere Projekte',
+      title: 'Für konkrete Räume *entwickelt.*',
+      text: 'Entdecken Sie ausgewählte Einbauschränke, Ankleiden und Stauraumlösungen aus unseren Arbeiten.',
+      cta: 'Alle Projekte ansehen',
+    },
+    process: {
+      eyebrow: 'So arbeiten wir', // UI
+      title: 'Vom Aufmaß *bis zum letzten Detail.*',
+      steps: [
+        { title: 'Beratung', text: 'Wir klären, was Sie aufbewahren möchten und wie der Raum genutzt wird.' },
+        { title: 'Aufmaß', text: 'Wir nehmen die Maße vor Ort auf.' },
+        { title: 'Entwurf', text: 'Wir planen das Erscheinungsbild und die Innenaufteilung.' },
+        { title: 'Angebot', text: 'Wir erstellen ein Angebot für die abgestimmte Lösung.' },
+        { title: 'Fertigung', text: 'Wir fertigen den Schrank passend zu Ihrem Raum.' },
+        { title: 'Montage', text: 'Wir übernehmen die Montage und Übergabe.' },
+      ],
+    },
+    complete: {
+      eyebrow: 'Mehr als Stauraum',
+      title: 'Ein Schrank als Teil *Ihrer gesamten Einrichtung.*',
+      text: 'Einbaumöbel lassen sich auf Küche, Türen, Wohnbereiche und weitere Elemente abstimmen. So entsteht ein einheitliches Gesamtbild.',
+      claim: ['Ein Stil.', 'Eine abgestimmte Umsetzung.', 'Ein Partner.'],
+      cta: 'Komplette Inneneinrichtungen',
+    },
+    cta: {
+      title: 'Nutzen wir Ihren Raum *sinnvoll.*',
+      text: 'Sagen Sie uns, wo Sie mehr Stauraum benötigen. Gemeinsam entwickeln wir eine passende Lösung.',
+      button: 'Unverbindliche Beratung anfragen',
+    },
+  },
 }

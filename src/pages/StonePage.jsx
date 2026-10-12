@@ -4,7 +4,7 @@
 // No stone photos are used until the verified package arrives; the decor gallery stays unpublished
 // (stonePage in site.config.js).
 import { useState } from 'react'
-import { useLang, Rich, openForm } from '../lib.jsx'
+import { useLang, Rich, openForm, A11Y } from '../lib.jsx'
 import { Lightbox } from '../components/Lightbox.jsx'
 import { Icon, SlabArt } from '../components/Icons.jsx'
 import { ContactSection } from '../components/EnquiryForms.jsx'
@@ -44,7 +44,7 @@ export default function StonePage() {
         <section className="s-hero" id="top">
           <div className="container s-hero__grid">
             <div className="s-hero__copy">
-              <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label="Drobečková navigace">
+              <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label={A11Y[lang].crumbs}>
                 <a href="/">{c.crumb[0]}</a><span aria-hidden="true">/</span><span aria-current="page">{c.crumb[1]}</span>
               </nav>
               <p className="eyebrow hero__reveal" style={{ '--d': '.1s' }}>{c.hero.eyebrow}</p>

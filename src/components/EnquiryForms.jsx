@@ -3,9 +3,10 @@
 //   C – custom manufacturing ('production', Naše výroba page: AK_INTERIERY_NASE_VYROBA brief, section 05)
 // Every page ends with <ContactSection>. Any button can open it with openForm({ mode, preselect }) from lib.jsx.
 import { useEffect, useRef, useState } from 'react'
-import { useLang, Rich, openForm } from '../lib.jsx'
+import { useLang, Rich, openForm, A11Y } from '../lib.jsx'
 import { Icon } from './Icons.jsx'
-import { contact, whatsappUrl } from '../site.config.js'
+import { contact } from '../site.config.js'
+import { ContactDetails, CompanyDetails } from './ContactDetails.jsx'
 import { formsContent } from '../forms.content.js'
 
 const DEMO = import.meta.env.VITE_DEMO === '1' // single-file preview: no server behind it
@@ -303,15 +304,11 @@ export function ContactSection({ title, text, image, mode: initialMode = 'privat
               <button type="button" className="btn btn--ghost" onClick={() => openForm({ mode: 'b2b' })}>{buttons[1]}<Icon.arrow /></button>
             </div>
           )}
-          <ul className="cta__contact">
-            <li><Icon.phone /><a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></li>
-            <li><Icon.mail /><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
-            <li><Icon.whatsapp /><a href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
-            <li><Icon.person width="16" height="16" /><span>{contact.person.name} — {contact.person.role[lang]}</span></li>
-          </ul>
+          <ContactDetails />
+          {asPage && <CompanyDetails />}
         </div>
         <div className="cta__forms" id="formular">
-          <div className="form-tabs" role="tablist" aria-label="Typ poptávky">
+          <div className="form-tabs" role="tablist" aria-label={A11Y[lang].formType}>
             {modes.map((m) => (
               <button key={m} type="button" role="tab" aria-selected={mode === m} className={mode === m ? 'is-active' : ''}
                 onClick={() => { setMode(m); setFormKey((k) => k + 1) }}>{F.tabs[m]}</button>

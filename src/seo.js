@@ -9,15 +9,15 @@ import { heroSlides, wardrobesPage, completePage, kitchenPage, doorsPage, furnit
 export const SEO = {
   home: {
     path: '/', image: heroSlides[0],
-    cz: { title: 'AK Interiéry – kuchyně, nábytek a kompletní interiéry na míru | Praha',
-          description: 'Navrhujeme a realizujeme interiéry na míru od prvního návrhu po montáž: kuchyně, vestavné skříně, nábytek, dveře i kompletní interiéry. Praha a okolí.' },
-    en: { title: 'AK Interiors – bespoke kitchens, furniture and complete interiors | Prague',
-          description: 'We design and deliver bespoke interiors from the first concept to installation: kitchens, built-in wardrobes, furniture, doors and complete interiors. Prague and surroundings.' },
+    cz: { title: 'AK Interiéry – kuchyně, nábytek a kompletní interiéry na míru | Orlová',
+          description: 'Navrhujeme a realizujeme interiéry na míru od prvního návrhu po montáž: kuchyně, vestavné skříně, nábytek, dveře i kompletní interiéry. Orlová a okolí.' },
+    en: { title: 'AK Interiors – bespoke kitchens, furniture and complete interiors | Orlová',
+          description: 'We design and deliver bespoke interiors from the first concept to installation: kitchens, built-in wardrobes, furniture, doors and complete interiors. Orlová and surroundings.' },
   },
   kitchen: {
     path: '/kuchyne-na-miru', image: kitchenPage.hero, crumb: 'Kuchyně na míru',
     cz: { title: 'Kuchyně na míru – návrh, výroba a montáž | AK Interiéry',
-          description: 'Kuchyně na míru navržené podle vašeho prostoru a způsobu života. Návrh, materiály, výroba a montáž od jednoho partnera. Praha a okolí.' },
+          description: 'Kuchyně na míru navržené podle vašeho prostoru a způsobu života. Návrh, materiály, výroba a montáž od jednoho partnera. Orlová a okolí.' },
     en: { title: 'Bespoke kitchens – design, manufacture and installation | AK Interiors',
           description: 'Bespoke kitchens designed around your space and the way you live. Design, materials, manufacture and installation from one partner.' },
   },
@@ -73,9 +73,9 @@ export const SEO = {
   contact: {
     path: '/kontakt', image: heroSlides[0], crumb: 'Kontakt',
     cz: { title: 'Kontakt – nezávazná poptávka | AK Interiéry',
-          description: 'Napište nám o svém projektu – kuchyně, nábytek na míru, celý interiér nebo B2B zakázka. Telefon +420 736 719 675.' },
+          description: 'Napište nám o svém projektu – kuchyně, nábytek na míru, celý interiér nebo B2B zakázka. Telefon +420 604 596 169, info@akinteriery.com.' },
     en: { title: 'Contact – send an enquiry | AK Interiors',
-          description: 'Tell us about your project – a kitchen, bespoke furniture, a whole interior or a B2B contract. Phone +420 736 719 675.' },
+          description: 'Tell us about your project – a kitchen, bespoke furniture, a whole interior or a B2B contract. Phone +420 604 596 169, info@akinteriery.com.' },
   },
   work: {
     path: '/realizace', image: heroSlides[0], crumb: 'Naše realizace',
@@ -106,6 +106,26 @@ export const SEO = {
   },
 }
 
+// German titles and descriptions – MASTER DE 1.0, 16.03 (privacy/terms/404 = UI).
+const SEO_DE = {
+  home: { title: 'AK INTERIÉRY | Küchen, Möbel und Stein nach Maß', description: 'Maßgefertigte Küchen, Möbel, Türen und Steinlösungen. Entdecken Sie die eigene Fertigung und die individuellen Einrichtungsmöglichkeiten von AK INTERIÉRY.' },
+  kitchen: { title: 'Küchen nach Maß | AK INTERIÉRY', description: 'Individuelle Küchenplanung, abgestimmte Materialien und maßgefertigte Lösungen. Entdecken Sie unsere Küchen und fragen Sie Ihr Projekt bei AK INTERIÉRY an.' },
+  wardrobes: { title: 'Einbauschränke nach Maß | AK INTERIÉRY', description: 'Einbauschränke, Ankleiden und Stauraum passend zu Ihrem Raum. Entdecken Sie individuelle Aufteilungen und Gestaltungsmöglichkeiten von AK INTERIÉRY.' },
+  furniture: { title: 'Möbel nach Maß | AK INTERIÉRY', description: 'Individuelle Möbel für Wohnräume, Arbeitszimmer und Schlafzimmer. AK INTERIÉRY plant und fertigt Lösungen passend zu Ihrem Raum und Ihren Anforderungen.' },
+  doors: { title: 'Türen und Innenausbau-Elemente | AK INTERIÉRY', description: 'Türen, Oberflächen und Details passend zur gesamten Einrichtung. Entdecken Sie die Lösungen von AK INTERIÉRY und fragen Sie Ihr Projekt an.' },
+  complete: { title: 'Komplette Inneneinrichtungen | AK INTERIÉRY', description: 'Küchen, Möbel, Einbauschränke und Türen als stimmiges Ganzes. AK INTERIÉRY begleitet Ihre Einrichtung vom Entwurf bis zur vereinbarten Umsetzung.' },
+  stone: { title: 'Stein und Steinverarbeitung | AK INTERIÉRY', description: 'Kunststein und Naturstein nach Maß. Entdecken Sie Dekore, Arbeitsplatten und individuelle Bauteile aus der eigenen Steinbearbeitung von AK INTERIÉRY.' },
+  production: { title: 'Eigene Fertigung und CNC-Bearbeitung | AK INTERIÉRY', description: 'Möbelfertigung, Holz- und MDF-Bearbeitung, Steinbearbeitung und Acrylglas. Entdecken Sie die auftragsbezogenen Fertigungsmöglichkeiten von AK INTERIÉRY.' },
+  b2b: { title: 'Fertigung und Projektumsetzung für Unternehmen | AK INTERIÉRY', description: 'Individuelle Fertigung, Lieferung und Montage für Projektentwickler, Bauunternehmen und Immobilienverwaltungen. Fragen Sie Ihre B2B-Zusammenarbeit an.' },
+  about: { title: 'Über uns | AK INTERIÉRY', description: 'Lernen Sie AK INTERIÉRY kennen: individuelle Lösungen, eigene Fertigung und abgestimmte Einrichtungen – vom einzelnen Detail bis zum gesamten Projekt.' },
+  work: { title: 'Unsere Projekte | AK INTERIÉRY', description: 'Entdecken Sie ausgewählte Projekte, maßgefertigte Möbel und Details unserer Arbeiten. Finden Sie Anregungen für Ihr eigenes Projekt mit AK INTERIÉRY.' },
+  contact: { title: 'Kontakt und Projektanfrage | AK INTERIÉRY', description: 'Planen Sie eine Küche, Möbel, Steinbauteile oder eine gesamte Einrichtung? Kontaktieren Sie AK INTERIÉRY und besprechen Sie Ihr Projekt mit uns.' },
+  privacy: { title: 'Datenschutzhinweise | AK INTERIÉRY', description: 'Wie AK INTERIÉRY personenbezogene Daten aus dem Anfrageformular und dem Newsletter verarbeitet.' },
+  terms: { title: 'Nutzungsbedingungen | AK INTERIÉRY', description: 'Nutzungsbedingungen der Website von AK INTERIÉRY.' },
+  notfound: { title: 'Seite nicht gefunden | AK INTERIÉRY', description: 'Diese Seite wurde nicht gefunden.' },
+}
+for (const [k, v] of Object.entries(SEO_DE)) if (SEO[k]) SEO[k].de = v
+
 const abs = (p) => siteUrl.replace(/\/$/, '') + p
 
 // SEO data for a route; project pages (/realizace/<slug>) are built from src/realizace.js.
@@ -118,6 +138,7 @@ export function pageSeo(route, path = '') {
     path: `/realizace/${p.slug}`, image: p.cover, crumb: p.title.cz, parent: SEO.work,
     cz: { title: `${p.title.cz} | Naše realizace | AK Interiéry`, description: desc('cz') },
     en: { title: `${p.title.en || p.title.cz} | Our projects | AK Interiors`, description: desc('en') },
+    de: { title: `${p.title.de || p.title.cz} | Unsere Projekte | AK INTERIÉRY`, description: desc('de') },
   }
 }
 
@@ -134,7 +155,7 @@ export function jsonLd(route, path) {
     telephone: contact.phone,
     email: contact.email,
     areaServed: contact.area,
-    address: { '@type': 'PostalAddress', addressLocality: 'Praha', addressCountry: 'CZ' },
+    address: { '@type': 'PostalAddress', streetAddress: company.street, postalCode: company.postalCode, addressLocality: company.city, addressCountry: 'CZ' },
     description: SEO.home.cz.description,
   }
   if (route === 'home') return [business]
@@ -177,7 +198,7 @@ export function useSeo(route, path) {
   const { lang } = useLang()
   useEffect(() => {
     const page = pageSeo(route, path)
-    const m = page[lang]
+    const m = page[lang] || page.cz
     document.title = m.title
     const set = (sel, attr, val) => { const el = document.head.querySelector(sel); if (el) el.setAttribute(attr, val) }
     set('meta[name="description"]', 'content', m.description)

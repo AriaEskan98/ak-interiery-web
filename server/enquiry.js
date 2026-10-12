@@ -39,7 +39,7 @@ export function validateEnquiry(payload, files = []) {
   if (typeof p.elapsed === 'number' && p.elapsed < 2500) return { bot: true } // submitted faster than a human can
   const type = ['b2b', 'production'].includes(p.type) ? p.type : 'private'
   const errors = {}
-  const base = { type, lang: p.lang === 'en' ? 'en' : 'cz', createdAt: new Date().toISOString(), phone: clean(p.phone, 40), email: clean(p.email, 160) }
+  const base = { type, lang: ['en', 'de'].includes(p.lang) ? p.lang : 'cz', createdAt: new Date().toISOString(), phone: clean(p.phone, 40), email: clean(p.email, 160) }
   let entry
   if (type === 'private') {
     entry = { ...base, name: clean(p.name, 120), city: clean(p.city, 120),

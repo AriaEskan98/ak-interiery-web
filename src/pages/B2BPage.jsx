@@ -1,6 +1,6 @@
 // B2B / Pro developery a profesionály – AK as a production and delivery partner.
 // Section order follows "KONTROLNÍ POŘADÍ" in AK_B2B_KONTROLNI_VZOR.pdf.
-import { useLang, useInView, Rich, openForm } from '../lib.jsx'
+import { useLang, useInView, Rich, openForm, A11Y } from '../lib.jsx'
 import { Icon, PergolaArt } from '../components/Icons.jsx'
 import { ContactSection } from '../components/EnquiryForms.jsx'
 import { CrossLink } from '../components/CrossLink.jsx'
@@ -27,7 +27,7 @@ export default function B2BPage() {
           <div className="hero__media" aria-hidden="true"><img src={img.hero} alt="" className="is-active" fetchPriority="high" /></div>
           <div className="hero__shade" aria-hidden="true" />
           <div className="container hero__content">
-            <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label="Drobečková navigace">
+            <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label={A11Y[lang].crumbs}>
               <a href="/">{c.crumb[0]}</a><span aria-hidden="true">/</span><span aria-current="page">{c.crumb[1]}</span>
             </nav>
             <p className="eyebrow hero__reveal" style={{ '--d': '.1s' }}>{c.hero.eyebrow}</p>

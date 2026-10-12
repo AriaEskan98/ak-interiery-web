@@ -137,4 +137,71 @@ export const kitchenContent = {
       button: 'Free consultation',
     },
   },
+  // German – MASTER DE 1.0, chapter 03. Lines marked UI were not in the document.
+  de: {
+    meta: 'Küchen nach Maß | AK INTERIÉRY',
+    crumb: ['Startseite', 'Küchen nach Maß'],
+    hero: {
+      eyebrow: 'Küchen nach Maß',
+      title: ['Eine Küche, die', '*zu Ihrem Leben passt.*'],
+      text: 'Wir planen Küchen, in denen durchdachtes Design, Alltagstauglichkeit und sorgfältige Verarbeitung zusammenkommen. Jede Lösung entsteht aus dem vorhandenen Raum, Ihren Anforderungen und Ihrem persönlichen Stil.',
+      claim: 'Vom ersten Entwurf bis zum letzten montierten Detail.',
+      cta: 'Meine Küche planen lassen',
+    },
+    intro: {
+      title: 'Das Herz Ihres Zuhauses. *Für Sie geplant.*',
+      p1: 'Eine gute Küche ist mehr als eine Zusammenstellung von Schränken. Sie muss zum Raum passen, kurze Wege ermöglichen und berücksichtigen, wie Sie kochen und Ihren Alltag gestalten.',
+      p2: 'Deshalb planen wir jede Küche individuell. Wir unterstützen Sie bei der Raumaufteilung, Materialauswahl, Arbeitsplatte, Stauraumplanung und Beleuchtung – und stimmen die Küche auf Ihre übrige Einrichtung ab.',
+      claim: 'Design. Funktion. Maßgeschneiderte Lösungen.',
+    },
+    styles: {
+      eyebrow: 'Inspiration',
+      title: 'Ein Raum. *Viele Möglichkeiten.*',
+      text: 'Wir legen Sie nicht auf einen Stil fest. Gemeinsam finden wir eine Lösung, die zu Ihnen und Ihrem Zuhause passt.',
+      items: [
+        { title: 'Hell und natürlich', text: 'Warme Holzoberflächen, sanfte Farbtöne und eine ruhige Atmosphäre.' },
+        { title: 'Elegant und zeitlos', text: 'Dunklere Materialien, klare Linien und ausdrucksstarke Details.' },
+        { title: 'Modern und minimalistisch', text: 'Klare Formen, durchdachte Funktionen und ein aufgeräumtes Gesamtbild.' },
+        { title: 'Exklusiv und ausdrucksstark', text: 'Besondere Materialkombinationen und Details mit eigenständigem Charakter.' },
+      ],
+    },
+    details: {
+      eyebrow: 'Auf die Details kommt es an',
+      title: 'Materialien, die gut aussehen. *Und im Alltag überzeugen.*',
+      text: 'Wir unterstützen Sie bei der Auswahl von Oberflächen, Arbeitsplatten, Beschlägen und Innenausstattung. Dabei stimmen wir die Gestaltung nicht nur auf Ihren Stil, sondern auch auf die tägliche Nutzung ab.',
+      extra: 'Gemeinsam bringen wir Gestaltung, Funktion und Budget zusammen.',
+      items: ['Dekore und Oberflächen', 'Arbeitsplatten', 'Beschläge und Auszüge', 'Innenorganisation', 'Beleuchtung', 'Integration von Elektrogeräten'],
+      stoneLink: { text: 'Steinarbeitsplatten nach Maß. Kunststein und Naturstein bearbeiten wir in unserer eigenen Fertigung.', label: 'Stein und Steinverarbeitung entdecken' },
+    },
+    projects: {
+      eyebrow: 'Unsere Projekte',
+      title: 'Küchen, die bereits *Teil eines Zuhauses sind.*',
+      text: 'Jeder Raum stellt andere Anforderungen. Entdecken Sie ausgewählte Küchen und Details aus unseren Arbeiten.',
+      cta: 'Alle Projekte ansehen',
+    },
+    process: {
+      eyebrow: 'So entsteht Ihre Küche', // UI
+      title: 'Von der ersten Vorstellung *zur fertigen Küche.*',
+      steps: [
+        { title: 'Beratung', text: 'Wir besprechen, was Sie benötigen und wie Ihre Küche im Alltag funktionieren soll.' },
+        { title: 'Aufmaß', text: 'Wir nehmen die Maße auf und prüfen die räumlichen und technischen Voraussetzungen.' },
+        { title: 'Entwurf', text: 'Wir planen die Aufteilung, Materialien und einzelnen Details.' },
+        { title: 'Angebot', text: 'Sie erhalten ein Angebot auf Grundlage der abgestimmten Lösung.' },
+        { title: 'Fertigung', text: 'Wir fertigen Ihre Küche nach Maß.' },
+        { title: 'Montage', text: 'Wir übernehmen die Montage und die abschließende Übergabe.' },
+      ],
+    },
+    complete: {
+      eyebrow: 'Mehr als eine Küche',
+      title: 'Ihre Küche kann der Anfang *eines stimmigen Zuhauses sein.*',
+      text: 'Für ein einheitliches Gesamtbild stimmen wir Einbaumöbel, Wohnbereiche, Türen und weitere maßgefertigte Elemente auf Ihre Küche ab.',
+      claim: ['Ein Stil.', 'Eine abgestimmte Umsetzung.', 'Ein Partner.'],
+      cta: 'Komplette Inneneinrichtungen',
+    },
+    cta: {
+      title: 'Planen wir *Ihre neue Küche.*',
+      text: 'Beschreiben Sie uns Ihren Raum und Ihre Vorstellungen. Wir melden uns bei Ihnen und besprechen die nächsten Schritte.',
+      button: 'Unverbindliche Beratung anfragen',
+    },
+  },
 }

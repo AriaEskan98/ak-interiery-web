@@ -45,32 +45,33 @@ import k09 from './assets/realizace/moderni-kuchyne/kuchyne-09.webp'
 import k10 from './assets/realizace/moderni-kuchyne/kuchyne-10.webp'
 import k11 from './assets/realizace/moderni-kuchyne/kuchyne-11.webp'
 
-const img = (src, cz, en) => ({ type: 'image', src, alt: { cz, en } })
+const img = (src, cz, en, de) => ({ type: 'image', src, alt: { cz, en, de } })
 
 export const projects = [
   {
     slug: 'moderni-kuchyne-s-kamennym-ostruvkem',
     category: 'kitchen',
     featured: true,
-    title: { cz: 'Moderní kuchyně s kamenným ostrůvkem', en: 'Modern kitchen with a stone island' },
+    title: { cz: 'Moderní kuchyně s kamenným ostrůvkem', en: 'Modern kitchen with a stone island', de: 'Moderne Küche mit Steininsel' },
     cover: k01,
-    coverAlt: { cz: 'Moderní kuchyně se dvěma ostrůvky, závěsnými světly a prosklenými vitrínami', en: 'Modern kitchen with two islands, pendant lights and glazed display cabinets' },
+    coverAlt: { cz: 'Moderní kuchyně se dvěma ostrůvky, závěsnými světly a prosklenými vitrínami', en: 'Modern kitchen with two islands, pendant lights and glazed display cabinets', de: 'Moderne Küche mit dunklen Hochschränken, Steininsel und Pendelleuchten' },
     coverPosition: '50% 58%', // CSS crop of the portrait photo for wide cards
     description: {
       cz: 'Moderní kuchyňský prostor s výrazným kamenným ostrůvkem, tmavými nábytkovými plochami, prosklenými vitrínami a promyšleným osvětlením. Kombinace kontrastních materiálů a jemných detailů vytváří reprezentativní a funkční celek.',
       en: 'A modern kitchen space with a striking stone island, dark cabinetry, glazed display cabinets and carefully considered lighting. The combination of contrasting materials and fine details creates a representative and functional whole.',
+      de: 'Eine moderne Küche mit markanter Steininsel, dunklen Möbeloberflächen, Glasvitrinen und durchdachter Beleuchtung. Kontrastreiche Materialien und fein abgestimmte Details verbinden sich zu einem repräsentativen und funktionalen Ganzen.',
     },
     // detail of the stone worktop – used for the cross-link on the Kámen a kamenické realizace page
     stoneDetail: k07,
     media: [
-      img(k08, 'Pohled na kuchyň se dvěma ostrůvky a závěsnými světly', 'View of the kitchen with two islands and pendant lights'),
-      img(k03, 'Ostrůvek s nasvícenou hranou, v pozadí prosklené vitríny', 'Island with an illuminated edge, glazed cabinets behind'),
-      img(k02, 'Pracovní deska ostrůvku s dřezem a zlatou baterií', 'Island worktop with sink and gold tap'),
-      img(k07, 'Detail kamenné pracovní desky', 'Detail of the stone worktop'),
-      img(k10, 'Prosklené vitríny s integrovaným osvětlením', 'Glazed display cabinets with integrated lighting'),
-      img(k06, 'Kuchyň pod střešním oknem, v popředí jídelní stůl', 'Kitchen under the roof light, dining table in the foreground'),
-      img(k09, 'Jídelní stůl a pohled do kuchyně', 'Dining table and view of the kitchen'),
-      img(k11, 'Kuchyňská linka s nasvícenou hranou a vestavěnými spotřebiči', 'Kitchen run with illuminated edge and built-in appliances'),
+      img(k08, 'Pohled na kuchyň se dvěma ostrůvky a závěsnými světly', 'View of the kitchen with two islands and pendant lights', 'Blick auf die Küche mit zwei Inseln und Pendelleuchten'),
+      img(k03, 'Ostrůvek s nasvícenou hranou, v pozadí prosklené vitríny', 'Island with an illuminated edge, glazed cabinets behind', 'Steininsel mit beleuchteter Kante, im Hintergrund Glasvitrinen'),
+      img(k02, 'Pracovní deska ostrůvku s dřezem a zlatou baterií', 'Island worktop with sink and gold tap', 'Steininsel mit integrierter Spüle und goldfarbener Armatur'),
+      img(k07, 'Detail kamenné pracovní desky', 'Detail of the stone worktop', 'Nahaufnahme der dunklen Arbeitsplatte mit heller Aderung'),
+      img(k10, 'Prosklené vitríny s integrovaným osvětlením', 'Glazed display cabinets with integrated lighting', 'Beleuchtete Glasvitrinen über der Küchenarbeitsplatte'),
+      img(k06, 'Kuchyň pod střešním oknem, v popředí jídelní stůl', 'Kitchen under the roof light, dining table in the foreground', 'Blick vom Essbereich auf die Küche mit Steininsel'),
+      img(k09, 'Jídelní stůl a pohled do kuchyně', 'Dining table and view of the kitchen', 'Esstisch mit Blick in die Küche'),
+      img(k11, 'Kuchyňská linka s nasvícenou hranou a vestavěnými spotřebiči', 'Kitchen run with illuminated edge and built-in appliances', 'Küchenfronten mit integrierter Beleuchtung unter der Arbeitsplatte'),
     ],
   },
 ]
@@ -87,18 +88,18 @@ import n08 from './assets/navrhy/navrh-08.webp'
 import n09 from './assets/navrhy/navrh-09.webp'
 import n10 from './assets/navrhy/navrh-10.webp'
 
-const viz = (src, cz, en) => ({ src, label: { cz: `3D vizualizace ${cz}`, en: `3D visualisation – ${en}` } })
+const viz = (src, cz, en, de) => ({ src, label: { cz: `3D vizualizace ${cz}`, en: `3D visualisation – ${en}`, de: `3D-Visualisierung ${de}` } })
 export const visualisations = [
-  viz(n10, 'kuchyně', 'kitchen'),
-  viz(n06, 'obývacího pokoje', 'living room'),
-  viz(n09, 'obývacího pokoje s TV stěnou', 'living room with TV wall'),
-  viz(n07, 'obývacího pokoje s knihovnou', 'living room with library'),
-  viz(n08, 'ložnice', 'bedroom'),
-  viz(n04, 'šatny', 'walk-in wardrobe'),
-  viz(n01, 'koupelny', 'bathroom'),
-  viz(n02, 'koupelny', 'bathroom'),
-  viz(n03, 'koupelny', 'bathroom'),
-  viz(n05, 'WC', 'WC'),
+  viz(n10, 'kuchyně', 'kitchen', 'einer Küche'),
+  viz(n06, 'obývacího pokoje', 'living room', 'eines Wohnzimmers'),
+  viz(n09, 'obývacího pokoje s TV stěnou', 'living room with TV wall', 'einer TV-Wand'),
+  viz(n07, 'obývacího pokoje s knihovnou', 'living room with library', 'eines Wohnzimmers mit Bücherwand'),
+  viz(n08, 'ložnice', 'bedroom', 'eines Schlafzimmers'),
+  viz(n04, 'šatny', 'walk-in wardrobe', 'einer Ankleide'),
+  viz(n01, 'koupelny', 'bathroom', 'eines Badezimmers'),
+  viz(n02, 'koupelny', 'bathroom', 'eines Badezimmers'),
+  viz(n03, 'koupelny', 'bathroom', 'eines Badezimmers'),
+  viz(n05, 'WC', 'WC', 'eines Gäste-WCs'),
 ]
 
 // ── Videa z realizací ── (client-supplied 12. 10. 2026, added to Naše realizace at the client's request)
@@ -110,12 +111,12 @@ import vp3 from './assets/realizace/videa/video-03-poster.webp'
 import vp4 from './assets/realizace/videa/video-04-poster.webp'
 // the single-file preview is published next to the video files, so it uses relative paths
 const VIDEO_BASE = import.meta.env.VITE_DEMO === '1' ? 'realizace/videa/' : '/realizace/videa/'
-const clip = (n, poster, cz, en) => ({ src: `${VIDEO_BASE}video-0${n}.mp4`, webm: `${VIDEO_BASE}video-0${n}.webm`, poster, label: { cz, en } })
+const clip = (n, poster, cz, en, de) => ({ src: `${VIDEO_BASE}video-0${n}.mp4`, webm: `${VIDEO_BASE}video-0${n}.webm`, poster, label: { cz, en, de } })
 export const projectVideos = [
-  clip(1, vp1, 'Obývací pokoj s lamelovou stěnou a TV', 'Living room with a slatted wall and TV'),
-  clip(2, vp2, 'Kuchyně s dřevěným dekorem a kamenným ostrůvkem', 'Kitchen with wood décor and a stone island'),
-  clip(3, vp3, 'TV stěna s krbem a prosklenými vitrínami', 'TV wall with a fireplace and glazed cabinets'),
-  clip(4, vp4, 'Světlá kuchyně s ostrůvkem', 'Light kitchen with an island'),
+  clip(1, vp1, 'Obývací pokoj s lamelovou stěnou a TV', 'Living room with a slatted wall and TV', 'Wohnzimmer mit Lamellenwand und TV'),
+  clip(2, vp2, 'Kuchyně s dřevěným dekorem a kamenným ostrůvkem', 'Kitchen with wood décor and a stone island', 'Küche mit Holzdekor und Steininsel'),
+  clip(3, vp3, 'TV stěna s krbem a prosklenými vitrínami', 'TV wall with a fireplace and glazed cabinets', 'TV-Wand mit Kamin und Glasvitrinen'),
+  clip(4, vp4, 'Světlá kuchyně s ostrůvkem', 'Light kitchen with an island', 'Helle Küche mit Kochinsel'),
 ]
 
 export const projectBySlug = (slug) => projects.find((p) => p.slug === slug)

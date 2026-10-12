@@ -31,33 +31,39 @@ export const scrollReveal = false
 // used for canonical links, share previews and the sitemap.
 export const siteUrl = 'https://akinteriery.com'
 
-// TODO (client): legal details of the operator – shown in the privacy policy and terms of use.
+// Operator of the website – confirmed by AK (12. 10. 2026). Shown in the footer, on the contact page,
+// in the privacy policy / terms and in the structured data for search engines.
 export const company = {
-  legalName: '[Obchodní firma / jméno podnikatele]',
-  ico: '[IČO]',
-  address: '[Sídlo / místo podnikání]',
-  register: '[Zápis v obchodním rejstříku nebo živnostenském rejstříku]',
-  privacyEmail: 'Said.nadima@gmail.com', // TODO (client): replace with a company mailbox if there is one
+  legalName: 'A&K Interiéry-Granit s.r.o.',
+  ico: '23030887',
+  address: 'Těšínská 1316, 735 14 Orlová-Poruba',
+  street: 'Těšínská 1316', postalCode: '735 14', city: 'Orlová-Poruba',
+  directors: 'Kamil Sivák, Ing. Azizullah Sayed',
+  privacyEmail: 'info@akinteriery.com',
   effectiveFrom: '1. 1. 2027',
 }
 
-// TODO (client): final contact details – these are the placeholders from the visual reference.
 export const contact = {
-  // from AK_Kontakt_a_formulare_FINAL_CZ_EN.docx
-  phone: '+420 736 719 675',
-  // TODO (client): the document says to use this address only if approved for launch – replace with the
-  // final company mailbox when it exists (also set MAIL_TO in .env / Vercel).
-  email: 'Said.nadima@gmail.com',
-  person: { name: 'Nadima Said', role: { cz: 'manažerka zakázek', en: 'project manager' } },
-  area: 'Praha a okolí',
-  // WhatsApp – international format without + or spaces (confirmed by AK: +420 604 596 169).
+  // company contacts (confirmed by AK 12. 10. 2026)
+  phone: '+420 604 596 169',
+  email: 'info@akinteriery.com',
+  // separate contact for orders / projects
+  person: {
+    name: 'Nadima Said',
+    role: { cz: 'manažerka zakázek', en: 'project manager', de: 'Projektmanagerin' },
+    phone: '+420 736 719 675',
+    email: 'Said.nadima@gmail.com',
+  },
+  area: 'Orlová a okolí',
+  areaLabel: { cz: 'Orlová a okolí', en: 'Orlová and surroundings', de: 'Orlová und Umgebung' }, // footer
+  // WhatsApp = the company mobile above (international format without + or spaces)
   whatsapp: '420604596169',
-  whatsappText: { cz: 'Dobrý den, píšu vám z webu AK Interiéry.', en: 'Hello, I am writing from the AK Interiors website.' },
-  // TODO (client): links to the official AK profiles (footer icons: Instagram · Facebook · TikTok)
+  whatsappText: { cz: 'Dobrý den, píšu vám z webu AK Interiéry.', en: 'Hello, I am writing from the AK Interiors website.', de: 'Guten Tag, ich schreibe Ihnen über die Website von AK INTERIÉRY.' },
+  // official profiles (footer icons). A profile set to null is not shown.
   social: {
-    instagram: 'https://www.instagram.com/',
-    facebook: 'https://www.facebook.com/',
-    tiktok: 'https://www.tiktok.com/',
+    instagram: 'https://www.instagram.com/akinteriery/',
+    facebook: 'https://www.facebook.com/share/1bt57wBEtn/',
+    tiktok: 'https://www.tiktok.com/@ak.interierygranit',
   },
 }
 

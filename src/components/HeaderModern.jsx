@@ -1,7 +1,7 @@
 // Modern header (v2). The original header is still in Top.jsx as `Header`.
 // Switch between them with `headerStyle` in src/site.config.js.
 import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { useLang } from '../lib.jsx'
+import { LANGS, useLang, A11Y } from '../lib.jsx'
 import { useRoute } from '../router.jsx'
 import { Icon } from './Icons.jsx'
 import { contact } from '../site.config.js'
@@ -104,8 +104,8 @@ export function HeaderModern() {
   const cls = ['hdr', scrolled && 'is-scrolled', hidden && 'is-hidden', open && 'is-open'].filter(Boolean).join(' ')
 
   const Lang = (
-    <div className="hdr__lang" role="group" aria-label="Jazyk / Language">
-      {['cz', 'en'].map((l) => (
+    <div className="hdr__lang" role="group" aria-label="Jazyk / Language / Sprache">
+      {LANGS.map((l) => (
         <button key={l} type="button" aria-pressed={lang === l} className={lang === l ? 'is-active' : ''} onClick={() => setLang(l)}>
           {l.toUpperCase()}
         </button>
@@ -116,13 +116,14 @@ export function HeaderModern() {
   return (
     <header className={cls}>
       <div className="hdr__bar">
-        <a href="/" className="hdr__logo" aria-label="AK Interiéry – domů" onClick={() => setOpen(false)}><LogoInline /></a>
+        <a href="/" className="hdr__logo" aria-label={A11Y[lang].home} onClick={() => setOpen(false)}><LogoInline /></a>
 
-        <nav ref={navRef} className="hdr__nav" aria-label="Hlavní menu" onMouseLeave={() => setHover(null)}>
+        <nav ref={navRef} className="hdr__nav" aria-label={A11Y[lang].mainNav} onMouseLeave={() => setHover(null)}>
           {t.nav.items.map((i) => (
             <a key={i.href} href={i.href} onMouseEnter={() => setHover(i.href)} onFocus={() => setHover(i.href)} onBlur={() => setHover(null)}
-              className={active === i.href ? 'is-active' : ''} aria-current={active === i.href ? 'location' : undefined}>
-              {i.label}
+              className={active === i.href ? 'is-active' : ''} aria-current={active === i.href ? 'location' : undefined}
+              title={i.short ? i.label : undefined}>
+              {i.short || i.label}
             </a>
           ))}
           <span className={`hdr__ind${ind.on ? ' is-on' : ''}`} style={{ transform: `translateX(${ind.x}px)`, width: ind.w }} aria-hidden="true" />
@@ -144,7 +145,7 @@ export function HeaderModern() {
       </div>
 
       <div id="hdr-menu" className="hdr__menu" hidden={!open}>
-        <nav aria-label="Mobilní menu">
+        <nav aria-label={A11Y[lang].mobileNav}>
           {t.nav.items.map((i, n) => (
             <a key={i.href} href={i.href} onClick={() => setOpen(false)} style={{ '--i': n }}>
               <span>{i.label}</span><Icon.arrow />

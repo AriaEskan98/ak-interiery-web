@@ -1,7 +1,7 @@
 // /realizace – all real AK projects with category filters, and /realizace/<slug> – one project.
 // Data: src/realizace.js. With no projects, /realizace shows only its heading, intro and the enquiry form.
 import { useEffect, useRef, useState } from 'react'
-import { useLang, Rich, openForm } from '../lib.jsx'
+import { useLang, Rich, openForm, A11Y } from '../lib.jsx'
 import { useRoute } from '../router.jsx'
 import { Icon } from '../components/Icons.jsx'
 import { ContactSection } from '../components/EnquiryForms.jsx'
@@ -50,7 +50,7 @@ export function WorkPage() {
       <div className="panel panel--dark">
         <section className="work-hero" id="top">
           <div className="container">
-            <nav className="crumbs" aria-label="Drobečková navigace">
+            <nav className="crumbs" aria-label={A11Y[lang].crumbs}>
               <a href="/">{w.page.crumb[0]}</a><span aria-hidden="true">/</span><span aria-current="page">{w.page.crumb[1]}</span>
             </nav>
             <p className="eyebrow hero__reveal" style={{ '--d': '.05s' }}>{w.page.eyebrow}</p>
@@ -138,7 +138,7 @@ export function WorkPage() {
         </div>
       )}
       {vizOpen !== null && (
-        <Lightbox items={visualisations.map((v) => ({ src: v.src, alt: v.label[lang], caption: `${v.label[lang]} · ${w.viz.badge}` }))}
+        <Lightbox items={visualisations.map((v) => ({ src: v.src, alt: v.label[lang], caption: v.label[lang] }))}
           index={vizOpen} onIndex={setVizOpen} onClose={() => setVizOpen(null)} />
       )}
 
@@ -170,7 +170,7 @@ export function ProjectPage() {
       <div className="panel panel--dark">
         <section className="project-hero" id="top">
           <div className="container">
-            <nav className="crumbs" aria-label="Drobečková navigace">
+            <nav className="crumbs" aria-label={A11Y[lang].crumbs}>
               <a href="/">{w.page.crumb[0]}</a><span aria-hidden="true">/</span>
               <a href="/realizace">{w.page.crumb[1]}</a><span aria-hidden="true">/</span>
               <span aria-current="page">{title}</span>

@@ -149,7 +149,6 @@
 }
 .vclip__badge svg { margin-left: 2px; width: 14px; height: 14px; }
 .vclip__label { display: block; margin-top: 12px; font-family: var(--serif); font-size: 1.05rem; line-height: 1.35; }
-.lightbox video { display: block; width: auto; max-width: 100%; max-height: calc(100vh - 200px); margin: 0 auto; background: #000; }
 @media (max-width: 1080px) { .vclips__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 600px) {
   .vclips__grid { gap: 24px 10px; }

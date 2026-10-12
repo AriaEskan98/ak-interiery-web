@@ -2,15 +2,24 @@ import { createContext, useContext, useEffect, useRef, useState } from 'react'
 import { content } from './content.js'
 
 const LangCtx = createContext(null)
+// Site languages: Czech (primary, pre-rendered), English, German (MASTER DE 1.0, 12. 10. 2026).
+export const LANGS = ['cz', 'en', 'de']
+const HTML_LANG = { cz: 'cs', en: 'en', de: 'de' }
+// Labels read out by screen readers (not visible).
+export const A11Y = {
+  cz: { crumbs: 'Drobečková navigace', mainNav: 'Hlavní menu', mobileNav: 'Mobilní menu', home: 'AK Interiéry – domů', formType: 'Typ poptávky' },
+  en: { crumbs: 'Breadcrumb', mainNav: 'Main menu', mobileNav: 'Mobile menu', home: 'AK Interiors – home', formType: 'Enquiry type' },
+  de: { crumbs: 'Brotkrümelnavigation', mainNav: 'Hauptmenü', mobileNav: 'Mobiles Menü', home: 'AK INTERIÉRY – Startseite', formType: 'Art der Anfrage' },
+}
 
 export function LangProvider({ children }) {
   // Starts in Czech so the browser matches the pre-rendered (Czech) HTML, then applies a saved choice.
   const [lang, setLang] = useState('cz')
   useEffect(() => {
-    try { const saved = localStorage.getItem('ak-lang'); if (saved && saved !== 'cz') setLang(saved) } catch { /* no storage */ }
+    try { const saved = localStorage.getItem('ak-lang'); if (saved && saved !== 'cz' && LANGS.includes(saved)) setLang(saved) } catch { /* no storage */ }
   }, [])
   useEffect(() => {
-    document.documentElement.lang = lang === 'cz' ? 'cs' : 'en'
+    document.documentElement.lang = HTML_LANG[lang] || 'cs'
     try { localStorage.setItem('ak-lang', lang) } catch { /* storage unavailable */ }
   }, [lang])
   return <LangCtx.Provider value={{ lang, setLang, t: content[lang] }}>{children}</LangCtx.Provider>

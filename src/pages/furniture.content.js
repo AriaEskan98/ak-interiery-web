@@ -128,4 +128,67 @@ export const furnitureContent = {
       button: 'Free consultation',
     },
   },
+  // German – MASTER DE 1.0, chapter 05. Lines marked UI were not in the document.
+  de: {
+    meta: 'Möbel nach Maß | AK INTERIÉRY',
+    crumb: ['Startseite', 'Möbel nach Maß'],
+    hero: {
+      eyebrow: 'Möbel nach Maß',
+      title: ['Möbel, die genau', '*hierher gehören.*'],
+      text: 'Wir planen und fertigen Möbel, die den Raum berücksichtigen, sich in die Einrichtung einfügen und zu Ihrem Alltag passen.',
+      claim: 'Vom einzelnen Möbelstück bis zur gesamten Raumausstattung.',
+      cta: 'Möbel nach Maß anfragen',
+    },
+    intro: {
+      title: 'Wenn Standardlösungen *nicht ausreichen.*',
+      p1: 'Maßgefertigte Möbel ermöglichen es, Räume nach Ihren Anforderungen zu nutzen. Maße, Materialien, Funktionen und Details entstehen für einen konkreten Platz.',
+      p2: 'Das Ergebnis ist mehr als ein Möbelstück: eine stimmige Ergänzung Ihrer Einrichtung, die gut aussieht und täglich ihren Zweck erfüllt.',
+    },
+    types: {
+      eyebrow: 'Möbel für Ihr Zuhause',
+      title: 'Vom Wohnzimmer *bis zum Arbeitszimmer.*',
+      items: [
+        { title: 'Wohnzimmer', text: 'TV-Möbel, Bücherregale, Kommoden, Vitrinen und weitere aufeinander abgestimmte Elemente.' },
+        { title: 'Arbeitszimmer', text: 'Schreibtische, Regale und Stauraumlösungen für Ihren Arbeitsplatz.' },
+        { title: 'Schlafzimmer', text: 'Nachttische, Kommoden, Betthäupter und Möbel für ein ruhiges Gesamtbild.' },
+        { title: 'Individuelle Sonderlösungen', text: 'Möbel für Nischen, Dachschrägen, Flure und Räume, in denen Standardmaße nicht passen.' },
+      ],
+    },
+    details: {
+      eyebrow: 'Details, die den Unterschied machen',
+      title: 'Qualität zeigt sich *im täglichen Gebrauch.*',
+      text: 'Materialien, Kanten, Beschläge, Auszüge, Beleuchtung und Öffnungssysteme wählen wir nach Gestaltung und Funktion aus. Jedes Detail soll als Teil der gesamten Lösung überzeugen.',
+      items: ['Dekore und Furniere', 'Lackierte und matte Oberflächen', 'Beschläge und Auszugssysteme', 'Integrierte Beleuchtung', 'Glas- und Metallelemente', 'Individuelle Maße und Sonderformen'],
+    },
+    projects: {
+      eyebrow: 'Unsere Projekte',
+      title: 'Individuelle Möbel *für echte Lebensräume.*',
+      text: 'Entdecken Sie ausgewählte Möbel und Einrichtungslösungen, die wir für konkrete Räume entwickelt haben.',
+      cta: 'Alle Projekte ansehen',
+    },
+    process: {
+      eyebrow: 'So arbeiten wir', // UI
+      title: 'Von der Idee *zum fertigen Möbelstück.*',
+      steps: [
+        { title: 'Beratung', text: 'Wir besprechen den Raum, den Verwendungszweck und Ihre Vorstellungen.' },
+        { title: 'Aufmaß', text: 'Wir nehmen die Maße am vorgesehenen Einbauort auf.' },
+        { title: 'Entwurf', text: 'Wir planen Gestaltung, Funktion, Materialien und Details.' },
+        { title: 'Angebot', text: 'Wir erstellen ein Angebot für die abgestimmte Ausführung.' },
+        { title: 'Fertigung', text: 'Wir fertigen Ihre Möbel nach Maß.' },
+        { title: 'Montage', text: 'Wir übernehmen die Montage und abschließende Fertigstellung.' },
+      ],
+    },
+    complete: {
+      eyebrow: 'Ein Möbelstück oder ein ganzes Zuhause',
+      title: 'Möbel, die Räume *miteinander verbinden.*',
+      text: 'Bei der Gestaltung mehrerer Räume stimmen wir Möbel, Küche, Einbauschränke, Türen und weitere Elemente aufeinander ab.',
+      claim: ['Ein Stil.', 'Eine abgestimmte Umsetzung.', 'Ein Partner.'],
+      cta: 'Komplette Inneneinrichtungen',
+    },
+    cta: {
+      title: 'Sie haben eine Idee? *Wir geben ihr Form.*',
+      text: 'Senden Sie uns Ihre Vorstellungen oder Fotos des Raumes. Gemeinsam finden wir eine Lösung, die zu Ihnen passt.',
+      button: 'Unverbindliche Beratung anfragen',
+    },
+  },
 }

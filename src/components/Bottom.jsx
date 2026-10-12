@@ -2,7 +2,8 @@ import { useState } from 'react'
 import { useLang, useInView, Rich } from '../lib.jsx'
 import { Icon, Logo } from './Icons.jsx'
 import { ContactSection } from './EnquiryForms.jsx'
-import { contact, b2bImage, testimonials, whatsappUrl } from '../site.config.js'
+import { contact, company, b2bImage, testimonials } from '../site.config.js'
+import { ContactDetails } from './ContactDetails.jsx'
 
 const DEMO = import.meta.env.VITE_DEMO === '1' // static preview: no API server behind it
 
@@ -107,7 +108,7 @@ export function Footer() {
         <div className="footer__brand">
           <Logo />
           <p>{t.footer.claim}</p>
-          <p className="footer__area"><Icon.pin />{contact.area}</p>
+          <p className="footer__area"><Icon.pin />{contact.areaLabel[lang]}</p>
         </div>
 
         <nav aria-label={t.footer.servicesTitle}>
@@ -122,17 +123,13 @@ export function Footer() {
 
         <div>
           <h3 className="footer__title">{t.footer.contactTitle}</h3>
-          <ul className="footer__contact">
-            <li><Icon.phone /><a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a></li>
-            <li><Icon.mail /><a href={`mailto:${contact.email}`}>{contact.email}</a></li>
-            <li><Icon.whatsapp /><a href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer">{t.footer.whatsapp}</a></li>
-          </ul>
+          <ContactDetails className="footer__contact" />
           {/* social icons – footer only, right-hand column (AK_Social_Media_Footer_Instructions): Instagram · Facebook · TikTok */}
           <h3 className="footer__title footer__follow">{t.footer.follow}</h3>
           <div className="footer-social">
-            <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" aria-label={t.footer.on('Instagram')}><Icon.instagram /></a>
-            <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" aria-label={t.footer.on('Facebook')}><Icon.facebook /></a>
-            <a href={contact.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label={t.footer.on('TikTok')}><Icon.tiktok /></a>
+            {contact.social.instagram && <a href={contact.social.instagram} target="_blank" rel="noopener noreferrer" aria-label={t.footer.on('Instagram')}><Icon.instagram /></a>}
+            {contact.social.facebook && <a href={contact.social.facebook} target="_blank" rel="noopener noreferrer" aria-label={t.footer.on('Facebook')}><Icon.facebook /></a>}
+            {contact.social.tiktok && <a href={contact.social.tiktok} target="_blank" rel="noopener noreferrer" aria-label={t.footer.on('TikTok')}><Icon.tiktok /></a>}
           </div>
         </div>
       </div>
@@ -157,7 +154,7 @@ export function Footer() {
       </div>
 
       <div className="container footer__bottom">
-        <span>© {new Date().getFullYear()} AK Interiéry. {t.footer.rights}</span>
+        <span>© {new Date().getFullYear()} {company.legalName}{company.legalName.endsWith('.') ? '' : '.'} {t.footer.rights}<span className="footer__company"> {t.contactInfo.ico} {company.ico} · {company.address}</span></span>
         <span><a href="/ochrana-osobnich-udaju">{t.footer.privacy}</a><span aria-hidden="true">·</span><a href="/podminky-pouziti">{t.footer.terms}</a></span>
       </div>
       <div className="footer-mark" aria-hidden="true"><span>AK Interiéry</span></div>

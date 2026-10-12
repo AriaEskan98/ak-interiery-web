@@ -3,6 +3,34 @@
 // English: our translation – TODO (client): review.
 // TODO (client) before relying on it: confirm "přibližně 25 designových variant" of MDF doors (brief section 06).
 
+// The five manufacturing areas (number + title, summary line beneath) – verbatim from the 5-point brief.
+// `id` = the matching chapter on /nase-vyroba (vacuum foiling is explained in the softforming chapter).
+const area = (id, title, tag) => ({ id, title, tag })
+const AREAS = {
+  cz: [
+    area('nabytek', 'Zakázková výroba nábytku', 'Kuchyně · vestavěné skříně · interiérové dveře · nábytek na míru'),
+    area('cnc-mdf', 'CNC obrábění dřeva a MDF', 'Přesné řezání · frézování · vrtání · dekorativní profily'),
+    area('softforming', 'Vakuové fóliování MDF dvířek', '3D profily · bezúchytková dvířka · matné a lesklé povrchy'),
+    area('kamen', 'Kamenická výroba', 'Technický a přírodní kámen · CNC obrábění · pracovní desky'),
+    area('plexisklo', 'Výroba z plexiskla', 'Řezání · frézování · gravírování · reklamní a designové prvky'),
+  ],
+  en: [
+    area('nabytek', 'Bespoke furniture manufacturing', 'Kitchens · built-in wardrobes · interior doors · bespoke furniture'),
+    area('cnc-mdf', 'CNC machining of wood and MDF', 'Precision cutting · milling · drilling · decorative profiles'),
+    area('softforming', 'Vacuum foiling of MDF fronts', '3D profiles · handleless fronts · matt and gloss finishes'),
+    area('kamen', 'Stone fabrication', 'Engineered and natural stone · CNC machining · worktops'),
+    area('plexisklo', 'Acrylic fabrication', 'Cutting · milling · engraving · signage and design elements'),
+  ],
+  // \u00ad = soft hyphen: long German compounds break with a hyphen in narrow cards
+  de: [
+    area('nabytek', 'Möbel\u00adfertigung nach Maß', 'Küchen · Einbauschränke · Innentüren · Möbel nach Maß'),
+    area('cnc-mdf', 'CNC-Bearbeitung von Holz und MDF', 'Präziser Zuschnitt · Fräsen · Bohren · dekorative Profile'),
+    area('softforming', 'Vakuum\u00adfolierung von MDF-Fronten', '3D-Profile · grifflose Fronten · matte und glänzende Oberflächen'),
+    area('kamen', 'Stein\u00adbearbeitung', 'Kunststein und Naturstein · CNC-Bearbeitung · Arbeitsplatten'),
+    area('plexisklo', 'Acrylglas\u00adverarbeitung', 'Schneiden · Fräsen · Gravieren · Werbe- und Designelemente'),
+  ],
+}
+
 export const productionContent = {
   cz: {
     // homepage section – brief section 02
@@ -10,12 +38,8 @@ export const productionContent = {
       eyebrow: 'Naše výroba',
       title: 'Od prvního řezu *po finální detail.*',
       text: 'Vlastní výrobní technologie nám umožňují zpracovávat dřevo, MDF, technický i přírodní kámen a plexisklo. Vyrábíme kuchyně, vestavěné skříně, nábytková dvířka, pracovní desky a další prvky na míru. Nabízíme také zakázkové opracování materiálů pro firemní partnery.',
-      points: [
-        { title: 'Nábytková výroba', tag: 'Kuchyně, skříně, dvířka, desky', id: 'nabytek' },
-        { title: 'CNC a MDF dvířka', tag: 'Řezání, vrtání, frézování', id: 'cnc-mdf' },
-        { title: 'Kamenická výroba', tag: 'Technický i přírodní kámen', id: 'kamen' },
-        { title: 'Plexisklo', tag: 'Řezání, frézování, gravírování', id: 'plexisklo' },
-      ],
+      // 5 points – AK_INTERIERY_VYROBA_5_BODU_CZ_DE_EN (12. 10. 2026), shared with the page overview
+      points: AREAS.cz,
       cta: 'Prohlédnout naši výrobu',
     },
     page: {
@@ -29,13 +53,8 @@ export const productionContent = {
       },
       overview: {
         eyebrow: 'Výrobní oblasti',
-        title: 'Čtyři technologie. *Jedna dílna.*',
-        items: [
-          { id: 'nabytek', title: 'Nábytek', text: 'Kuchyně, vestavěné skříně, dveře, dvířka a pracovní desky na míru.' },
-          { id: 'cnc-mdf', title: 'CNC a MDF dvířka', text: 'Řezání, vrtání a frézování dílců, frézovaná a fóliovaná MDF dvířka.' },
-          { id: 'kamen', title: 'Kámen', text: 'Pracovní desky z technického i přírodního kamene, hrany a výřezy.' },
-          { id: 'plexisklo', title: 'Plexisklo', text: 'Řezání, frézování, vrtání a gravírování zakázkových prvků.' },
-        ],
+        title: 'Pět výrobních oblastí. *Jedna dílna.*',
+        items: AREAS.cz,
       },
       chapters: {
         furniture: {
@@ -91,12 +110,7 @@ export const productionContent = {
       eyebrow: 'Our manufacturing',
       title: 'From the first cut *to the final detail.*',
       text: 'Our own manufacturing technology lets us work wood, MDF, technical and natural stone and acrylic glass. We make kitchens, built-in wardrobes, furniture doors, worktops and other bespoke elements. We also offer custom material processing for business partners.',
-      points: [
-        { title: 'Furniture manufacturing', tag: 'Kitchens, wardrobes, doors, worktops', id: 'nabytek' },
-        { title: 'CNC & MDF doors', tag: 'Cutting, drilling, milling', id: 'cnc-mdf' },
-        { title: 'Stone fabrication', tag: 'Technical and natural stone', id: 'kamen' },
-        { title: 'Acrylic glass', tag: 'Cutting, milling, engraving', id: 'plexisklo' },
-      ],
+      points: AREAS.en,
       cta: 'Explore our manufacturing',
     },
     page: {
@@ -110,13 +124,8 @@ export const productionContent = {
       },
       overview: {
         eyebrow: 'Manufacturing areas',
-        title: 'Four technologies. *One workshop.*',
-        items: [
-          { id: 'nabytek', title: 'Furniture', text: 'Bespoke kitchens, built-in wardrobes, doors, furniture fronts and worktops.' },
-          { id: 'cnc-mdf', title: 'CNC & MDF doors', text: 'Cutting, drilling and milling of components; milled and foiled MDF doors.' },
-          { id: 'kamen', title: 'Stone', text: 'Technical and natural stone worktops, edges and cut-outs.' },
-          { id: 'plexisklo', title: 'Acrylic glass', text: 'Cutting, milling, drilling and engraving of bespoke elements.' },
-        ],
+        title: 'Five areas of manufacturing. *One workshop.*',
+        items: AREAS.en,
       },
       chapters: {
         furniture: {
@@ -163,6 +172,77 @@ export const productionContent = {
       b2b: { text: 'Furniture manufacturing, CNC machining, stone and acrylic glass – our own manufacturing technology for your projects.', label: 'Our manufacturing' },
       kitchen: { text: 'We make kitchen components, milled MDF doors and stone worktops in our own production.', label: 'Our manufacturing' },
       stone: 'Stone fabrication in Our manufacturing',
+    },
+  },
+  // German – MASTER DE 1.0, chapters 02.06 and 09 + the 5-point overview. CNC text: the number-free default (09.04.02)
+  // until the ~25 designs are confirmed. Lines marked UI were not in the document.
+  de: {
+    home: {
+      eyebrow: 'Eigene Fertigung',
+      title: 'Vom ersten Schnitt *bis zum letzten Detail.*',
+      text: 'Mit unserer eigenen Fertigungstechnik bearbeiten wir Holz, MDF, Kunststein, Naturstein und Acrylglas. Wir fertigen Küchen, Einbauschränke, Möbelfronten, Arbeitsplatten und weitere Elemente nach Maß. Für Geschäftspartner übernehmen wir auch die auftragsbezogene Materialbearbeitung.',
+      points: AREAS.de,
+      cta: 'Unsere Fertigung entdecken',
+    },
+    page: {
+      crumb: ['Startseite', 'Eigene Fertigung'],
+      hero: {
+        eyebrow: 'Eigene Fertigung nach Maß',
+        title: 'Technologie, Präzision *und handwerkliche Verarbeitung.*',
+        text: 'Wir verbinden eigene Möbelfertigung, CNC-Bearbeitung von Holz und MDF, Steinbearbeitung und die Verarbeitung von Acrylglas. Mit unseren Fertigungsmöglichkeiten stellen wir einzelne Bauteile ebenso wie komplexere maßgefertigte Elemente nach konkreter Vorgabe her.',
+        cta1: 'Fertigungsanfrage senden',
+        cta2: 'Unsere Möglichkeiten ansehen',
+      },
+      overview: {
+        eyebrow: 'Fertigungsbereiche', // UI
+        title: 'Fünf Fertigungsbereiche. *Eine Werkstatt.*', // UI
+        items: AREAS.de,
+      },
+      chapters: {
+        furniture: {
+          eyebrow: 'Möbel', title: 'Möbel und Bauteile nach Maß.',
+          text: 'Wir fertigen Küchen, Einbauschränke, Innentüren, Möbelfronten, Arbeitsplatten und weitere Möbelbauteile nach Maß. Im Mittelpunkt stehen präzise Verarbeitung und funktionale Lösungen für den jeweiligen Raum.',
+          tags: ['Küchen', 'Einbauschränke', 'Innentüren', 'Möbelfronten', 'Arbeitsplatten'],
+          links: [['Küchen nach Maß', '/kuchyne-na-miru'], ['Einbauschränke', '/vestavne-skrine'], ['Möbel nach Maß', '/nabytek-na-miru'], ['Türen & Innenausbau-Elemente', '/dvere']],
+        },
+        cnc: {
+          eyebrow: 'CNC und MDF', title: 'CNC-Bearbeitung von Holz und MDF.',
+          text: 'Auf unseren CNC-Maschinen schneiden, bohren und fräsen wir Möbelbauteile. Zum Angebot gehören gefräste MDF-Möbelfronten in unterschiedlichen Designs, darunter grifflose Fronten mit eingefräster Griffmulde.',
+          tags: ['Schneiden', 'Bohren', 'Fräsen', 'Gefräste MDF-Fronten', 'Grifflose Fronten'],
+        },
+        edge: {
+          eyebrow: 'Kanten und Oberflächen', title: 'Kantenbearbeitung, Folierung und Plattenzuschnitt.',
+          text: 'Mit der Softforming-Kantenanleimmaschine bearbeiten wir profilierte Kanten von Fronten und Möbelbauteilen. Die Vakuumpresse ermöglicht das Folieren gefräster MDF-Fronten einschließlich ihrer Kanten und Konturen. Für den präzisen Zuschnitt von Plattenmaterialien setzen wir außerdem eine elektronisch gesteuerte Säge und eine vertikale Plattensäge ein.',
+          tech: [
+            ['Softforming-Kantenanleimmaschine', 'Profilierte Kanten'],
+            ['Vakuumpresse', 'Folieren gefräster MDF-Fronten'],
+            ['Elektronisch gesteuerte Säge und vertikale Plattensäge', 'Zuschnitt von Plattenmaterialien'],
+          ],
+        },
+        stone: {
+          eyebrow: 'Stein', title: 'Kunststein und Naturstein aus eigener Bearbeitung.',
+          text: 'Wir bearbeiten Kunststein und Naturstein mit CNC-Technik und Brückensäge. Dabei entstehen Arbeitsplatten nach Maß, bearbeitete Kanten und Ausschnitte für Spülen und Kochfelder. Weitere Informationen zu Materialien und Dekoren finden Sie im Bereich Stein und Steinverarbeitung.',
+          tags: ['CNC-Technik', 'Brückensäge', 'Arbeitsplatten', 'Kantenbearbeitung', 'Ausschnitte für Spülen und Kochfelder'],
+          cta: 'Stein und Steinverarbeitung entdecken',
+        },
+        plexi: {
+          eyebrow: 'Acrylglas', title: 'Acrylglas nach Ihren Vorgaben.',
+          text: 'Wir schneiden, fräsen, bohren und gravieren Acrylglas nach Auftrag. Daraus fertigen wir Einrichtungselemente, Werbeelemente und weitere individuelle Produkte für Privatkunden und Geschäftspartner.',
+          tags: ['Schneiden', 'Fräsen', 'Bohren', 'Gravieren'],
+        },
+      },
+      b2b: {
+        eyebrow: 'Fertigung für Geschäftskunden',
+        title: 'Ein Fertigungspartner *für Ihre Projekte.*',
+        text: 'Planen Sie ein Einrichtungs-, Bau- oder Gewerbeprojekt? Senden Sie uns Ihre technischen Vorgaben und den gewünschten Fertigungsumfang. Bearbeitungsmöglichkeiten, Termine und Preis prüfen wir individuell.',
+        cta: 'Auftragsfertigung anfragen',
+        link: { text: 'Sie suchen einen Partner für Fertigung, Lieferung und Montage eines gesamten Projekts?', label: 'Mehr zur B2B-Zusammenarbeit' },
+      },
+    },
+    links: {
+      b2b: { text: 'Möbelfertigung, CNC-Bearbeitung, Stein und Acrylglas – eigene Fertigungstechnik für Ihre Projekte.', label: 'Eigene Fertigung' }, // UI
+      kitchen: { text: 'Küchenbauteile, gefräste MDF-Fronten und Steinarbeitsplatten fertigen wir in unserer eigenen Fertigung.', label: 'Eigene Fertigung' }, // UI
+      stone: 'Unsere Fertigung entdecken',
     },
   },
 }

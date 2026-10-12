@@ -1,7 +1,7 @@
 // Privacy policy and terms of use – TEMPLATES written for how this website actually works.
 // TODO (client): fill in company details in site.config.js (`company`) and have both texts reviewed by a lawyer
 // before launch. Retention periods and processors below are sensible defaults – confirm they match reality.
-// {legalName} {ico} {address} {register} {privacyEmail} {effectiveFrom} are filled in from site.config.js.
+// {legalName} {ico} {address} {directors} {privacyEmail} {effectiveFrom} are filled in from site.config.js.
 
 export const legalContent = {
   cz: {
@@ -13,7 +13,7 @@ export const legalContent = {
       intro: 'Vážíme si vaší důvěry. Na této stránce vysvětlujeme, jaké osobní údaje při používání našeho webu zpracováváme, proč, jak dlouho a jaká máte práva.',
       sections: [
         { h: 'Kdo vaše údaje zpracovává', p: [
-          'Správcem osobních údajů je {legalName}, IČO {ico}, se sídlem {address}, {register} (dále jen „AK Interiéry“ nebo „my“).',
+          'Správcem osobních údajů je {legalName}, IČO {ico}, se sídlem {address} (dále jen „AK Interiéry“ nebo „my“).',
           'V záležitostech osobních údajů nás můžete kontaktovat na e-mailu {privacyEmail}.',
         ] },
         { h: 'Jaké údaje zpracováváme', list: [
@@ -59,7 +59,7 @@ export const legalContent = {
       title: 'Podmínky *použití webu.*',
       intro: 'Tyto podmínky upravují používání webových stránek AK Interiéry. Používáním webu s nimi souhlasíte.',
       sections: [
-        { h: 'Provozovatel', p: ['Provozovatelem webu je {legalName}, IČO {ico}, se sídlem {address}, {register}.'] },
+        { h: 'Provozovatel', p: ['Provozovatelem webu je {legalName}, IČO {ico}, se sídlem {address}. Jednatelé: {directors}.'] },
         { h: 'Informační charakter obsahu', p: [
           'Obsah webu má informativní charakter a nepředstavuje návrh na uzavření smlouvy. Konkrétní rozsah, cena a termíny realizace jsou vždy předmětem individuální nabídky a smlouvy.',
           'Odesláním poptávkového formuláře nevzniká smluvní vztah ani povinnost cokoli objednat.',
@@ -88,7 +88,7 @@ export const legalContent = {
       intro: 'We value your trust. This page explains what personal data we process when you use our website, why, for how long, and what your rights are.',
       sections: [
         { h: 'Who processes your data', p: [
-          'The data controller is {legalName}, company ID {ico}, registered office {address}, {register} ("AK Interiors" or "we").',
+          'The data controller is {legalName}, company ID {ico}, registered office {address} ("AK Interiors" or "we").',
           'For any privacy matters, contact us at {privacyEmail}.',
         ] },
         { h: 'What data we process', list: [
@@ -134,7 +134,7 @@ export const legalContent = {
       title: 'Terms *of use.*',
       intro: 'These terms govern the use of the AK Interiors website. By using the website you agree to them.',
       sections: [
-        { h: 'Operator', p: ['The website is operated by {legalName}, company ID {ico}, registered office {address}, {register}.'] },
+        { h: 'Operator', p: ['The website is operated by {legalName}, company ID {ico}, registered office {address}. Managing directors: {directors}.'] },
         { h: 'Informational content', p: [
           'The content of this website is for information only and does not constitute an offer to enter into a contract. The scope, price and timing of any project are always subject to an individual quotation and contract.',
           'Submitting the enquiry form does not create a contract or any obligation to order.',
@@ -150,5 +150,26 @@ export const legalContent = {
         { h: 'Governing law', p: ['These terms are governed by the laws of the Czech Republic. The operator may change the terms at any time; the version published on this website applies.'] },
       ],
     },
+  },
+}
+
+// German: MASTER DE 1.0 supplied only the link labels, not the policy texts (they must not be published unfinished).
+// The German pages therefore show German headings and a short note, followed by the complete Czech text (lang="cs").
+// TODO (client): replace with a reviewed German translation when available.
+legalContent.de = {
+  updated: 'Gültig ab',
+  contents: 'Inhalt',
+  bodyLang: 'cs',
+  privacy: {
+    eyebrow: 'Rechtliche Hinweise',
+    title: 'Datenschutz*hinweise.*',
+    intro: 'Die deutsche Fassung dieser Hinweise wird derzeit vorbereitet. Nachfolgend finden Sie den vollständigen Text in tschechischer Sprache.',
+    sections: legalContent.cz.privacy.sections,
+  },
+  terms: {
+    eyebrow: 'Rechtliche Hinweise',
+    title: 'Nutzungs*bedingungen.*',
+    intro: 'Die deutsche Fassung der Nutzungsbedingungen wird derzeit vorbereitet. Nachfolgend finden Sie den vollständigen Text in tschechischer Sprache.',
+    sections: legalContent.cz.terms.sections,
   },
 }

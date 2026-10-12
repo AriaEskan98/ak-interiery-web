@@ -1,6 +1,6 @@
 // Vestavné skříně – opens from Homepage → Vestavné skříně → Zjistit více.
 // Section order follows "KONTROLNÍ POŘADÍ" in AK_Vestavne_skrine_KONTROLNI_VZOR.pdf.
-import { useLang, useInView, Rich } from '../lib.jsx'
+import { useLang, useInView, Rich, A11Y } from '../lib.jsx'
 import { Icon } from '../components/Icons.jsx'
 import { ContactCTA } from '../components/Bottom.jsx'
 import { wardrobesPage as img } from '../site.config.js'
@@ -26,7 +26,7 @@ export default function WardrobesPage() {
           </div>
           <div className="hero__shade" aria-hidden="true" />
           <div className="container hero__content">
-            <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label="Drobečková navigace">
+            <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label={A11Y[lang].crumbs}>
               <a href="/">{c.crumb[0]}</a><span aria-hidden="true">/</span><span aria-current="page">{c.crumb[1]}</span>
             </nav>
             <p className="eyebrow hero__reveal" style={{ '--d': '.1s' }}>{c.hero.eyebrow}</p>

@@ -12,6 +12,34 @@ Homepage built from the approved materials: `AK_Interiery_Homepage_KONTROLNI_VZO
 5. **Contact details & photos:** see the TODOs in `src/site.config.js`.
 6. After launch, add the site in **Google Search Console** and submit `https://<your-domain>/sitemap.xml`.
 
+## Company and contact details – v29
+- `company` and `contact` in src/site.config.js: A&K Interiéry-Granit s.r.o., IČO 23030887, Těšínská 1316,
+  735 14 Orlová-Poruba, directors Kamil Sivák and Ing. Azizullah Sayed; company mobile +420 604 596 169 (also WhatsApp),
+  info@akinteriery.com. Nadima Said is the separate contact for projects (+420 736 719 675, Said.nadima@gmail.com).
+- Shown by `ContactDetails.jsx` (footer + next to every form) and `CompanyDetails` (contact page); company line in the
+  footer bottom; filled into the privacy policy and terms; used in the structured data (address) for search engines.
+- Location: "Orlová a okolí" (footer, homepage/kitchen SEO texts). Social profiles: Instagram, Facebook, TikTok –
+  set a profile to null to hide its icon.
+- Where enquiries are delivered is set by MAIL_TO in Vercel (Settings → Environment Variables).
+
+## German version (DE) – v28
+- Third language next to CZ and EN (switch CZ · EN · DE in the header). Copy: AK_INTERIERY_CELY_WEB_DE (MASTER DE 1.0),
+  formal "Sie". Each content file has a `de` block; lines marked `// UI` were not in the document and were written by us.
+- Desktop header uses short forms of the German menu labels (`short` in content.js – the full labels do not fit on one
+  line); the phone menu and footer use the full labels. Below 1240 px German switches to the menu button.
+- Forms, validation, success state and the customer's confirmation e-mail are German; the e-mail to AK stays Czech and
+  shows "Jazyk webu: němčina".
+- Legal pages: no German text was supplied, so German headings + a note + the full Czech text (marked `lang="cs"`).
+- Not done on purpose (brief): AK CLEAN cross-link (destination not confirmed), cookie banner (none on the site).
+- Deviations from the German brief made at the client's later request: decor names are shown (brief says numbers only)
+  and the four project videos are published (brief says keep unpublished).
+- German SEO titles/descriptions are applied when the visitor switches to DE; search engines index the Czech pages
+  (no separate /de/ addresses yet).
+
+## Naše výroba – 5 points (v28)
+- The homepage section and the /nase-vyroba overview show the five areas from AK_INTERIERY_VYROBA_5_BODU (CZ/EN/DE),
+  defined once in `AREAS` (src/pages/production.content.js). Item 03 links to the softforming / vacuum chapter.
+
 ## Moving the domain from Shopify (akinteriery.com)
 - `siteUrl` is `https://akinteriery.com` (no www – the same primary domain Shopify used, so search rankings carry over).
   In Vercel add `akinteriery.com` (primary) and `www.akinteriery.com` (redirect → akinteriery.com).

@@ -16,6 +16,11 @@ const copy = {
     text: 'The address may be mistyped, or the page no longer exists. Try one of our services or go back to the homepage.',
     home: 'Back to homepage', contact: 'Contact us',
     links: [['Bespoke kitchens', '/kuchyne-na-miru'], ['Built-in wardrobes', '/vestavne-skrine'], ['Bespoke furniture', '/nabytek-na-miru'], ['Doors & interior elements', '/dvere'], ['Complete interiors', '/kompletni-interiery']],
+  },  de: { // MASTER DE 1.0 – 16.01.13–15
+    eyebrow: 'Fehler 404', title: 'Diese Seite *wurde nicht gefunden.*',
+    text: 'Die gewünschte Seite ist nicht verfügbar. Kehren Sie zur Startseite zurück oder kontaktieren Sie uns.',
+    home: 'Zur Startseite', contact: 'Kontakt aufnehmen',
+    links: [['Küchen nach Maß', '/kuchyne-na-miru'], ['Einbauschränke', '/vestavne-skrine'], ['Möbel nach Maß', '/nabytek-na-miru'], ['Türen & Innenausbau-Elemente', '/dvere'], ['Komplette Inneneinrichtungen', '/kompletni-interiery']],
   },
 }
 

@@ -114,6 +114,7 @@ export const content = {
       },
     },
     // statement band – line taken from the Kuchyně control mockup
+    contactInfo: { company: 'Firma', person: 'Kontakt pro zakázky', whatsapp: 'WhatsApp', details: 'Firemní údaje', ico: 'IČO', seat: 'Sídlo', directors: 'Jednatelé' },
     statement: { eyebrow: 'AK Interiéry', line: 'Od jednoho detailu *po celý interiér.*' },
     footer: {
       closing: 'Prostor, *který má hodnotu.*',
@@ -248,6 +249,7 @@ export const content = {
         },
       },
     },
+    contactInfo: { company: 'Company', person: 'Contact for projects', whatsapp: 'WhatsApp', details: 'Company details', ico: 'Company ID (IČO)', seat: 'Registered office', directors: 'Managing directors' },
     statement: { eyebrow: 'AK Interiors', line: 'From a single detail *to the whole interior.*' },
     footer: {
       closing: 'A space *with lasting value.*',
@@ -269,6 +271,144 @@ export const content = {
       rights: 'All rights reserved.',
       privacy: 'Privacy policy',
       terms: 'Terms of use',
+    },
+  },
+
+  // German – MASTER DE 1.0 (12. 10. 2026), chapters 01 (navigation, footer) and 02 (homepage). Formal "Sie".
+  // Lines marked "UI" were not in the document and were written for the site (same tone).
+  de: {
+    nav: {
+      // label = MASTER DE 1.0 (mobile menu); short = the desktop header bar, where the full German labels cannot fit
+      items: [
+        { label: 'Küchen nach Maß', short: 'Küchen', href: '/kuchyne-na-miru' },
+        { label: 'Komplette Inneneinrichtungen', short: 'Inneneinrichtungen', href: '/kompletni-interiery' },
+        { label: 'Unsere Projekte', short: 'Projekte', href: '/realizace' },
+        { label: 'Für Geschäftskunden', short: 'Geschäftskunden', href: '/pro-profesionaly' },
+        { label: 'Über uns', href: '/o-nas' },
+        { label: 'Kontakt', href: '/kontakt' },
+      ],
+      cta: 'Beratung anfragen',
+      menu: 'Menü öffnen',
+      close: 'Menü schließen',
+    },
+    hero: {
+      eyebrow: 'Komplette Inneneinrichtungen nach Maß',
+      title: ['Räume mit', '*bleibendem Wert.*'],
+      text: 'Wir gestalten und realisieren maßgefertigte Inneneinrichtungen – vom ersten Entwurf bis zur fertigen Umsetzung. Küchen, Einbaumöbel, Türen und durchdachte Lösungen für Ihr gesamtes Zuhause.',
+      claim: 'Ein Partner. Ein Stil. Ein durchdachtes Zuhause.',
+      primary: 'Beratung anfragen',
+      secondary: 'Unsere Projekte ansehen',
+      slides: ['Küche nach Maß', 'Küche in dunklem Holz', 'Wohnbereich'], // UI (image alt)
+      scroll: 'Nach unten', // UI
+    },
+    services: {
+      eyebrow: 'Unser Angebot',
+      title: 'Ihr Raum. *Unsere Lösung.*',
+      text: 'Vom einzelnen Detail bis zur gesamten Inneneinrichtung. Jede Lösung entsteht aus Ihrem Raum, Ihren Anforderungen und Ihrem Alltag.',
+      more: 'Mehr erfahren',
+      items: {
+        kitchen: { title: 'Küchen nach Maß', text: 'Wo Design, Funktion und Alltag zusammenkommen.' },
+        stone: { title: 'Stein und Steinverarbeitung', text: 'Kunststein und Naturstein nach Maß – mit eigener Bearbeitung und Fertigung für Ihr Projekt.' },
+        wardrobes: { title: 'Einbauschränke', text: 'Stauraum, der genau dort entsteht, wo Sie ihn brauchen.' },
+        furniture: { title: 'Möbel nach Maß', text: 'Individuelle Möbel für Ihren Raum und Ihre Art zu leben.' },
+        doors: { title: 'Türen & Innenausbau-Elemente', text: 'Details, die Ihre Inneneinrichtung zu einem stimmigen Ganzen verbinden.' },
+        pergola: { title: 'Pergolen', text: 'Weil durchdachte Räume nicht an der Haustür enden.' },
+      },
+    },
+    complete: {
+      eyebrow: 'Komplette Inneneinrichtungen',
+      title: 'Eine Einrichtung, die *als Ganzes funktioniert.*',
+      text: 'Ein Zuhause ist mehr als die Summe seiner Möbel. Deshalb betrachten wir Räume im Zusammenhang – von der Aufteilung und Materialauswahl über Küche, Einbaumöbel und Türen bis zur Abstimmung der letzten Details.',
+      extra: 'So entsteht ein stimmiger Raum, der im Alltag funktioniert und Ihren persönlichen Stil widerspiegelt.',
+      cta: 'Komplette Inneneinrichtungen entdecken',
+    },
+    process: {
+      eyebrow: 'So arbeiten wir',
+      title: 'Von der Idee *zur fertigen Einrichtung.*',
+      steps: [
+        { title: 'Beratung', text: 'Wir lernen Ihre Vorstellungen, Anforderungen und Räume kennen.' },
+        { title: 'Aufmaß', text: 'Wir nehmen die Maße vor Ort auf und schaffen die Grundlage für die Planung.' },
+        { title: 'Entwurf und Angebot', text: 'Wir entwickeln eine Lösung, empfehlen Materialien und erstellen ein Angebot.' },
+        { title: 'Fertigung', text: 'Wir fertigen die vereinbarten Elemente nach Maß und achten auf eine sorgfältige Verarbeitung.' },
+        { title: 'Montage und Übergabe', text: 'Wir übernehmen die Montage und die abschließende Fertigstellung.' },
+      ],
+    },
+    projects: { // UI – former illustrative strip (not shown)
+      eyebrow: 'Unsere Arbeiten',
+      title: 'Räume, die *für unsere Arbeit sprechen.*',
+      cta: 'Alle Projekte ansehen',
+      illustrative: 'Illustrative Darstellung',
+      prev: 'Zurück', next: 'Weiter', close: 'Schließen',
+    },
+    b2b: {
+      eyebrow: 'Für Projektentwickler und Geschäftspartner',
+      title: 'Ein verlässlicher Partner *für Ihre Projekte.*',
+      text: 'Von einzelnen Bauteilen bis zu umfangreicheren Lieferungen: Wir bieten individuelle Innen- und Außenlösungen für Projektentwickler, Bauunternehmen, Investoren, Immobilienverwaltungen und weitere Geschäftspartner.',
+      claim: ['Fertigung.', 'Lieferung.', 'Montage.'],
+      claimTail: 'Ein verlässlicher Partner.',
+      cta: 'B2B-Zusammenarbeit anfragen',
+    },
+    about: {
+      eyebrow: 'AK INTERIÉRY',
+      title: 'Mehr als *Möbel.*',
+      text: 'Ein Zuhause entsteht nicht allein aus einzelnen Möbelstücken, sondern aus Räumen, die als Ganzes funktionieren. Deshalb betrachten wir jedes Projekt im Zusammenhang – von der Raumaufteilung und den Materialien bis zum letzten Detail.',
+      extra: 'Unser Ziel ist eine Einrichtung, die heute überzeugt und in der Sie sich auch langfristig wohlfühlen.',
+      cta: 'Mehr über uns',
+      values: [
+        { icon: 'person', title: 'Individueller Ansatz', text: 'Jeder Raum und jeder Kunde sind anders.' },
+        { icon: 'diamond', title: 'Qualität im Detail', text: 'Qualität zählt auch dort, wo ein Detail nicht sofort sichtbar ist.' },
+        { icon: 'ruler', title: 'Lösungen nach Maß', text: 'Wir gestalten keine Einrichtung für alle. Wir gestalten sie für Sie.' },
+        { icon: 'home', title: 'Vom Entwurf bis zur Montage', text: 'Ein Ansprechpartner während der vereinbarten Umsetzung.' },
+      ],
+      testimonialsTitle: 'Das sagen unsere Kunden.',
+    },
+    cta: {
+      title: 'Sie haben eine Idee? *Geben wir ihr Form.*',
+      text: 'Erzählen Sie uns, welchen Raum Sie gestalten möchten. Gemeinsam finden wir eine Lösung, die zu Ihrem Stil, Ihren Anforderungen und Ihrem Zuhause passt.',
+      button: 'Unverbindliche Beratung anfragen',
+      form: { // UI – former simple form (replaced by the enquiry forms)
+        name: 'Vor- und Nachname',
+        email: 'E-Mail',
+        phone: 'Telefon',
+        optional: 'optional',
+        interest: 'Wofür interessieren Sie sich?',
+        message: 'Beschreiben Sie Ihren Raum oder Ihre Idee',
+        consent: 'Ich bin mit der Verarbeitung meiner personenbezogenen Daten zur Beantwortung meiner Anfrage einverstanden.',
+        privacyLink: 'Datenschutzhinweise',
+        sending: 'Wird gesendet …',
+        successTitle: 'Vielen Dank, Ihre Anfrage wurde gesendet.',
+        successText: 'Wir melden uns bei Ihnen, um die nächsten Schritte zu besprechen.',
+        again: 'Weitere Anfrage senden',
+        errors: {
+          name: 'Bitte geben Sie Ihren Namen ein.',
+          email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+          consent: 'Für die Antwort benötigen wir Ihre Zustimmung.',
+          server: 'Die Anfrage konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder schreiben Sie uns eine E-Mail.',
+        },
+      },
+    },
+    contactInfo: { company: 'Unternehmen', person: 'Ihre Ansprechpartnerin', whatsapp: 'WhatsApp', details: 'Unternehmensangaben', ico: 'Unternehmens-ID (IČO)', seat: 'Geschäftssitz', directors: 'Geschäftsführer' },
+    statement: { eyebrow: 'AK INTERIÉRY', line: 'Vom einzelnen Detail *bis zur gesamten Inneneinrichtung.*' },
+    footer: {
+      closing: 'Räume *mit bleibendem Wert.*',
+      follow: 'Folgen Sie uns',
+      on: (n) => `AK INTERIÉRY auf ${n}`,
+      claim: 'Maßgefertigte Inneneinrichtungen. Mit bleibendem Wert.',
+      linksTitle: 'Schnellzugriff', // UI
+      contactTitle: 'Kontakt',
+      servicesTitle: 'Unser Angebot',
+      services: [['Küchen nach Maß', '/kuchyne-na-miru'], ['Einbauschränke', '/vestavne-skrine'], ['Möbel nach Maß', '/nabytek-na-miru'], ['Türen & Innenausbau-Elemente', '/dvere'], ['Stein und Steinverarbeitung', '/kamen'], ['Komplette Inneneinrichtungen', '/kompletni-interiery']],
+      companyTitle: 'Über AK INTERIÉRY',
+      company: [['Unsere Projekte', '/realizace'], ['Eigene Fertigung', '/nase-vyroba'], ['Für Geschäftskunden', '/pro-profesionaly'], ['Über uns', '/o-nas'], ['Kontakt', '/kontakt']],
+      whatsapp: 'Auf WhatsApp schreiben', // UI
+      newsletterTitle: 'Inspiration für Ihr Postfach.',
+      newsletterText: 'Entdecken Sie Ideen, Materialkombinationen und Neuigkeiten aus der Welt maßgefertigter Einrichtungen.',
+      newsletterPlaceholder: 'Ihre E-Mail-Adresse',
+      newsletterDone: 'Vielen Dank, Sie sind angemeldet.', // UI
+      newsletterNote: 'Sie können sich jederzeit abmelden. Mehr dazu in den', // UI
+      rights: 'Alle Rechte vorbehalten.',
+      privacy: 'Datenschutzhinweise',
+      terms: 'Nutzungsbedingungen', // UI (link label not in the document)
     },
   },
 }

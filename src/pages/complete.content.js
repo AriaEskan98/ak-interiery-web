@@ -155,4 +155,80 @@ export const completeContent = {
       button: 'Book a free consultation',
     },
   },
+  // German – MASTER DE 1.0, chapter 07. Lines marked UI were not in the document.
+  de: {
+    meta: 'Komplette Inneneinrichtungen | AK INTERIÉRY',
+    crumb: ['Startseite', 'Komplette Inneneinrichtungen'],
+    hero: {
+      eyebrow: 'Komplette Inneneinrichtungen nach Maß',
+      title: ['Ein Zuhause.', '*Ein stimmiges Ganzes.*'],
+      text: 'Wir gestalten und realisieren Ihre Einrichtung von der ersten Idee bis zum letzten montierten Detail. Küchen, Möbel, Einbauschränke, Türen und weitere Elemente verbinden wir zu einem funktionalen und gestalterisch abgestimmten Raum.',
+      claim: 'Ein Partner. Eine abgestimmte Umsetzung. Ein Zuhause.',
+      cta: 'Komplette Inneneinrichtung anfragen',
+    },
+    meaning: {
+      title: 'Ihr Zuhause muss nicht *aus Einzellösungen entstehen.*',
+      p1: 'Wenn die einzelnen Teile einer Einrichtung unabhängig voneinander geplant werden, können Materialien, Proportionen, Farben und Details auseinanderfallen.',
+      p2: 'Deshalb betrachten wir den Raum als Ganzes. Wir entwickeln eine gemeinsame Gestaltungslinie, planen die einzelnen Elemente und organisieren die Fertigung, Lieferung und Montage des vereinbarten Umfangs.',
+      extra: 'Für eine Einrichtung, die nicht nur zusammenpasst, sondern im Alltag funktioniert.',
+    },
+    include: {
+      eyebrow: 'Lösungen für Ihre Einrichtung',
+      title: 'Von der Küche *bis zum letzten Detail.*',
+      more: 'Mehr erfahren',
+      items: [
+        { title: 'Küchen', text: 'Planung, Fertigung und Montage einer Küche, die zum Mittelpunkt Ihres Zuhauses wird.' },
+        { title: 'Einbaumöbel', text: 'Schränke, Ankleiden und Stauraum passend zum Grundriss.' },
+        { title: 'Möbel nach Maß', text: 'Lösungen für Wohnräume, Arbeitszimmer, Schlafzimmer, Badmöbel und individuelle Anforderungen.' },
+        { title: 'Türen und weitere Elemente', text: 'Türen, Wandverkleidungen und Details, die die Raumgestaltung ergänzen.' },
+      ],
+    },
+    statement: { eyebrow: 'Komplette Inneneinrichtungen', line: 'Eine Einrichtung, *die durchdacht ist.*' }, // UI
+    design: {
+      eyebrow: 'Ganzheitliche Raumgestaltung',
+      title: 'Eine gemeinsame Gestaltungslinie *für Ihr Zuhause.*',
+      text: 'Wir stimmen Materialien, Farben und die Gestaltung der einzelnen Räume aufeinander ab. Dabei betrachten wir nicht nur die Produkte, sondern auch ihr Zusammenspiel.',
+      items: [
+        'Raumaufteilung und Nutzung',
+        'Material- und Farbkonzept',
+        'Möbel- und Stauraumplanung',
+        'Abstimmung von Türen und weiteren Elementen',
+        'Beleuchtung und funktionale Details',
+        'Koordination der vereinbarten Leistungen',
+      ],
+    },
+    process: {
+      eyebrow: 'So arbeiten wir zusammen', // UI
+      title: 'Vom ersten Gespräch *zur fertigen Einrichtung.*',
+      steps: [
+        { title: 'Beratung', text: 'Wir lernen Ihre Vorstellungen, Räume und den gewünschten Projektumfang kennen.' },
+        { title: 'Aufmaß und Unterlagen', text: 'Wir erfassen die Maße und notwendigen technischen Informationen.' },
+        { title: 'Konzept und Entwurf', text: 'Wir entwickeln die Gestaltungslinie und planen die einzelnen Lösungen.' },
+        { title: 'Materialien und Angebot', text: 'Wir stimmen Materialien und Details ab und erstellen ein Angebot.' },
+        { title: 'Fertigung und Koordination', text: 'Wir organisieren die Fertigung und stimmen die einzelnen Projektteile aufeinander ab.' },
+        { title: 'Montage und Übergabe', text: 'Wir übernehmen die Montage, die abschließenden Details und die Übergabe.' },
+      ],
+    },
+    why: {
+      eyebrow: 'Warum AK INTERIÉRY',
+      title: 'Weniger Abstimmungsaufwand. *Ein klarer Weg zum Ergebnis.*',
+      points: [
+        { title: 'Ein Ansprechpartner', text: 'Die vereinbarten Leistungen werden gemeinsam abgestimmt.' },
+        { title: 'Einheitliche Gestaltung', text: 'Materialien und Einrichtungselemente ergänzen einander.' },
+        { title: 'Individuelle Lösungen', text: 'Die Einrichtung entsteht aus Ihren Räumen und Anforderungen.' },
+        { title: 'Fertigung und Montage', text: 'Aus dem Entwurf wird eine tatsächlich umgesetzte Lösung.' },
+      ],
+    },
+    projects: {
+      eyebrow: 'Unsere Projekte',
+      title: 'Echte Räume. *Individuelle Lösungen.*',
+      text: 'Entdecken Sie ausgewählte Arbeiten und Details, die zeigen, wie einzelne Elemente zu einem Ganzen werden.',
+      cta: 'Alle Projekte ansehen',
+    },
+    cta: {
+      title: 'Gestalten wir ein Zuhause, *das als Ganzes funktioniert.*',
+      text: 'Erzählen Sie uns von Ihrem Vorhaben. Ob ein einzelner Raum oder eine gesamte Einrichtung: Gemeinsam stimmen wir den passenden Umfang der Zusammenarbeit ab.',
+      button: 'Unverbindliche Beratung anfragen',
+    },
+  },
 }

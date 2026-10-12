@@ -1,6 +1,6 @@
 // O nás – typographic, no photos (brief). Sections 07 (our work) and 08 (team & production) are prepared
 // but hidden until genuine AK photos and verified facts exist: set `aboutPage.showWork` in site.config.js.
-import { useLang, Rich } from '../lib.jsx'
+import { useLang, Rich, A11Y } from '../lib.jsx'
 import { Icon } from '../components/Icons.jsx'
 import { aboutPage } from '../site.config.js'
 import { aboutContent } from './about.content.js'
@@ -19,7 +19,7 @@ export default function AboutPage() {
       <div className="panel panel--dark">
         <section className="a-hero" id="top">
           <div className="container">
-            <nav className="crumbs" aria-label="Drobečková navigace">
+            <nav className="crumbs" aria-label={A11Y[lang].crumbs}>
               <a href="/">{c.crumb[0]}</a><span aria-hidden="true">/</span><span aria-current="page">{c.crumb[1]}</span>
             </nav>
             <p className="eyebrow hero__reveal" style={{ '--d': '.05s' }}>{c.hero.eyebrow}</p>

@@ -177,4 +177,93 @@ export const formsContent = {
       b1: 'Send an enquiry', b2: 'B2B / send a project',
     },
   },
+
+  // German – MASTER DE 1.0, chapters 13 (contact) and 14 (forms). Lines marked UI were written for the site.
+  de: {
+    tabs: { private: 'Privatkunde', b2b: 'Unternehmen / B2B-Projekt', production: 'Auftragsfertigung' }, // UI
+    required: 'Pflichtfeld',
+    attach: {
+      choose: 'Dateien auswählen',
+      drop: 'oder hierher ziehen', // UI
+      remove: 'Anhang entfernen',
+      hintPrivate: 'Fotos, Grundriss oder PDF · insgesamt max. 4 MB', // UI – the real upload limit
+      hintB2B: 'PDF, Zeichnungen (DWG/DXF), Tabellen, Dokumente, Fotos · insgesamt max. 4 MB',
+      hintProduction: 'Zeichnungen (PDF, DWG, DXF), Tabellen, Fotos · insgesamt max. 4 MB',
+      tooBig: 'Die Datei überschreitet die zulässige Größe. Größere Unterlagen senden Sie uns bitte als Link (Feld unten) oder per E-Mail.',
+      badType: 'Dieses Dateiformat wird nicht unterstützt:',
+      linkLabel: 'Link zu größeren Unterlagen (WeTransfer, Google Drive …)', // UI
+    },
+    notice: 'Mit dem Absenden nehmen Sie zur Kenntnis, dass wir Ihre Angaben zur Bearbeitung Ihrer Anfrage verarbeiten.', // UI
+    privacyLink: 'Hinweise zur Verarbeitung Ihrer Daten',
+    sending: 'Wird gesendet …',
+    done: {
+      title: 'Vielen Dank. Ihre Nachricht ist bei uns eingegangen.',
+      text: 'Wir melden uns bei Ihnen, sobald wir Ihre Unterlagen geprüft haben. Bei einer dringenden Anfrage erreichen Sie uns auch telefonisch.',
+      again: 'Weitere Nachricht senden', // UI
+    },
+    errors: {
+      required: 'Bitte füllen Sie dieses Feld aus.',
+      email: 'Bitte geben Sie eine gültige E-Mail-Adresse ein.',
+      phone: 'Bitte prüfen Sie Ihre Telefonnummer einschließlich Ländervorwahl.',
+      choose: 'Bitte wählen Sie mindestens eine Option aus.', // UI
+      server: 'Ihre Nachricht konnte nicht gesendet werden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns telefonisch oder per E-Mail.',
+    },
+    private: {
+      title: 'Erzählen Sie uns von Ihrem Projekt.',
+      intro: 'Sie brauchen noch keinen fertigen Entwurf und müssen nicht alle Materialien kennen. Beschreiben Sie uns Ihre Vorstellungen – wir melden uns bei Ihnen.',
+      name: 'Vor- und Nachname', phone: 'Telefon', email: 'E-Mail', city: 'Ort des Projekts',
+      interest: 'Was möchten Sie umsetzen?',
+      interestOptions: {
+        kitchen: 'Küche nach Maß', stone: 'Stein und Steinverarbeitung', wardrobes: 'Einbauschränke', furniture: 'Möbel nach Maß',
+        doors: 'Türen und Innenausbau-Elemente', complete: 'Komplette Inneneinrichtung', other: 'Andere Anfrage',
+      },
+      stage: 'In welcher Phase befindet sich Ihr Projekt?',
+      stageOptions: ['Ich habe erste Ideen', 'Maße oder Grundriss sind vorhanden', 'Ein Entwurf oder eine Visualisierung ist vorhanden', 'Das Projekt ist zur Umsetzung vorbereitet', 'Ich benötige Beratung'],
+      timeline: 'Gewünschter Ausführungstermin',
+      message: 'Beschreiben Sie uns Ihre Vorstellungen',
+      files: 'Anhänge: Raumfotos, Grundriss, Inspiration oder Projektunterlagen',
+      submit: 'Unverbindliche Anfrage senden',
+      after: 'Wir melden uns bei Ihnen und besprechen die nächsten Schritte.',
+    },
+    b2b: {
+      title: 'Sie haben ein Projekt? Senden Sie uns Ihre Anforderungen.',
+      intro: 'Schicken Sie uns erste Informationen und die verfügbaren Unterlagen. Wir prüfen die Anfrage und melden uns zu den Umsetzungsmöglichkeiten und weiteren Schritten.',
+      company: 'Unternehmen', person: 'Ansprechpartner/in', phone: 'Telefon', email: 'E-Mail',
+      companyType: 'Art des Unternehmens',
+      companyTypeOptions: ['Projektentwickler', 'Bauunternehmen', 'Investor', 'Immobilienverwaltung / Wohnungsgenossenschaft', 'Architektur- / Planungsbüro', 'Immobilienunternehmen', 'Generalunternehmer', 'Anderer Geschäftspartner'],
+      projectType: 'Projektart',
+      projectTypeOptions: ['Innenraumprojekt', 'Serienausstattung von Wohnungen', 'Küchen / Möbel / Türen', 'Außenbereich: Pergolen / Zäune', 'Steinbearbeitung', 'Holz- und MDF-Bearbeitung / Möbelfronten', 'Acrylglasbearbeitung', 'Sonderanfertigung', 'Fertigung und Montage', 'Andere Anfrage'],
+      place: 'Projektstandort',
+      scope: 'Voraussichtlicher Umfang / Anzahl der Einheiten',
+      deadline: 'Gewünschter Termin',
+      description: 'Kurze Projektbeschreibung',
+      files: 'Anhänge: Projektunterlagen, Zeichnungen, Leistungsverzeichnis, Fotos oder weitere Dokumente',
+      submit: 'Projekt senden',
+      after: 'Nach Eingang Ihrer Unterlagen prüfen wir die Anfrage und melden uns bei Ihnen.',
+    },
+    production: {
+      title: 'Maßgefertigte Bauteile anfragen',
+      intro: 'Senden Sie uns Ihre technischen Vorgaben, die gewünschte Stückzahl und den vorgesehenen Termin.',
+      company: 'Unternehmen', person: 'Ansprechpartner/in', phone: 'Telefon', email: 'E-Mail',
+      material: 'Material oder Leistung',
+      materialOptions: { // labels from 14.06.04 mapped to the existing internal codes (edge = UI)
+        furniture: 'Möbelbauteile', cnc: 'Holz / MDF', mdf: 'MDF-Möbelfronten',
+        edge: 'Kantenbearbeitung / Vakuumfolierung / Plattenzuschnitt', stone: 'Kunststein / Naturstein', plexi: 'Acrylglas', other: 'Andere Bearbeitung',
+      },
+      dimensions: 'Ungefähre Maße', dimensionsHint: 'z. B. 600 × 400 × 18 mm',
+      quantity: 'Stückzahl', quantityHint: 'z. B. 40 Stück',
+      message: 'Beschreibung der gewünschten Bearbeitung',
+      files: 'Zeichnung oder technische Unterlagen anhängen (optional) — PDF, DWG, DXF, Fotos',
+      submit: 'Fertigungsanfrage senden',
+      after: 'Nach Eingang Ihrer Vorgaben prüfen wir die Bearbeitungsmöglichkeiten und melden uns bei Ihnen.', // UI
+    },
+    select: 'Bitte auswählen',
+    reference: { decor: 'Ausgewähltes Dekor', project: 'Bezug auf ein Projekt' },
+    contactPage: {
+      eyebrow: 'Kontakt',
+      title: 'Sie haben ein Projekt? *Gehen wir den nächsten Schritt gemeinsam.*',
+      text: 'Ob neue Küche, Möbel nach Maß, eine gesamte Einrichtung oder eine individuelle Aufgabe: Schreiben Sie uns. Erste Informationen reichen aus, um gemeinsam die nächsten Schritte zu besprechen.',
+      b1: 'Unverbindliche Anfrage', b2: 'Geschäftskunden: Projekt senden',
+    },
+  },
 }

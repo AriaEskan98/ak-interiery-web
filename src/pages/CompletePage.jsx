@@ -1,7 +1,7 @@
 // Kompletní interiéry / Home Design – key brand page.
 // Opens from Homepage → Kompletní interiéry → Zjistit více (and the "Interiéry" menu item).
 // Section order follows "KONTROLNÍ POŘADÍ" in AK_Kompletni_interiery_KONTROLNI_VZOR.pdf.
-import { useLang, useInView, Rich } from '../lib.jsx'
+import { useLang, useInView, Rich, A11Y } from '../lib.jsx'
 import { Icon } from '../components/Icons.jsx'
 import { ContactCTA } from '../components/Bottom.jsx'
 import { Statement } from '../components/Top.jsx'
@@ -28,7 +28,7 @@ export default function CompletePage() {
           </div>
           <div className="hero__shade" aria-hidden="true" />
           <div className="container hero__content">
-            <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label="Drobečková navigace">
+            <nav className="crumbs hero__reveal" style={{ '--d': '0s' }} aria-label={A11Y[lang].crumbs}>
               <a href="/">{c.crumb[0]}</a><span aria-hidden="true">/</span><span aria-current="page">{c.crumb[1]}</span>
             </nav>
             <p className="eyebrow hero__reveal" style={{ '--d': '.1s' }}>{c.hero.eyebrow}</p>

@@ -1,8 +1,8 @@
 // Naše výroba (/nase-vyroba) – AK_INTERIERY_NASE_VYROBA_WEBAR_CZ_EN.docx, section 03 (layout) + 04 (texts).
-// Hero · capability overview (4 areas) · furniture · CNC/MDF · softforming/vacuum/saws · stone (→ /kamen) ·
+// Hero · capability overview (5 areas) · furniture · CNC/MDF · softforming/vacuum/saws · stone (→ /kamen) ·
 // plexiglass · B2B manufacturing enquiry (form C) with a link to the B2B page.
 // No photos until AK supplies genuine workshop media (productionMedia in site.config.js).
-import { useLang, Rich, openForm } from '../lib.jsx'
+import { useLang, Rich, openForm, A11Y } from '../lib.jsx'
 import { Icon } from '../components/Icons.jsx'
 import { ContactSection } from '../components/EnquiryForms.jsx'
 import { CrossLink } from '../components/CrossLink.jsx'
@@ -53,7 +53,7 @@ export default function ProductionPage() {
         <section className={`work-hero m-hero${productionMedia.hero ? ' has-media' : ''}`} id="top">
           <div className="container m-hero__grid">
             <div>
-              <nav className="crumbs" aria-label="Drobečková navigace">
+              <nav className="crumbs" aria-label={A11Y[lang].crumbs}>
                 <a href="/">{c.crumb[0]}</a><span aria-hidden="true">/</span><span aria-current="page">{c.crumb[1]}</span>
               </nav>
               <p className="eyebrow hero__reveal" style={{ '--d': '.05s' }}>{c.hero.eyebrow}</p>
@@ -75,7 +75,7 @@ export default function ProductionPage() {
         </section>
       </div>
 
-      {/* 02 Capabilities overview – four clearly labelled areas */}
+      {/* 02 Capabilities overview – five numbered areas (5-point brief), each linking to its chapter */}
       <div className="panel panel--light">
         <section className="section section--light m-overview" id="oblasti">
           <div className="container">
@@ -89,7 +89,7 @@ export default function ProductionPage() {
                   <a href={`#${it.id}`} className="m-area">
                     <span className="m-area__no">{String(i + 1).padStart(2, '0')}</span>
                     <span className="m-area__title">{it.title}</span>
-                    <span className="m-area__text">{it.text}</span>
+                    <span className="m-area__tag">{it.tag}</span>
                     <span className="m-area__arrow" aria-hidden="true"><Icon.arrow /></span>
                   </a>
                 </li>

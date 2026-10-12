@@ -1,5 +1,5 @@
 // Privacy policy (/ochrana-osobnich-udaju) and terms of use (/podminky-pouziti).
-import { useLang, Rich } from '../lib.jsx'
+import { useLang, Rich, A11Y } from '../lib.jsx'
 import { company } from '../site.config.js'
 import { legalContent } from './legal.content.js'
 import './legal.css'
@@ -16,8 +16,8 @@ function Legal({ kind }) {
       <div className="panel panel--dark">
         <section className="legal-hero" id="top">
           <div className="container">
-            <nav className="crumbs" aria-label="Drobečková navigace">
-              <a href="/">{lang === 'cz' ? 'Úvod' : 'Home'}</a><span aria-hidden="true">/</span>
+            <nav className="crumbs" aria-label={A11Y[lang].crumbs}>
+              <a href="/">{{ cz: 'Úvod', en: 'Home', de: 'Startseite' }[lang]}</a><span aria-hidden="true">/</span>
               <span aria-current="page">{c.title.replace(/\*/g, '')}</span>
             </nav>
             <p className="eyebrow">{c.eyebrow}</p>
@@ -30,13 +30,13 @@ function Legal({ kind }) {
       <div className="panel panel--light">
         <section className="section section--light legal">
           <div className="container legal__grid">
-            <nav className="legal__toc" aria-label={L.contents}>
+            <nav className="legal__toc" aria-label={L.contents} lang={L.bodyLang}>
               <p className="eyebrow">{L.contents}</p>
               <ol>
                 {c.sections.map((s) => <li key={s.h}><a href={`#${slug(s.h)}`}>{s.h}</a></li>)}
               </ol>
             </nav>
-            <div className="legal__body">
+            <div className="legal__body" lang={L.bodyLang}>
               {c.sections.map((s, i) => (
                 <section key={s.h} id={slug(s.h)} className="legal__section">
                   <h2><span className="legal__num">{String(i + 1).padStart(2, '0')}</span>{s.h}</h2>

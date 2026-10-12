@@ -24,7 +24,19 @@ const MATERIAL_NAMES = {
   furniture: 'Nábytková výroba', cnc: 'CNC opracování dřeva a MDF', mdf: 'Frézovaná MDF dvířka',
   edge: 'Softforming / vakuové lisování / dělení desek', stone: 'Kamenická výroba', plexi: 'Opracování plexiskla', other: 'Jiné zadání',
 }
-const PHONE = () => env.CONTACT_PHONE || '+420 736 719 675'
+// customer confirmation in the language the visitor used (texts: Kontakt a formuláře, MASTER DE 1.0 – 14.09)
+const CONFIRM = {
+  cz: { subject: 'Vaši zprávu jsme přijali – AK Interiéry', hello: 'Dobrý den,', title: 'Děkujeme. Vaši zprávu jsme přijali.',
+    text: 'Ozveme se vám, jakmile se s podklady seznámíme. Pokud je vaše poptávka urgentní, můžete nás kontaktovat také telefonicky.',
+    brand: 'AK Interiéry', claim: 'Prostor, který má hodnotu.' },
+  en: { subject: 'We have received your message – AK Interiors', hello: 'Hello,', title: 'Thank you. We have received your message.',
+    text: 'We will get back to you once we have reviewed the details. If your enquiry is urgent, you can also call us.',
+    brand: 'AK Interiors', claim: 'A space with lasting value.' },
+  de: { subject: 'Ihre Nachricht ist bei uns eingegangen – AK INTERIÉRY', hello: 'Guten Tag,', title: 'Vielen Dank. Ihre Nachricht ist bei uns eingegangen.',
+    text: 'Wir melden uns bei Ihnen, sobald wir Ihre Unterlagen geprüft haben. Bei einer dringenden Anfrage erreichen Sie uns auch telefonisch.',
+    brand: 'AK INTERIÉRY', claim: 'Räume mit bleibendem Wert.' },
+}
+const PHONE = () => env.CONTACT_PHONE || '+420 604 596 169' // company mobile
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
 
 // simple, brand-coloured HTML that works in every mail client (tables + inline styles)
@@ -78,7 +90,7 @@ export async function sendEnquiryEmails(e, files = []) {
     textBlock = 'Představa'
   }
   if (ref) rows.unshift(ref)
-  rows.push(['Jazyk webu', e.lang === 'en' ? 'angličtina' : 'čeština'])
+  rows.push(['Jazyk webu', { cz: 'čeština', en: 'angličtina', de: 'němčina' }[e.lang] || 'čeština'])
   await mailer.sendMail({
     from: FROM(), to: env.MAIL_TO, replyTo: `${b2b ? e.person : e.name} <${e.email}>`, subject, attachments,
     text: rows.map(([k, v]) => `${k}: ${String(v).replace(/<[^>]+>/g, '')}`).join('\n') + `\n\n${textBlock}:\n${bodyText || '–'}\n\nOdpovězte přímo na tento e-mail.`,
@@ -93,20 +105,16 @@ export async function sendEnquiryEmails(e, files = []) {
 
   // 2) confirmation to the customer (set CONFIRM_TO_CUSTOMER=false to disable) – text from AK_Kontakt_a_formulare
   if (env.CONFIRM_TO_CUSTOMER === 'false') return
-  const en = e.lang === 'en'
-  const title = en ? 'Thank you. We have received your message.' : 'Děkujeme. Vaši zprávu jsme přijali.'
-  const text = en
-    ? 'We will get back to you once we have reviewed the details. If your enquiry is urgent, you can also call us.'
-    : 'Ozveme se vám, jakmile se s podklady seznámíme. Pokud je vaše poptávka urgentní, můžete nás kontaktovat také telefonicky.'
+  const C = CONFIRM[e.lang] || CONFIRM.cz
   await mailer.sendMail({
     from: FROM(), to: e.email, replyTo: env.MAIL_TO,
-    subject: en ? 'We have received your message – AK Interiors' : 'Vaši zprávu jsme přijali – AK Interiéry',
-    text: `${en ? 'Hello' : 'Dobrý den,'}\n\n${title}\n${text}\n\n${PHONE()}\n\n${en ? 'AK Interiors' : 'AK Interiéry'}`,
-    html: layout(title, `
-      <p style="margin:0 0 16px;font-size:15px;line-height:1.7">${en ? 'Hello,' : 'Dobrý den,'}</p>
-      <p style="margin:0 0 20px;font-size:15px;line-height:1.7">${text}</p>
+    subject: C.subject,
+    text: `${C.hello}\n\n${C.title}\n${C.text}\n\n${PHONE()}\n\n${C.brand}`,
+    html: layout(C.title, `
+      <p style="margin:0 0 16px;font-size:15px;line-height:1.7">${C.hello}</p>
+      <p style="margin:0 0 20px;font-size:15px;line-height:1.7">${C.text}</p>
       <p style="margin:0 0 26px;font-size:18px"><a href="tel:${PHONE().replace(/\s/g, '')}" style="color:#1F1A16;text-decoration:none">${PHONE()}</a></p>
-      <p style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:17px;color:#85725B">${en ? 'A space with lasting value.' : 'Prostor, který má hodnotu.'}</p>`),
+      <p style="margin:0;font-family:Georgia,serif;font-style:italic;font-size:17px;color:#85725B">${C.claim}</p>`),
   })
 }
 

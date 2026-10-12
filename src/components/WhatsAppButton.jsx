@@ -12,7 +12,7 @@ export function WhatsAppButton() {
     on(); window.addEventListener('scroll', on, { passive: true })
     return () => window.removeEventListener('scroll', on)
   }, [])
-  const label = lang === 'en' ? 'Message us on WhatsApp' : 'Napište nám na WhatsApp'
+  const label = { cz: 'Napište nám na WhatsApp', en: 'Message us on WhatsApp', de: 'Schreiben Sie uns auf WhatsApp' }[lang]
   return (
     <a className={`wa-float${show ? ' is-on' : ''}`} href={whatsappUrl(lang)} target="_blank" rel="noopener noreferrer"
       aria-label={label} title={label} tabIndex={show ? 0 : -1}>

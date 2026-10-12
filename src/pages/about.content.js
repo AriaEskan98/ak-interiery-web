@@ -32,7 +32,7 @@ export const aboutContent = {
       text: 'Rozsah spolupráce přizpůsobujeme konkrétnímu zadání.',
       links: [
         ['Kuchyně na míru', '/kuchyne-na-miru'], ['Vestavné skříně', '/vestavne-skrine'], ['Nábytek na míru', '/nabytek-na-miru'],
-        ['Dveře a interiérové prvky', '/dvere'], ['Kámen a kamenické realizace', '/kamen'], ['Kompletní interiéry', '/kompletni-interiery'], ['Pro developery a profesionály', '/pro-profesionaly'],
+        ['Dveře a interiérové prvky', '/dvere'], ['Kámen a kamenické realizace', '/kamen'], ['Kompletní interiéry', '/kompletni-interiery'], ['Naše výroba', '/nase-vyroba'], ['Pro developery a profesionály', '/pro-profesionaly'],
       ],
     },
     why: {
@@ -93,7 +93,7 @@ export const aboutContent = {
       text: 'We adapt the scope of cooperation to the specific brief.',
       links: [
         ['Bespoke kitchens', '/kuchyne-na-miru'], ['Built-in wardrobes', '/vestavne-skrine'], ['Bespoke furniture', '/nabytek-na-miru'],
-        ['Doors & interior elements', '/dvere'], ['Stone & stone fabrication', '/kamen'], ['Complete interiors', '/kompletni-interiery'], ['For developers & professionals', '/pro-profesionaly'],
+        ['Doors & interior elements', '/dvere'], ['Stone & stone fabrication', '/kamen'], ['Complete interiors', '/kompletni-interiery'], ['Our manufacturing', '/nase-vyroba'], ['For developers & professionals', '/pro-profesionaly'],
       ],
     },
     why: {
@@ -121,6 +121,69 @@ export const aboutContent = {
       title: 'Have a project? *Let’s look at it together.*',
       text: 'Whether it is one room, a whole interior or an individual commission, tell us your basic idea. We will get back to you and agree the next steps.',
       b1: 'Free consultation', b2: 'Contact',
+    },
+  },
+  // German – MASTER DE 1.0, chapter 11.
+  de: {
+    crumb: ['Startseite', 'Über uns'],
+    hero: {
+      eyebrow: 'Über uns',
+      title: 'Es geht nicht nur darum, etwas zu fertigen. *Sondern die richtige Lösung zu finden.*',
+      text: 'AK INTERIÉRY baut auf einem einfachen Prinzip auf: zuhören, Räume im Zusammenhang betrachten und Verantwortung für das Ergebnis übernehmen.',
+      extra: 'Vom einzelnen Detail bis zur gesamten Einrichtung. Vom Entwurf bis zur Umsetzung.',
+    },
+    who: {
+      title: 'Ihr Partner für Räume, *die funktionieren.*',
+      p: [
+        'Wir möchten nicht einfach nur ein Produkt verkaufen. Unser Ziel ist es, die Anforderungen des Raumes zu verstehen und eine Lösung zu entwickeln, die funktional, technisch und gestalterisch sinnvoll ist.',
+        'Deshalb planen und fertigen wir einzelne Küchen, Schränke, Möbel oder Türen ebenso wie abgestimmte Inneneinrichtungen und individuelle Projektlösungen.',
+        'Diesen Ansatz verfolgen wir bei Privatkunden genauso wie in der Zusammenarbeit mit Projektentwicklern, Bauunternehmen und weiteren Geschäftspartnern.',
+      ],
+    },
+    think: {
+      title: 'Zuerst verstehen. Dann planen. *Anschließend sorgfältig umsetzen.*',
+      points: [
+        { title: 'Zuhören', text: 'Jedes Projekt beginnt damit, den Raum sowie die Anforderungen und Erwartungen des Kunden zu verstehen.' },
+        { title: 'Lösungen entwickeln', text: 'Wir beschränken uns nicht auf Standardprodukte. Wir suchen eine Lösung für die konkrete Aufgabe.' },
+        { title: 'Zusammenhänge beachten', text: 'Materialien, Funktionen, Proportionen und einzelne Elemente müssen zusammenpassen.' },
+        { title: 'Umsetzung zu Ende denken', text: 'Ein guter Entwurf entfaltet seinen Wert erst durch eine sorgfältige Umsetzung im realen Raum.' },
+      ],
+    },
+    what: {
+      eyebrow: 'Unser Angebot',
+      title: 'Vom einzelnen Element *bis zum gesamten Projekt.*',
+      text: 'Den Umfang der Zusammenarbeit stimmen wir auf Ihre konkrete Aufgabe ab.',
+      links: [
+        ['Küchen nach Maß', '/kuchyne-na-miru'], ['Einbauschränke', '/vestavne-skrine'], ['Möbel nach Maß', '/nabytek-na-miru'],
+        ['Türen & Innenausbau-Elemente', '/dvere'], ['Stein und Steinverarbeitung', '/kamen'], ['Komplette Inneneinrichtungen', '/kompletni-interiery'],
+        ['Eigene Fertigung', '/nase-vyroba'], ['Für Geschäftskunden', '/pro-profesionaly'],
+      ],
+    },
+    why: {
+      eyebrow: 'Warum AK INTERIÉRY',
+      title: 'Ein Partner. *Ein klarer Weg zum Ergebnis.*',
+      points: [
+        { title: 'Individueller Ansatz', text: 'Wir beginnen nicht mit einem fertigen Produkt, sondern mit Ihrer Aufgabe.' },
+        { title: 'Vielfältige Lösungen', text: 'Einrichtung, Möbel, Türen und individuelle Fertigungsleistungen betrachten wir als mögliche Teile eines gemeinsamen Projekts.' },
+        { title: 'Koordination', text: 'Wenn wir mehrere Projektteile übernehmen, achten wir auf ihre Abstimmung und das gemeinsame Ergebnis.' },
+        { title: 'Vom Entwurf zur Umsetzung', text: 'Unser Ziel ist nicht nur eine schöne Idee, sondern eine Lösung, die sich fertigen, liefern und montieren lässt.' },
+      ],
+    },
+    split: {
+      title: 'Unterschiedliche Projekte. *Dieselbe Verantwortung für das Ergebnis.*',
+      b2c: { label: 'Für Privatkunden', text: 'Wir gestalten individuelle Wohnräume – von der einzelnen Küche bis zur gesamten Inneneinrichtung.', link: 'Komplette Inneneinrichtungen', href: '/kompletni-interiery' },
+      b2b: { label: 'Für Geschäftspartner', text: 'Projektentwicklern, Investoren, Bauunternehmen und weiteren Partnern bieten wir Fertigung, Lieferung, Montage und individuelle Projektlösungen.', link: 'Für Geschäftskunden', href: '/pro-profesionaly' },
+    },
+    work: {
+      eyebrow: 'Unsere Arbeiten',
+      title: 'Das Ergebnis ist *unsere beste Visitenkarte.*',
+      text: 'Entdecken Sie ausgewählte Arbeiten und die Details ihrer Umsetzung.',
+      cta: 'Unsere Projekte ansehen',
+    },
+    cta: {
+      title: 'Sie haben ein Projekt? *Sehen wir es uns gemeinsam an.*',
+      text: 'Ob ein einzelner Raum, eine gesamte Einrichtung oder eine besondere Aufgabe: Beschreiben Sie uns Ihre Vorstellungen. Wir melden uns bei Ihnen und besprechen die nächsten Schritte.',
+      b1: 'Unverbindliche Beratung anfragen', b2: 'Kontakt',
     },
   },
 }

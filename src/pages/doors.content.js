@@ -128,4 +128,67 @@ export const doorsContent = {
       button: 'Free consultation',
     },
   },
+  // German – MASTER DE 1.0, chapter 06. Lines marked UI were not in the document.
+  de: {
+    meta: 'Türen und Innenausbau-Elemente | AK INTERIÉRY',
+    crumb: ['Startseite', 'Türen & Innenausbau-Elemente'],
+    hero: {
+      eyebrow: 'Türen und Innenausbau-Elemente',
+      title: ['Details, die Ihre', '*Räume verbinden.*'],
+      text: 'Türen sind für uns mehr als funktionale Bauteile. Material, Proportionen und Details sollen sich selbstverständlich in die gesamte Einrichtung einfügen.',
+      claim: 'Funktion, Material und Gestaltung im Einklang.',
+      cta: 'Passende Türen anfragen',
+    },
+    intro: {
+      title: 'Türen als Teil *der Raumgestaltung.*',
+      p1: 'Eine passende Tür kann dezent in den Hintergrund treten oder zum ausdrucksstarken Gestaltungselement werden.',
+      p2: 'Wir unterstützen Sie bei der Auswahl und stimmen Türen auf die Raumaufteilung, Möbel, Wandverkleidungen und weiteren Materialien ab.',
+    },
+    types: {
+      eyebrow: 'Unterschiedliche Lösungen',
+      title: 'Die passende Tür *für Ihren Raum.*',
+      items: [
+        { title: 'Türen mit Holzoberflächen', text: 'Ein natürlicher Charakter, abgestimmt auf Möbel und Boden.' },
+        { title: 'Wandbündige und stumpfeinschlagende Türen', text: 'Klare Linien für zurückhaltend gestaltete Innenräume.' },
+        { title: 'Schiebetüren', text: 'Lösungen, die Platz sparen oder Räume flexibel miteinander verbinden.' },
+        { title: 'Glastüren und Glastrennwände', text: 'Lichtdurchlässige Lösungen für die Gliederung unterschiedlicher Bereiche.' },
+      ],
+    },
+    details: {
+      eyebrow: 'Das Zusammenspiel entscheidet',
+      title: 'Von der Oberfläche *bis zum Türgriff.*',
+      text: 'Material, Oberfläche, Beschläge, Zarge und Einbau bilden eine Einheit. Wir stimmen die einzelnen Komponenten so ab, dass sie technisch zusammenpassen und die Gestaltung Ihrer Räume ergänzen.',
+      items: ['Furniere und Holzoberflächen', 'Lackierte und matte Oberflächen', 'Verdeckte Zargen', 'Türgriffe und Beschläge', 'Glaselemente', 'Abstimmung mit Möbeln und Wandverkleidungen'],
+    },
+    projects: {
+      eyebrow: 'Unsere Projekte',
+      title: 'Details, die den Raum *vervollständigen.*',
+      text: 'Entdecken Sie Türen und ergänzende Innenausbau-Elemente aus unseren Arbeiten.',
+      cta: 'Alle Projekte ansehen',
+    },
+    process: {
+      eyebrow: 'So arbeiten wir', // UI
+      title: 'Von der Auswahl *bis zur Montage.*',
+      steps: [
+        { title: 'Beratung', text: 'Wir besprechen Raum, Gestaltung und gewünschte Funktion.' },
+        { title: 'Aufmaß', text: 'Wir prüfen Maße und Einbauvoraussetzungen.' },
+        { title: 'Auswahl', text: 'Wir stimmen Türmodell, Oberfläche, Zarge und Beschläge ab.' },
+        { title: 'Angebot', text: 'Wir erstellen ein Angebot für die vereinbarte Lösung.' },
+        { title: 'Bereitstellung', text: 'Wir organisieren die Bestellung oder Fertigung der ausgewählten Ausführung.' },
+        { title: 'Montage', text: 'Wir übernehmen den Einbau und die abschließende Kontrolle.' },
+      ],
+    },
+    complete: {
+      eyebrow: 'Ein stimmiges Gesamtbild',
+      title: 'Türen, die zu *Ihrem Zuhause passen.*',
+      text: 'Wir stimmen sie auf Küche, Einbauschränke, Möbel und weitere Materialien ab, damit die einzelnen Räume zusammengehören.',
+      claim: ['Ein Stil.', 'Eine abgestimmte Umsetzung.', 'Ein Partner.'],
+      cta: 'Komplette Inneneinrichtungen',
+    },
+    cta: {
+      title: 'Vervollständigen wir *Ihre Einrichtung.*',
+      text: 'Beschreiben Sie uns Ihren Raum. Wir unterstützen Sie bei der Auswahl passender Türen und ergänzender Elemente.',
+      button: 'Unverbindliche Beratung anfragen',
+    },
+  },
 }

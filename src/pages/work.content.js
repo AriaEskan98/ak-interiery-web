@@ -91,4 +91,50 @@ export const workContent = {
       text: 'Tell us what you are planning. If a specific project caught your eye, we include it in the enquiry automatically.',
     },
   },
+  // German – MASTER DE 1.0, chapters 02.05 and 12. Lines marked UI were not in the document.
+  de: {
+    home: {
+      eyebrow: 'Unsere Arbeiten',
+      title: 'Unsere Projekte',
+      intro: 'Jedes Detail zählt. Entdecken Sie ausgewählte Projekte, maßgefertigte Elemente und individuelle Einrichtungslösungen.',
+      cta: 'Alle Projekte ansehen',
+    },
+    page: {
+      crumb: ['Startseite', 'Unsere Projekte'],
+      eyebrow: 'Unsere Arbeiten',
+      title: 'Unsere Projekte',
+      intro: 'Entdecken Sie unsere realisierten Projekte. Wir zeigen Ergebnisse maßgefertigter Fertigung, Materialbearbeitung und individueller Einrichtungslösungen.',
+      all: 'Alle',
+      filterLabel: 'Projekte filtern', // UI
+    },
+    categories: {
+      kitchen: 'Küchen nach Maß', furniture: 'Möbel und Einbauschränke', stone: 'Stein und Steinverarbeitung',
+      complete: 'Komplette Inneneinrichtungen', other: 'Weitere Projekte',
+    },
+    project: {
+      back: 'Zurück zu unseren Projekten',
+      gallery: 'Einblicke in das Projekt',
+      photos: 'Einblicke in das Projekt',
+      scope: 'Unser Leistungsumfang',
+      cta: 'Ähnliches Projekt anfragen',
+      video: 'Video abspielen',
+      open: 'Projekt ansehen', // UI
+    },
+    videos: {
+      eyebrow: 'Video',
+      title: 'Einblicke *im Video*',
+      intro: 'Kurze Rundgänge durch fertige Räume – Materialien, Licht und Details, wie Sie sie vor Ort erleben würden.', // UI
+    },
+    viz: {
+      eyebrow: 'Entwürfe', // UI
+      title: 'Entwürfe & Visualisierungen',
+      intro: 'Entdecken Sie unsere Einrichtungsideen. Visualisierungen zeigen die geplanten Materialien, Raumaufteilungen und die gewünschte Atmosphäre vor der Umsetzung.',
+      badge: '3D-Visualisierung',
+      note: 'Entwurf – keine Fotografie einer abgeschlossenen Ausführung.',
+    },
+    contact: {
+      title: 'Planen Sie *ein ähnliches Projekt?*',
+      text: 'Erzählen Sie uns von Ihrem Vorhaben. Gemeinsam besprechen wir die Möglichkeiten für Ihren Raum.',
+    },
+  },
 }

@@ -150,4 +150,79 @@ export const b2bContent = {
       text: 'Send us the basic information, a drawing or project documentation. We will get back to you and explore the options together.',
     },
   },
+  // German – MASTER DE 1.0, chapter 10. Lines marked UI were not in the document.
+  de: {
+    crumb: ['Startseite', 'Für Geschäftskunden'],
+    hero: {
+      eyebrow: 'Für Projektentwickler und Geschäftspartner',
+      title: ['Ihr Partner für Fertigung', '*und Projektumsetzung.*'],
+      text: 'Von einzelnen Bauteilen bis zu umfangreicheren Lieferungen: Wir bieten individuelle Innen- und Außenlösungen für Projektentwickler, Bauunternehmen, Investoren, Immobilienverwaltungen und weitere Geschäftspartner.',
+      claim: 'Fertigung. Lieferung. Montage. Individuelle Sonderlösungen.',
+      cta1: 'Zusammenarbeit anfragen', cta2: 'Projekt zur Angebotserstellung senden',
+    },
+    why: {
+      title: 'Flexibler Partner *für unterschiedliche Projekte.*',
+      text: 'Jede Anfrage prüfen wir anhand des Umfangs, der technischen Anforderungen und des gewünschten Termins. Wir können einen klar definierten Projektteil übernehmen oder uns im vereinbarten Umfang an einer größeren Lieferung beteiligen.',
+      points: [
+        { title: 'Individueller Ansatz', text: 'Wir stimmen die Lösung auf das konkrete Projekt ab.' },
+        { title: 'Arbeit nach Vorgaben', text: 'Wir arbeiten auf Grundlage abgestimmter Entwürfe, Maße und Projektunterlagen.' },
+        { title: 'Fertigung und Lieferung', text: 'Wir organisieren die Fertigung und Lieferung des vereinbarten Umfangs.' },
+        { title: 'Montage', text: 'Je nach Projekt übernehmen wir auch die Montage und Fertigstellung vor Ort.' },
+      ],
+    },
+    areas: {
+      stoneLink: { text: 'Kunststein und Naturstein bearbeiten wir in unserer eigenen Fertigung – für Arbeitsplatten und individuelle Bauteile Ihres Projekts.', label: 'Steinbearbeitung entdecken' },
+      eyebrow: 'Unsere Leistungsbereiche',
+      title: 'Vielfältige Lösungen *für Ihr Projekt.*',
+      items: [
+        { title: 'Innenraumprojekte', text: 'Küchen, Einbauschränke, maßgefertigte Möbel, Türen und weitere Einrichtungselemente.' },
+        { title: 'Lösungen für den Außenbereich', text: 'Pergolen, Zäune und weitere Außenelemente nach projektbezogener Abstimmung.' },
+        { title: 'Individuelle Fertigung', text: 'Sonderlösungen nach Vorgaben, Unterlagen oder speziellen Projektanforderungen.' },
+        { title: 'Montage und Umsetzung', text: 'Lieferung, Montage, Koordination und Fertigstellung des vereinbarten Umfangs vor Ort.' },
+      ],
+    },
+    models: {
+      eyebrow: 'Formen der Zusammenarbeit', // UI
+      title: 'Zusammenarbeit *passend zu Ihrem Projekt.*',
+      items: [
+        { title: 'Serienlieferungen', text: 'Wiederkehrende Lieferungen für mehrere Wohnungen, Häuser oder andere Einheiten nach vereinbartem Standard.' },
+        { title: 'Teilleistungen als Nachunternehmer', text: 'Wir übernehmen einen definierten Fertigungs- oder Umsetzungsteil Ihres Projekts.' },
+        { title: 'Sonderanfertigungen', text: 'Wir prüfen individuelle Anforderungen und Fertigungsmöglichkeiten anhand Ihrer Projektunterlagen.' },
+        { title: 'Fertigung und Montage', text: 'Nach Vereinbarung übernehmen wir Fertigung, Transport, Montage und Fertigstellung des beauftragten Umfangs.' },
+      ],
+    },
+    custom: {
+      eyebrow: 'Sie haben eine besondere Aufgabe?',
+      title: 'Ihre Lösung ist nicht *in der Übersicht dabei?*',
+      text1: 'Auch individuelle Aufgabenstellungen prüfen wir gerne.',
+      text2: 'Senden Sie uns eine Zeichnung, Projektunterlagen oder eine Beschreibung Ihrer Anforderungen. Wir prüfen die technische Machbarkeit und besprechen die nächsten Schritte.',
+      cta: 'Projekt zur Angebotserstellung senden',
+    },
+    process: {
+      eyebrow: 'So läuft die B2B-Zusammenarbeit ab', // UI
+      title: 'Von der Aufgabenstellung *zur Umsetzung.*',
+      steps: [
+        { title: 'Anfrage', text: 'Sie senden uns Projektunterlagen oder eine Beschreibung des gewünschten Umfangs.' },
+        { title: 'Technische Prüfung', text: 'Wir prüfen Machbarkeit, Umfang und erforderliche Unterlagen.' },
+        { title: 'Angebot und Abstimmung', text: 'Wir klären Ausführung, Preis, Termine und Zuständigkeiten.' },
+        { title: 'Fertigung und Lieferung', text: 'Nach Freigabe beginnen wir mit der Umsetzung des vereinbarten Umfangs.' },
+        { title: 'Montage und Übergabe', text: 'Nach Vereinbarung übernehmen wir Montage, Kontrolle und Übergabe.' },
+      ],
+    },
+    references: {
+      eyebrow: 'Ausgewählte Projekte',
+      title: 'Unterschiedliche Projekte. *Ein verantwortlicher Partner.*',
+      text: 'Entdecken Sie ausgewählte Arbeiten aus unseren Bereichen Innenraumgestaltung, Fertigung und Montage.',
+    },
+    capacity: {
+      eyebrow: 'Unsere Möglichkeiten',
+      title: 'Fertigung und Montage *passend zum Projektumfang.*',
+      text: 'Die konkreten Fertigungs- und Montagemöglichkeiten prüfen wir anhand von Auftragsart, Umfang, technischer Lösung und gewünschtem Termin.',
+      extra: 'Für größere oder wiederkehrende Lieferungen stimmen wir Zeitplan und Zusammenarbeit im Voraus mit Ihnen ab.',
+    },
+    cta: {
+      title: 'Sie haben ein Projekt? *Finden wir die passende Lösung.*',
+      text: 'Senden Sie uns erste Informationen, eine Zeichnung oder Projektunterlagen. Wir melden uns bei Ihnen und prüfen gemeinsam die Möglichkeiten einer Zusammenarbeit.',
+    },
+  },
 }
