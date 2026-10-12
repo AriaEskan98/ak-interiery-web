@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLang, useInView, prefersReducedMotion, preselectService, Rich } from '../lib.jsx'
-import { Icon, Logo, PergolaArt } from './Icons.jsx'
+import { Icon, Logo, PergolaArt, StoneArt } from './Icons.jsx'
 import { contact, heroSlides, services, completeInterior } from '../site.config.js'
 import { useRoute } from '../router.jsx'
 
@@ -43,10 +43,6 @@ export function Header() {
           {t.nav.items.map((i) => <a key={i.href} href={i.href}>{i.label}</a>)}
         </nav>
         <div className="header__right">
-          <div className="social">
-            <a href={contact.social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer"><Icon.facebook /></a>
-            <a href={contact.social.instagram} aria-label="Instagram" target="_blank" rel="noreferrer"><Icon.instagram /></a>
-          </div>
           {LangSwitch}
           <a href="#kontakt" className="btn btn--primary btn--sm header__cta">{t.nav.cta}<Icon.arrow /></a>
           <button type="button" className="burger" aria-expanded={open} aria-controls="mobile-menu" onClick={() => setOpen(!open)}>
@@ -105,7 +101,7 @@ export function Hero() {
         <p className="hero__claim hero__reveal" style={{ '--d': '.7s' }}>{t.hero.claim}</p>
         <div className="hero__actions hero__reveal" style={{ '--d': '.8s' }}>
           <a href="#kontakt" className="btn btn--primary">{t.hero.primary}<Icon.arrow /></a>
-          <a href="#realizace" className="btn btn--ghost">{t.hero.secondary}<Icon.arrow /></a>
+          <a href="/realizace" className="btn btn--ghost">{t.hero.secondary}<Icon.arrow /></a>
         </div>
       </div>
 
@@ -154,7 +150,7 @@ export function Services() {
                 onMouseEnter={() => setOpen(i)} onFocus={() => setOpen(i)}>
                 <Tag className="service__link" {...props}>
                   <span className="service__img">
-                    {s.image ? <img src={s.image} alt="" loading="lazy" /> : <PergolaArt />}
+                    {s.image ? <img src={s.image} alt="" loading="lazy" /> : s.art === 'stone' ? <StoneArt /> : <PergolaArt />}
                   </span>
                   <span className="service__body">
                     <span className="service__num">{String(i + 1).padStart(2, '0')}</span>

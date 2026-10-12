@@ -1,0 +1,118 @@
+/* Kámen a kamenické realizace – on top of shared.css + b2b.css. Same tokens as the rest of the site. */
+
+/* 01 hero – typographic with the slab drawing (no photo until verified assets exist) */
+.s-hero {
+  background: radial-gradient(ellipse at 78% 45%, rgba(201,183,158,.09) 0%, rgba(31,26,22,0) 55%), var(--dark);
+  color: var(--white);
+  padding: calc(var(--header-h) + clamp(40px, 6vw, 88px)) 0 clamp(64px, 8vw, 112px);
+  min-height: min(88svh, 900px); display: flex; align-items: center;
+}
+.s-hero__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: clamp(32px, 5vw, 80px); align-items: center; }
+.s-hero .eyebrow { color: var(--gold); }
+.s-hero__title.hero__title { font-size: clamp(2.6rem, 4.6vw, 4.3rem); line-height: 1.05; max-width: none; text-shadow: none; }
+.s-hero__art { min-width: 0; }
+.slab-art { width: 100%; height: auto; display: block; overflow: visible; }
+
+/* 02 technical stone – copy + spec card */
+.s-tech__grid { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 110px); align-items: center; }
+.s-tech__copy { display: flex; flex-direction: column; gap: 20px; }
+.s-tech__copy .eyebrow { margin-bottom: -4px; }
+.s-tech__copy > p:not(.eyebrow) { color: var(--muted-on-light); max-width: 56ch; }
+.s-specs { background: var(--dark); color: var(--white); padding: clamp(28px, 4vw, 48px); border-top: 1px solid var(--gold); }
+.s-specs__title { font-size: 10.5px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); margin-bottom: 14px; }
+.s-specs dl { margin: 0; }
+.s-specs dl > div { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding: 14px 0; border-bottom: 1px solid var(--line-dark); }
+.s-specs dt { font-size: 13px; color: var(--muted-on-dark); }
+.s-specs dd { margin: 0; font-family: var(--serif); font-size: clamp(1.4rem, 2.2vw, 1.85rem); color: var(--white); white-space: nowrap; }
+.s-specs__note { margin-top: 18px; font-size: 12.5px; line-height: 1.6; color: rgba(255,255,255,.6); }
+
+/* 03 natural stone – warm brown */
+.s-natural { background: var(--warm); color: var(--white); }
+.s-natural .eyebrow { color: var(--gold); }
+.s-natural__grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(40px, 7vw, 110px); align-items: start; }
+.s-natural .display { max-width: 15ch; }
+.s-natural__text { display: flex; flex-direction: column; gap: 18px; padding-top: 10px; }
+.s-natural__text > p { color: var(--muted-on-dark); font-size: 16px; line-height: 1.8; }
+.s-natural__points { border-top: 1px solid var(--line-dark); margin-top: 8px; }
+.s-natural__points li { position: relative; padding: 14px 0 14px 24px; border-bottom: 1px solid var(--line-dark); font-family: var(--serif); font-size: 1.15rem; }
+.s-natural__points li::before { content: ''; position: absolute; left: 0; top: 50%; width: 12px; height: 1px; background: var(--gold); }
+
+/* 04 decor collection – published grid. Photos are shown as supplied: no filters, no colour changes;
+   the thumbnail is a crop, the full original opens in the lightbox. */
+.s-decors__grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 44px 20px; }
+.s-decor { display: flex; flex-direction: column; scroll-margin-top: calc(var(--header-h) + 24px); }
+.s-decor__img { position: relative; display: block; width: 100%; aspect-ratio: 16 / 10; overflow: hidden; background: var(--card); margin-bottom: 18px; cursor: zoom-in; }
+.s-decor__img img { width: 100%; height: 100%; object-fit: cover; }
+.s-decor__zoom {
+  position: absolute; right: 12px; bottom: 12px; width: 40px; height: 40px; display: grid; place-items: center;
+  background: rgba(31, 26, 22, .78); color: var(--gold); opacity: 0; transition: opacity .3s var(--ease);
+}
+.s-decor__img:hover .s-decor__zoom, .s-decor__img:focus-visible .s-decor__zoom { opacity: 1; }
+.s-decor__body { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex: 1; }
+/* decor numbers are reference codes: full-height (lining) figures so 05 never reads as "o5" */
+.s-decor__no { font-size: 10.5px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; color: var(--gold-ink); font-variant-numeric: lining-nums; }
+.s-decor__name { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; font-variant-numeric: lining-nums; }
+.s-decor__meta { font-size: 12.5px; color: var(--muted-on-light); }
+.s-decor__cta { margin-top: 12px; }
+.lightbox__side { display: flex; align-items: center; gap: 20px; }
+/* …and the "being prepared" panel while unpublished */
+.s-pending {
+  display: grid; grid-template-columns: auto minmax(0, 1fr); gap: clamp(24px, 5vw, 72px); align-items: center;
+  padding: clamp(32px, 5vw, 64px); background: var(--card); border-top: 1px solid var(--gold-ink);
+}
+.s-pending__num { font-family: var(--serif); font-style: italic; font-size: clamp(6rem, 13vw, 11rem); line-height: .8; color: var(--gold-ink); }
+.s-pending__title { font-family: var(--serif); font-weight: 400; font-size: clamp(1.5rem, 2.4vw, 2rem); margin-bottom: 12px; }
+.s-pending p { color: var(--muted-on-light); max-width: 58ch; margin-bottom: 24px; }
+
+/* 05 fabrication – six numbered cards in three columns */
+.b-models__grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.s-lead--dark { color: var(--muted-on-dark); }
+
+/* 06 applications – non-link rows match the link rows */
+.a-links__item {
+  display: flex; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--line-light);
+  font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--dark);
+}
+.s-custom { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--line-light); }
+.s-custom h3 { font-family: var(--serif); font-weight: 400; font-size: 1.45rem; margin-bottom: 10px; }
+.s-custom p { color: var(--muted-on-light); max-width: 46ch; margin-bottom: 22px; }
+.s-custom__buttons { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 26px; }
+.s-custom .more { color: var(--dark); }
+.s-custom .more:hover svg { transform: translateX(5px); }
+
+@media (max-width: 1080px) {
+  .s-decors__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .b-models__grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 860px) {
+  .s-hero { min-height: 0; }
+  .s-hero__grid, .s-tech__grid, .s-natural__grid { grid-template-columns: minmax(0, 1fr); }
+  .s-hero__art { max-width: 520px; padding-right: 28px; }
+  .s-decors__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 600px) {
+  .b-models__grid--3 { grid-template-columns: minmax(0, 1fr); }
+  .s-pending { grid-template-columns: minmax(0, 1fr); }
+  .s-pending .btn, .s-custom .btn { width: 100%; }
+}
+
+.lightbox figcaption { font-variant-numeric: lining-nums; }
+@media (max-width: 600px) {
+  .s-decors__grid { gap: 32px 12px; }
+  .s-decor__cta.btn { width: 100%; padding: 13px 6px; gap: 0; font-size: 9.5px; letter-spacing: .08em; min-height: 44px; }
+  .s-decor__cta svg { display: none; }
+  .s-decor__name { font-size: 1.2rem; }
+}
+
+/* slabs are landscape: whole-slab cards; "2 foto" badge when a real warehouse/detail photo exists */
+.s-decor__count {
+  position: absolute; left: 12px; top: 12px; padding: 5px 10px; background: rgba(31, 26, 22, .78); color: var(--beige);
+  font-size: 10.5px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .s-decors__grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .s-decor__cta.btn { width: auto; padding: 13px 20px; gap: 12px; font-size: 10.5px; letter-spacing: .16em; }
+  .s-decor__cta svg { display: inline; }
+  .s-decor__zoom { opacity: 1; }
+}
+.s-fab-link { margin-top: 36px; color: var(--gold); }

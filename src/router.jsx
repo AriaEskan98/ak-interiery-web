@@ -2,6 +2,7 @@
 // Each route is pre-rendered to HTML at build time (scripts/prerender.mjs); unknown paths get the 404 page.
 import { createContext, useContext, useEffect, useState } from 'react'
 import { scrollToHash } from './lib.jsx'
+import { projects } from './realizace.js'
 
 export const ROUTES = {
   '/': 'home',
@@ -9,15 +10,23 @@ export const ROUTES = {
   '/kompletni-interiery': 'complete',
   '/kuchyne-na-miru': 'kitchen',
   '/dvere': 'doors',
+  '/kamen': 'stone',
   '/nabytek-na-miru': 'furniture',
+  '/pro-profesionaly': 'b2b',
+  '/o-nas': 'about',
+  '/kontakt': 'contact',
   '/ochrana-osobnich-udaju': 'privacy',
   '/podminky-pouziti': 'terms',
+  '/realizace': 'work',
+  '/nase-vyroba': 'production',
+  // one page per real project (src/realizace.js) – none until the approved media arrive
+  ...Object.fromEntries(projects.map((p) => [`/realizace/${p.slug}`, 'project'])),
 }
 
 // The single-file preview runs under an unrelated URL, so there an unknown path means "homepage".
 const UNKNOWN = import.meta.env.VITE_DEMO === '1' ? 'home' : 'notfound'
 
-const RouteCtx = createContext({ route: 'home', navigate: () => {} })
+const RouteCtx = createContext({ route: 'home', path: '/', navigate: () => {} })
 export const routeOf = (path) => ROUTES[path.replace(/\/+$/, '') || '/'] || UNKNOWN
 
 export function RouterProvider({ children, initialPath }) {
@@ -60,7 +69,8 @@ export function RouterProvider({ children, initialPath }) {
     return () => { window.removeEventListener('popstate', onPop); document.removeEventListener('click', onClick, true) }
   }, [])
 
-  return <RouteCtx.Provider value={{ route, navigate }}>{children}</RouteCtx.Provider>
+  const clean = path.replace(/\/+$/, '') || '/'
+  return <RouteCtx.Provider value={{ route, path: clean, navigate }}>{children}</RouteCtx.Provider>
 }
 
 export const useRoute = () => useContext(RouteCtx)

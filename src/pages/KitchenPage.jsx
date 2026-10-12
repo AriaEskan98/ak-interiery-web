@@ -3,6 +3,10 @@
 import { useLang, useInView, Rich } from '../lib.jsx'
 import { Icon } from '../components/Icons.jsx'
 import { ContactCTA } from '../components/Bottom.jsx'
+import { CrossLink } from '../components/CrossLink.jsx'
+import { productionContent } from './production.content.js'
+import { FeaturedProject, ProjectCard } from '../components/OurWork.jsx'
+import { projectsIn } from '../realizace.js'
 import { kitchenPage as img } from '../site.config.js'
 import { kitchenContent } from './kitchen.content.js'
 import './shared.css'
@@ -12,6 +16,7 @@ import './kitchen.css'
 const stepIcons = [Icon.chat, Icon.ruler, Icon.pencil, Icon.tag, Icon.gear, Icon.home]
 
 export default function KitchenPage() {
+  const kitchenProjects = projectsIn('kitchen')
   const { lang } = useLang()
   const c = kitchenContent[lang]
   const [stepsRef, stepsIn] = useInView({ threshold: 0.35 })
@@ -102,15 +107,17 @@ export default function KitchenPage() {
                 {c.details.items.map((x) => <li key={x}>{x}</li>)}
               </ul>
               <p className="pull k-pull">{c.details.extra}</p>
+              <CrossLink dark href="/kamen" text={c.details.stoneLink.text} label={c.details.stoneLink.label} />
+              <CrossLink dark href="/nase-vyroba#nabytek" text={productionContent[lang].links.kitchen.text} label={productionContent[lang].links.kitchen.label} />
             </div>
           </div>
         </section>
       </div>
 
-      {/* 05 Realizace – genuine AK photos only; hidden until provided */}
-      {img.projects.length > 0 && (
+      {/* 05 Realizace – real kitchen projects from src/realizace.js; hidden while there are none */}
+      {kitchenProjects.length > 0 && (
         <div className="panel panel--dark">
-          <section className="section section--dark w-projects" id="realizace-kuchyne">
+          <section className="section section--dark" id="realizace-kuchyne">
             <div className="container">
               <div className="section-head section-head--row">
                 <div>
@@ -118,13 +125,11 @@ export default function KitchenPage() {
                   <h2 className="h2"><Rich t={c.projects.title} /></h2>
                   <p className="w-projects__text">{c.projects.text}</p>
                 </div>
-                <a href="/#realizace" className="btn btn--ghost">{c.projects.cta}<Icon.arrow /></a>
+                <a href="/realizace" className="btn btn--ghost">{c.projects.cta}<Icon.arrow /></a>
               </div>
-              <ul className="w-projects__grid">
-                {img.projects.map((p, i) => (
-                  <li key={i}><img src={p.image} alt={p.title[lang]} loading="lazy" /><span>{p.title[lang]}</span></li>
-                ))}
-              </ul>
+              {kitchenProjects.length === 1 ? <FeaturedProject project={kitchenProjects[0]} /> : (
+                <ul className="pgrid">{kitchenProjects.map((p) => <ProjectCard key={p.slug} project={p} />)}</ul>
+              )}
             </div>
           </section>
         </div>

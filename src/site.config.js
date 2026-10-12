@@ -27,8 +27,9 @@ export const sectionTransition = 'none'
 // Text/images rise in as you scroll (tried in v3, switched off). Set to true to bring back.
 export const scrollReveal = false
 
-// TODO (client): the live domain – used for canonical links, share previews and the sitemap.
-export const siteUrl = 'https://www.akinteriery.cz'
+// The live domain (same primary domain as the former Shopify site; www redirects to it) –
+// used for canonical links, share previews and the sitemap.
+export const siteUrl = 'https://akinteriery.com'
 
 // TODO (client): legal details of the operator – shown in the privacy policy and terms of use.
 export const company = {
@@ -36,19 +37,27 @@ export const company = {
   ico: '[IČO]',
   address: '[Sídlo / místo podnikání]',
   register: '[Zápis v obchodním rejstříku nebo živnostenském rejstříku]',
-  privacyEmail: 'info@akinteriery.cz',
+  privacyEmail: 'Said.nadima@gmail.com', // TODO (client): replace with a company mailbox if there is one
   effectiveFrom: '1. 1. 2027',
 }
 
 // TODO (client): final contact details – these are the placeholders from the visual reference.
 export const contact = {
-  phone: '+420 123 456 789',
-  email: 'info@akinteriery.cz',
+  // from AK_Kontakt_a_formulare_FINAL_CZ_EN.docx
+  phone: '+420 736 719 675',
+  // TODO (client): the document says to use this address only if approved for launch – replace with the
+  // final company mailbox when it exists (also set MAIL_TO in .env / Vercel).
+  email: 'Said.nadima@gmail.com',
+  person: { name: 'Nadima Said', role: { cz: 'manažerka zakázek', en: 'project manager' } },
   area: 'Praha a okolí',
+  // WhatsApp – international format without + or spaces (confirmed by AK: +420 604 596 169).
+  whatsapp: '420604596169',
+  whatsappText: { cz: 'Dobrý den, píšu vám z webu AK Interiéry.', en: 'Hello, I am writing from the AK Interiors website.' },
+  // TODO (client): links to the official AK profiles (footer icons: Instagram · Facebook · TikTok)
   social: {
-    facebook: 'https://facebook.com/',
-    instagram: 'https://instagram.com/',
-    linkedin: 'https://linkedin.com/',
+    instagram: 'https://www.instagram.com/',
+    facebook: 'https://www.facebook.com/',
+    tiktok: 'https://www.tiktok.com/',
   },
 }
 
@@ -62,6 +71,8 @@ export const statementImages = { home: kitchenHeroWide, complete: gKitchenLight 
 // Once the detail sub-pages exist, set e.g. href: '/kuchyne-na-miru'.
 export const services = [
   { id: 'kitchen', image: sKitchen, href: '/kuchyne-na-miru' },
+  // no stone photos until the verified package arrives (brief) – the card shows a drawing
+  { id: 'stone', image: null, art: 'stone', href: '/kamen' },
   { id: 'wardrobes', image: sWardrobes, href: '/vestavne-skrine' },
   { id: 'furniture', image: sFurniture, href: '/nabytek-na-miru' },
   { id: 'doors', image: sDoors, href: '/dvere' },
@@ -73,16 +84,8 @@ export const services = [
 export const completeInterior = { main: living, detailA: gBedroom }
 export const b2bImage = gKitchen
 
-// IMPORTANT (brief): the "Realizace" section must use genuine AK project photography only.
-// These are illustrative AI visuals, so each is flagged `illustrative: true` and shows a small label.
-// Replace with real projects and set `illustrative: false`.
-export const projects = [
-  { image: gBedroom, illustrative: true, title: { cz: 'Ložnice s vestavnými skříněmi', en: 'Bedroom with built-in wardrobes' } },
-  { image: kitchenDark, illustrative: true, title: { cz: 'Kuchyně v tmavém dřevě', en: 'Kitchen in dark wood' } },
-  { image: gWardrobe, illustrative: true, title: { cz: 'Šatní skříň s osvětlením', en: 'Lit walk-in wardrobe' } },
-  { image: gKitchenLight, illustrative: true, title: { cz: 'Světlá kuchyně s výhledem', en: 'Light kitchen with a view' } },
-  { image: gBedroomLight, illustrative: true, title: { cz: 'Světlá ložnice', en: 'Light bedroom' } },
-]
+// (The former illustrative "Vybrané realizace" list was removed: the Naše realizace brief allows real AK media only –
+// projects now live in src/realizace.js.)
 
 // Brief: genuine client reviews only – no placeholders or invented names.
 // The testimonials block stays hidden while this list is empty.
@@ -197,4 +200,73 @@ export const furniturePage = {
   complete: kMinimal,
   // Brief: genuine AK photos only. Section stays hidden while empty.
   projects: [],
+}
+
+// ── B2B page ─────────────────────────────────────────────────
+// AK_B2B_IMAGES_WEB.zip contains no new photos – every file repeats an existing one
+// (01 = 05 = complete-interior living room, 02 = kitchen card, 03 = kitchen-page hero, 04 = walk-in, 06 = homepage
+// hero kitchen). There is no exterior, workshop or installation photo, so the exterior card uses the drawn pergola.
+// TODO (client): genuine AK photos of production, installation and projects (brief: "doplníme z podkladů AK").
+export const b2bPage = {
+  hero: living,                                   // 01_HERO_B2B
+  areas: [sKitchen, null, kitchenHeroWide, sWardrobes], // 02, (exterior: drawing), 03, 04
+  custom: heroKitchen,                            // 06_Custom_Detail – behind the "different brief" band
+  // Brief: genuine AK references only. Section stays hidden while empty.
+  projects: [],
+}
+
+// ── O nás page ───────────────────────────────────────────────
+// Brief: no photos yet. Section 07 "Naše práce" shows once genuine AK photos/videos exist (set to true);
+// section 08 "Tým a výroba" is reserved in AboutPage.jsx and must stay unpublished until verified.
+export const aboutPage = { showWork: false }
+
+export const whatsappUrl = (lang = 'cz') => `https://wa.me/${contact.whatsapp}?text=${encodeURIComponent(contact.whatsappText[lang])}`
+
+// ── Kámen a kamenické realizace page (/kamen) ────────────────
+// TODO (client) before publishing: verify specifications/availability and supply the verified photo package.
+// Product gallery – each decor has a unique number ("Dekor 01"…) and, since 12 Oct 2026, the name supplied by the client.
+// "Poptat tento dekor" sends the number with the enquiry, so AK knows exactly which stone the customer means.
+// Photos: AK's own photos, only CROPPED to the slab (white background, edges and a label removed) and saved as
+// WebP – no colour changes, retouching or stretching. `photos` = extra real photos shown in the full-size viewer.
+// To add a decor: put the photo in src/assets/img/stone/, import it, add { no: '07', image: … } (numbers unique).
+// The gallery only shows when STONE_DECORS_PUBLISHED is true and every listed decor has an image.
+const STONE_DECORS_PUBLISHED = true
+
+import decor01 from './assets/img/stone/decor-01.webp'
+import decor01sklad from './assets/img/stone/decor-01-sklad.webp'
+import decor02 from './assets/img/stone/decor-02.webp'
+import decor02sklad from './assets/img/stone/decor-02-sklad.webp'
+import decor03 from './assets/img/stone/decor-03.webp'
+import decor03sklad from './assets/img/stone/decor-03-sklad.webp'
+import decor04 from './assets/img/stone/decor-04.webp'
+import decor05 from './assets/img/stone/decor-05.webp'
+import decor05sklad from './assets/img/stone/decor-05-sklad.webp'
+import decor06 from './assets/img/stone/decor-06.webp'
+
+export const stonePage = {
+  // Standard slab format shown in the "Technický kámen" section and on the hero drawing.
+  // Provided by AK; must be verified before publication – set to false to hide all dimensions.
+  showSpecs: true,
+  decorsPublished: STONE_DECORS_PUBLISHED,
+  // TODO (client): confirm that each warehouse photo shows the same decor as its catalogue photo (matched by pattern).
+  decors: STONE_DECORS_PUBLISHED ? [
+    { no: '01', name: 'Calacatta White', image: decor01, photos: [{ src: decor01sklad, kind: 'warehouse' }] },
+    { no: '02', name: 'Nero Marquina', image: decor02, photos: [{ src: decor02sklad, kind: 'detail' }] },
+    { no: '03', name: 'Patagonia Gold', image: decor03, photos: [{ src: decor03sklad, kind: 'warehouse' }] },
+    { no: '04', name: 'Pure White', image: decor04 },
+    { no: '05', name: 'Black Laurent', image: decor05, photos: [{ src: decor05sklad, kind: 'warehouse' }] },
+    { no: '06', name: 'Pietra Grey', image: decor06 },
+  ] : [],
+}
+export const stoneDecorsVisible = () =>
+  stonePage.decorsPublished && stonePage.decors.length > 0 && stonePage.decors.every((d) => d.image && /^\d{2,3}$/.test(d.no)) &&
+  new Set(stonePage.decors.map((d) => d.no)).size === stonePage.decors.length // numbers must be unique
+
+// Naše výroba (/nase-vyroba) – genuine workshop photos/videos ONLY (brief: no AI mock-ups as AK production).
+// Every slot is empty until AK supplies and approves media; empty slots are simply not rendered.
+// To add one: put the file in src/assets/img/vyroba/, import it here and set e.g. furniture: { src: photo, alt: { cz: '…', en: '…' } }.
+export const productionMedia = {
+  home: null,      // homepage "Naše výroba" section – one strong photo (or video poster)
+  hero: null,      // /nase-vyroba hero
+  furniture: null, cnc: null, edge: null, stone: null, plexi: null,
 }

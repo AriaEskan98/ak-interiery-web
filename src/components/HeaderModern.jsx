@@ -20,7 +20,7 @@ function LogoInline() {
 export function HeaderModern() {
   const { t, lang, setLang } = useLang()
   const { route } = useRoute()
-  const pageHref = { complete: '/kompletni-interiery', kitchen: '/kuchyne-na-miru' }[route] || null
+  const pageHref = { complete: '/kompletni-interiery', kitchen: '/kuchyne-na-miru', work: '/realizace', project: '/realizace', b2b: '/pro-profesionaly', about: '/o-nas', contact: '/kontakt' }[route] || null
   const [scrolled, setScrolled] = useState(false)
   const [hidden, setHidden] = useState(false)
   const [open, setOpen] = useState(false)
@@ -130,7 +130,7 @@ export function HeaderModern() {
 
         <div className="hdr__end">
           {Lang}
-          <a href="#kontakt" className="hdr__cta">
+          <a href="#kontakt" className="hdr__cta" onClick={() => window.dispatchEvent(new CustomEvent('ak:form', { detail: { mode: 'private' } }))}>
             <span>{t.nav.cta}</span>
             <span className="hdr__cta-icon"><Icon.arrow width="14" height="14" /></span>
           </a>
@@ -152,17 +152,12 @@ export function HeaderModern() {
           ))}
         </nav>
         <div className="hdr__menu-foot">
-          <a href="#kontakt" className="btn btn--primary btn--block" onClick={() => setOpen(false)}>{t.nav.cta}<Icon.arrow /></a>
+          <a href="#kontakt" className="btn btn--primary btn--block" onClick={() => { setOpen(false); window.dispatchEvent(new CustomEvent('ak:form', { detail: { mode: 'private' } })) }}>{t.nav.cta}<Icon.arrow /></a>
           <div className="hdr__menu-meta">
             <a href={`tel:${contact.phone.replace(/\s/g, '')}`}>{contact.phone}</a>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>
           </div>
           <div className="hdr__menu-row">
-            <div className="social">
-              <a href={contact.social.facebook} aria-label="Facebook" target="_blank" rel="noreferrer"><Icon.facebook /></a>
-              <a href={contact.social.instagram} aria-label="Instagram" target="_blank" rel="noreferrer"><Icon.instagram /></a>
-              <a href={contact.social.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer"><Icon.linkedin /></a>
-            </div>
             {Lang}
           </div>
         </div>

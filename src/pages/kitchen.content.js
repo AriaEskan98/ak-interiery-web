@@ -36,6 +36,8 @@ export const kitchenContent = {
       text: 'Pomůžeme vám vybrat kombinaci povrchů, pracovních desek, kování a vnitřního vybavení tak, aby kuchyně odpovídala nejen vašemu stylu, ale také každodennímu používání.',
       extra: 'Na jednom místě společně sladíme vzhled, funkci i rozpočet.',
       items: ['Dekory a povrchy', 'Pracovní desky', 'Kování a výsuvy', 'Vnitřní organizace', 'Osvětlení', 'Spotřebiče a jejich začlenění'],
+      // cross-link (our copy – TODO client: review)
+      stoneLink: { text: 'Pracovní desky z technického i přírodního kamene vyrábíme ve vlastní dílně.', label: 'Kámen a kamenické realizace' },
     },
     projects: {
       eyebrow: 'Naše realizace',
@@ -102,6 +104,7 @@ export const kitchenContent = {
       text: 'We help you choose the combination of surfaces, worktops, hardware and interior fittings so the kitchen suits not only your style but also everyday use.',
       extra: 'In one place, we match the look, the function and the budget together.',
       items: ['Finishes and surfaces', 'Worktops', 'Hardware and drawers', 'Interior organisation', 'Lighting', 'Appliances and their integration'],
+      stoneLink: { text: 'We make technical and natural stone worktops in our own workshop.', label: 'Stone & stone fabrication' },
     },
     projects: {
       eyebrow: 'Our projects',

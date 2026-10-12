@@ -107,7 +107,7 @@ export default function WardrobesPage() {
                   <h2 className="h2"><Rich t={c.projects.title} /></h2>
                   <p className="w-projects__text">{c.projects.text}</p>
                 </div>
-                <a href="/#realizace" className="btn btn--ghost">{c.projects.cta}<Icon.arrow /></a>
+                <a href="/realizace" className="btn btn--ghost">{c.projects.cta}<Icon.arrow /></a>
               </div>
               <ul className="w-projects__grid">
                 {img.projects.map((p, i) => (

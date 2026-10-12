@@ -57,10 +57,16 @@ export function scrollToHash(hash) {
   window.scrollTo({ top, behavior })
 }
 
-export const preselectService = (id) => {
-  window.dispatchEvent(new CustomEvent('ak:preselect', { detail: id }))
-  scrollToHash('#kontakt')
+// Open the enquiry form at the bottom of the current page: mode 'private' (form A) or 'b2b' (form B),
+// optionally with a service pre-selected in form A (e.g. 'kitchen') and a reference that is sent with the
+// enquiry, e.g. { kind: 'decor', id: '03', label: 'Dekor 03' } or { kind: 'project', id: slug, label: title }.
+export function openForm({ mode = 'private', preselect, reference } = {}) {
+  const detail = { mode, preselect }
+  if (reference !== undefined) detail.reference = reference
+  window.dispatchEvent(new CustomEvent('ak:form', { detail }))
+  scrollToHash(document.getElementById('formular') ? '#formular' : '#kontakt')
 }
+export const preselectService = (id) => openForm({ mode: 'private', preselect: id })
 
 // Headings: words wrapped in *asterisks* in the content files render as Playfair italic accents.
 export function Rich({ t }) {

@@ -17,13 +17,14 @@ const base = template
   .replace(/<meta property="og:[^>]*>\s*/gi, '')
 
 const page = (route, urlPath) => base
-  .replace('</head>', `    ${ssr.headTags(route)}\n  </head>`)
+  .replace('</head>', `    ${ssr.headTags(route, urlPath)}\n  </head>`)
   .replace('<div id="root"></div>', `<div id="root">${ssr.render(urlPath)}</div>`)
 
 const written = []
 for (const [urlPath, route] of Object.entries(ssr.ROUTES)) {
   // flat files (dist/kuchyne-na-miru.html) – served as /kuchyne-na-miru by Vercel (cleanUrls) and server/index.js
   const file = urlPath === '/' ? path.join(dist, 'index.html') : path.join(dist, urlPath.slice(1) + '.html')
+  await fs.mkdir(path.dirname(file), { recursive: true }) // nested pages, e.g. realizace/<slug>.html
   await fs.writeFile(file, page(route, urlPath))
   written.push(urlPath)
 }

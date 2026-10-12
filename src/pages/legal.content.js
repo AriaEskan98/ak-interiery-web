@@ -17,10 +17,11 @@ export const legalContent = {
           'V záležitostech osobních údajů nás můžete kontaktovat na e-mailu {privacyEmail}.',
         ] },
         { h: 'Jaké údaje zpracováváme', list: [
-          'Poptávkový formulář: jméno a příjmení, e-mail, telefon (nepovinný), služby, o které máte zájem, a text vaší zprávy.',
+          'Poptávka soukromého klienta: jméno a příjmení, telefon, e-mail, město / místo realizace, o co máte zájem, fáze a termín projektu, vaše zpráva a soubory, které přiložíte (např. fotografie prostoru nebo půdorys).',
+          'B2B poptávka: název společnosti, kontaktní osoba, telefon, e-mail, typ společnosti a informace o projektu (typ, místo, rozsah, termín, popis) včetně přiložených podkladů a odkazů.',
           'Newsletter: e-mailová adresa.',
           'Komunikace: údaje, které nám sdělíte e-mailem nebo telefonicky v souvislosti s vaší poptávkou nebo zakázkou.',
-          'Technické údaje: při odeslání formuláře dočasně zpracováváme IP adresu k ochraně před zneužitím (omezení počtu odeslání).',
+          'Technické údaje: při odeslání formuláře dočasně zpracováváme IP adresu a dobu vyplňování k ochraně před zneužitím a spamem.',
         ] },
         { h: 'Proč a na jakém základě', list: [
           'Vyřízení poptávky a příprava nabídky – jednání o smlouvě na vaši žádost (čl. 6 odst. 1 písm. b) GDPR).',
@@ -29,7 +30,7 @@ export const legalContent = {
           'Ochrana webu před zneužitím – náš oprávněný zájem (čl. 6 odst. 1 písm. f) GDPR).',
         ] },
         { h: 'Jak dlouho údaje uchováváme', list: [
-          'Poptávky, ze kterých nevznikne zakázka: nejdéle 3 roky od poslední komunikace.',
+          'Poptávky, ze kterých nevznikne zakázka, včetně přiložených souborů: nejdéle 3 roky od poslední komunikace.',
           'Údaje související se zakázkou: po dobu trvání smlouvy a následně po dobu stanovenou právními předpisy (např. účetní doklady 10 let).',
           'Newsletter: do odvolání souhlasu nebo odhlášení.',
           'Technické údaje k ochraně před zneužitím: několik hodin.',
@@ -91,10 +92,11 @@ export const legalContent = {
           'For any privacy matters, contact us at {privacyEmail}.',
         ] },
         { h: 'What data we process', list: [
-          'Enquiry form: full name, email, phone (optional), the services you are interested in and the text of your message.',
+          'Private client enquiry: full name, phone, email, city / project location, what you are interested in, project stage and timing, your message and any files you attach (e.g. photos of the space or a floor plan).',
+          'B2B enquiry: company name, contact person, phone, email, company type and project information (type, location, scope, timing, description) including attached documents and links.',
           'Newsletter: email address.',
           'Communication: information you share with us by email or phone in connection with your enquiry or project.',
-          'Technical data: when you submit a form we temporarily process your IP address to prevent abuse (submission limits).',
+          'Technical data: when you submit a form we temporarily process your IP address and the time taken to fill it in, to prevent abuse and spam.',
         ] },
         { h: 'Why and on what legal basis', list: [
           'Handling your enquiry and preparing a quotation – steps taken at your request before entering into a contract (Art. 6(1)(b) GDPR).',
@@ -103,7 +105,7 @@ export const legalContent = {
           'Protecting the website against abuse – our legitimate interest (Art. 6(1)(f) GDPR).',
         ] },
         { h: 'How long we keep data', list: [
-          'Enquiries that do not lead to a project: up to 3 years from the last communication.',
+          'Enquiries that do not lead to a project, including attached files: up to 3 years from the last communication.',
           'Project-related data: for the duration of the contract and then for the period required by law (e.g. accounting records for 10 years).',
           'Newsletter: until you withdraw consent or unsubscribe.',
           'Technical anti-abuse data: a few hours.',

@@ -1,0 +1,88 @@
+/* B2B + O nás pages */
+
+/* B2B 02 – four points with icons */
+.b-points { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line-light); }
+.b-points li { padding: 34px 28px 8px 0; }
+.b-points li + li { padding-left: 28px; border-left: 1px solid var(--line-light); }
+.b-points svg { color: var(--gold-ink); margin-bottom: 20px; }
+.b-points h3 { font-family: var(--serif); font-weight: 400; font-size: 1.35rem; margin-bottom: 10px; }
+.b-points p { font-size: 14px; color: var(--muted-on-light); max-width: 30ch; }
+
+/* B2B 04 / O nás 05 – numbered model cards on dark */
+.b-models__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.b-models__grid li {
+  position: relative; padding: 34px 28px 36px; background: var(--warm);
+  border-top: 1px solid var(--gold); transition: background-color .4s var(--ease);
+}
+.b-models__grid li:hover { background: #43372f; }
+.b-models__num { display: block; font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 2.6rem; line-height: 1; margin-bottom: 26px; }
+.b-models__grid h3 { font-family: var(--serif); font-weight: 400; font-size: 1.4rem; line-height: 1.25; margin-bottom: 12px; color: var(--white); }
+.b-models__grid p { font-size: 14px; color: var(--muted-on-dark); line-height: 1.65; }
+
+/* B2B 05 – prominent "different brief" band */
+.b-custom { position: relative; overflow: hidden; color: var(--white); background: var(--warm); padding: clamp(96px, 12vw, 168px) 0; }
+.b-custom__img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; }
+.b-custom__shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(58,47,40,.97) 0%, rgba(58,47,40,.88) 48%, rgba(58,47,40,.35) 100%); }
+.b-custom__inner { position: relative; }
+.b-custom__inner .eyebrow { color: var(--gold); }
+.b-custom__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.6rem, 6vw, 5.4rem); line-height: 1.03; letter-spacing: -.02em; max-width: 14ch; margin-bottom: 26px; }
+.b-custom__title em { font-style: italic; color: var(--gold); }
+.b-custom__lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.3rem, 2vw, 1.7rem); color: var(--gold); margin-bottom: 18px; }
+.b-custom__text { color: var(--muted-on-dark); max-width: 52ch; margin-bottom: 36px; font-size: 16px; }
+
+/* O nás 01 – typographic hero */
+.a-hero { background: var(--dark); color: var(--white); padding: calc(var(--header-h) + clamp(56px, 8vw, 120px)) 0 clamp(72px, 9vw, 128px); }
+.a-hero .eyebrow { color: var(--gold); }
+.a-hero__title { font-family: var(--serif); font-weight: 400; font-size: clamp(2.8rem, 6.6vw, 6.2rem); line-height: 1.02; letter-spacing: -.025em; max-width: 17ch; text-wrap: balance; }
+.a-hero__title em { font-style: italic; color: var(--gold); }
+.a-hero__foot { display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; margin-top: clamp(40px, 6vw, 80px); padding-top: 32px; border-top: 1px solid var(--line-dark); align-items: start; }
+.a-hero__text { color: var(--muted-on-dark); font-size: 16.5px; line-height: 1.75; max-width: 54ch; }
+.a-hero__extra { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 1.3rem; line-height: 1.5; }
+.a-icon { color: var(--gold); margin-bottom: 18px; }
+
+/* O nás 04 – service links */
+.a-what { display: grid; grid-template-columns: 1fr 1.25fr; gap: clamp(40px, 7vw, 110px); align-items: start; }
+.a-what__head .lead { margin-top: 20px; }
+.a-links { border-top: 1px solid var(--line-light); }
+.a-links a {
+  display: flex; align-items: center; justify-content: space-between; gap: 20px;
+  padding: 20px 0; border-bottom: 1px solid var(--line-light);
+  font-family: var(--serif); font-size: clamp(1.3rem, 2.2vw, 1.8rem); color: var(--dark);
+  transition: color .3s, padding-left .4s var(--ease);
+}
+.a-links a svg { color: var(--gold-ink); flex: none; transition: transform .4s var(--ease); }
+.a-links a:hover { color: var(--gold-ink); padding-left: 10px; }
+.a-links a:hover svg { transform: translateX(6px); }
+
+/* O nás 06 – B2C / B2B split */
+.a-split { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.a-split__col { display: flex; flex-direction: column; gap: 18px; padding: clamp(32px, 4vw, 56px); background: var(--card); transition: background-color .4s var(--ease); }
+.a-split__col:hover { background: #ebe4d9; }
+.a-split__col--dark { background: var(--warm); color: var(--white); }
+.a-split__col--dark:hover { background: #43372f; }
+.a-split__col--dark .eyebrow, .a-split__col--dark .more { color: var(--gold); }
+.a-split__text { font-family: var(--serif); font-size: clamp(1.25rem, 1.8vw, 1.55rem); line-height: 1.45; flex: 1; }
+.a-split__col .more { color: var(--dark); }
+.a-split__col:hover .more svg { transform: translateX(5px); }
+
+/* O nás 09 – clean CTA */
+.a-cta__inner { display: flex; flex-direction: column; align-items: flex-start; gap: 24px; }
+.a-cta__inner p { color: var(--muted-on-dark); max-width: 56ch; }
+.a-cta__buttons, .cta__buttons { display: flex; flex-wrap: wrap; gap: 14px; }
+.cta__buttons { margin-top: 4px; }
+
+@media (max-width: 1080px) {
+  .b-points { grid-template-columns: 1fr 1fr; }
+  .b-points li:nth-child(3) { padding-left: 0; border-left: 0; }
+  .b-points li:nth-child(n + 3) { border-top: 1px solid var(--line-light); margin-top: 24px; }
+  .b-models__grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 860px) {
+  .a-what, .a-hero__foot, .a-split { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 600px) {
+  .b-points, .b-models__grid { grid-template-columns: 1fr; }
+  .b-points li, .b-points li + li { padding: 24px 0; border-left: 0; margin-top: 0; }
+  .b-points li + li { border-top: 1px solid var(--line-light); }
+  .a-cta__buttons .btn, .cta__buttons .btn { width: 100%; }
+}

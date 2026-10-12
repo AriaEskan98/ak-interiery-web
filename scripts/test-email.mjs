@@ -9,8 +9,9 @@ try {
   await mailer.verify()
   console.log('✓ Connected to the mail server and logged in.')
   await sendEnquiryEmails({
-    name: 'Test – AK web', email: process.env.MAIL_TO, phone: '+420 000 000 000', lang: 'cz',
-    interest: ['kitchen', 'wardrobes'], message: 'Toto je zkušební poptávka z příkazu npm run test:email.',
+    type: 'private', name: 'Test – AK web', email: process.env.MAIL_TO, phone: '+420 000 000 000', lang: 'cz',
+    city: 'Praha', interest: ['kitchen', 'wardrobes'], stage: 'Mám první představu', timeline: '', files: [],
+    message: 'Toto je zkušební poptávka z příkazu npm run test:email.',
   })
   console.log(`✓ Test sent. Check ${process.env.MAIL_TO} – you should get the notification and the customer confirmation.`)
 } catch (err) {

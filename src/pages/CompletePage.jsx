@@ -170,7 +170,7 @@ export default function CompletePage() {
                   <h2 className="h2"><Rich t={c.projects.title} /></h2>
                   <p className="w-projects__text">{c.projects.text}</p>
                 </div>
-                <a href="/#realizace" className="btn btn--ghost">{c.projects.cta}<Icon.arrow /></a>
+                <a href="/realizace" className="btn btn--ghost">{c.projects.cta}<Icon.arrow /></a>
               </div>
               <ul className="w-projects__grid">
                 {img.projects.map((p, i) => (
@@ -184,7 +184,7 @@ export default function CompletePage() {
 
       {/* 08 CTA / kontakt – full-width warm interior image behind */}
       <div className="panel panel--dark">
-        <ContactCTA title={c.cta.title} text={c.cta.text} button={c.cta.button} image={img.ctaImage} />
+        <ContactCTA title={c.cta.title} text={c.cta.text} preselect="complete" image={img.ctaImage} />
       </div>
     </>
   )

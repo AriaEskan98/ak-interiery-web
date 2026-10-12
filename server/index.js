@@ -39,7 +39,7 @@ const limit = (req, res, next) => {
   next()
 }
 
-import { validateConsultation, validateNewsletter } from './enquiry.js'
+import { parseMultipart, validateEnquiry, validateNewsletter } from './enquiry.js'
 
 async function append(file, record) {
   await fs.mkdir(DATA_DIR, { recursive: true })
@@ -48,20 +48,29 @@ async function append(file, record) {
 
 import { mailEnabled, sendEnquiryEmails, sendNewsletterEmail } from './mail.js'
 
-app.post('/api/consultation', limit, async (req, res) => {
-  const { bot, errors, entry } = validateConsultation(req.body)
+// Enquiry forms A (private) and B (B2B) – multipart with optional attachments
+app.post('/api/enquiry', limit, async (req, res) => {
+  let parsed
+  try { parsed = await parseMultipart(req) } catch { return res.status(400).json({ ok: false, error: 'bad_request' }) }
+  if (parsed.tooBig) return res.status(413).json({ ok: false, error: 'files_too_large' })
+  const { bot, errors, entry, files } = validateEnquiry(parsed.payload, parsed.files)
   if (bot) return res.json({ ok: true }) // silently drop bots
   if (errors) return res.status(400).json({ ok: false, errors })
-
   try {
-    await append('consultations.jsonl', entry) // always saved first – an email problem never loses an enquiry
+    // always saved first – an e-mail problem never loses an enquiry
+    const id = `${entry.createdAt.replace(/[:.]/g, '-')}-${Math.random().toString(36).slice(2, 7)}`
+    if (files.length) {
+      const dir = path.join(DATA_DIR, 'uploads', id)
+      await fs.mkdir(dir, { recursive: true })
+      await Promise.all(files.map((f) => fs.writeFile(path.join(dir, f.filename), f.content)))
+    }
+    await append('enquiries.jsonl', { id, ...entry })
   } catch (err) {
-    console.error('consultation could not be saved', err)
+    console.error('enquiry could not be saved', err)
     return res.status(500).json({ ok: false, error: 'server_error' })
   }
   res.json({ ok: true })
-  // emails are sent after answering, so the visitor never waits for (or sees) mail-server problems
-  sendEnquiryEmails(entry).catch((err) => console.error('enquiry email failed (enquiry is saved):', err.message))
+  sendEnquiryEmails(entry, files).catch((err) => console.error('enquiry email failed (enquiry is saved):', err.message))
 })
 
 app.post('/api/newsletter', limit, async (req, res) => {
@@ -95,5 +104,5 @@ app.listen(PORT, () => {
   console.log(`AK Interiéry server on http://localhost:${PORT}`)
   console.log(mailEnabled
     ? `E-mail: enquiries are sent to ${process.env.MAIL_TO}`
-    : 'E-mail: NOT configured – enquiries are only saved to server/data/consultations.jsonl (see .env.example)')
+    : 'E-mail: NOT configured – enquiries are only saved to server/data/enquiries.jsonl (see .env.example)')
 })

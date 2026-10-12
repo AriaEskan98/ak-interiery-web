@@ -2,8 +2,9 @@
 // and in the browser to keep title/description in sync when navigating or switching language.
 import { useEffect } from 'react'
 import { useLang } from './lib.jsx'
+import { projectBySlug } from './realizace.js'
 import { siteUrl, contact, company } from './site.config.js'
-import { heroSlides, wardrobesPage, completePage, kitchenPage, doorsPage, furniturePage } from './site.config.js'
+import { heroSlides, wardrobesPage, completePage, kitchenPage, doorsPage, furniturePage, b2bPage } from './site.config.js'
 
 export const SEO = {
   home: {
@@ -41,12 +42,52 @@ export const SEO = {
     en: { title: 'Interior doors and interior elements | AK Interiors',
           description: 'Wooden, hidden, sliding and glazed doors matched to the whole interior. Finishes, frames and hardware, delivery and installation.' },
   },
+  stone: {
+    path: '/kamen', image: heroSlides[0], crumb: 'Kámen a kamenické realizace',
+    cz: { title: 'Kámen a kamenické realizace – technický i přírodní kámen na míru | AK Interiéry',
+          description: 'Technický i přírodní kámen pro kuchyně, koupelny, obklady a projekty na míru. Řezání, frézování, výroba, doprava a montáž ve vlastní dílně.' },
+    en: { title: 'Stone & stone fabrication – technical and natural stone | AK Interiors',
+          description: 'Technical and natural stone for kitchens, bathrooms, cladding and bespoke projects. Cutting, milling, fabrication, delivery and installation in our own workshop.' },
+  },
   complete: {
     path: '/kompletni-interiery', image: completePage.hero, crumb: 'Kompletní interiéry',
     cz: { title: 'Kompletní interiéry na míru – jeden partner pro celý domov | AK Interiéry',
           description: 'Kuchyně, nábytek, vestavné skříně, dveře a další prvky jako jeden promyšlený celek. Návrh, koordinace, výroba a montáž od jednoho partnera.' },
     en: { title: 'Complete bespoke interiors – one partner for the whole home | AK Interiors',
           description: 'Kitchens, furniture, built-in wardrobes, doors and more as one considered whole. Design, coordination, manufacture and installation from one partner.' },
+  },
+  b2b: {
+    path: '/pro-profesionaly', image: b2bPage.hero, crumb: 'Pro developery a profesionály',
+    cz: { title: 'B2B – výroba, dodávka a montáž pro developery a profesionály | AK Interiéry',
+          description: 'Partner pro výrobu a realizaci projektů: interiérová i exteriérová řešení na míru, sériové dodávky, subdodávky, atypická výroba a montáž pro developery, stavební firmy a investory.' },
+    en: { title: 'B2B – manufacturing, delivery and installation for developers | AK Interiors',
+          description: 'A partner for manufacturing and delivering projects: bespoke interior and exterior solutions, serial deliveries, subcontracting, bespoke manufacturing and installation.' },
+  },
+  about: {
+    path: '/o-nas', image: heroSlides[0], crumb: 'O nás',
+    cz: { title: 'O nás – partner pro prostor, který má fungovat | AK Interiéry',
+          description: 'Nasloucháme zadání, přemýšlíme nad prostorem v souvislostech a přebíráme odpovědnost za výsledek. Od jednoho detailu po celý interiér, od návrhu po realizaci.' },
+    en: { title: 'About us – a partner for spaces that have to work | AK Interiors',
+          description: 'We listen to the brief, think about the space as a whole and take responsibility for the result. From a single detail to the whole interior.' },
+  },
+  contact: {
+    path: '/kontakt', image: heroSlides[0], crumb: 'Kontakt',
+    cz: { title: 'Kontakt – nezávazná poptávka | AK Interiéry',
+          description: 'Napište nám o svém projektu – kuchyně, nábytek na míru, celý interiér nebo B2B zakázka. Telefon +420 736 719 675.' },
+    en: { title: 'Contact – send an enquiry | AK Interiors',
+          description: 'Tell us about your project – a kitchen, bespoke furniture, a whole interior or a B2B contract. Phone +420 736 719 675.' },
+  },
+  work: {
+    path: '/realizace', image: heroSlides[0], crumb: 'Naše realizace',
+    cz: { title: 'Naše realizace – skutečné projekty AK Interiéry', description: 'Nahlédněte do našich skutečných projektů: kuchyně a nábytek na míru, kamenické realizace a kompletní interiéry.' },
+    en: { title: 'Our projects – real AK Interiors work', description: 'Take a look at our real projects: bespoke kitchens and furniture, stonework and complete interiors.' },
+  },
+  production: {
+    path: '/nase-vyroba', image: heroSlides[0], crumb: 'Naše výroba',
+    cz: { title: 'Naše výroba – nábytek, CNC a MDF, kámen a plexisklo na míru | AK Interiéry',
+          description: 'Vlastní výroba nábytku, CNC opracování dřeva a MDF, kamenická výroba a zpracování plexiskla. Zakázková výroba i pro firemní partnery.' },
+    en: { title: 'Our manufacturing – furniture, CNC & MDF, stone and acrylic glass | AK Interiors',
+          description: 'In-house furniture manufacturing, CNC machining of wood and MDF, stone fabrication and acrylic glass processing. Custom manufacturing for business partners too.' },
   },
   privacy: {
     path: '/ochrana-osobnich-udaju', image: heroSlides[0], crumb: 'Ochrana osobních údajů',
@@ -67,9 +108,22 @@ export const SEO = {
 
 const abs = (p) => siteUrl.replace(/\/$/, '') + p
 
+// SEO data for a route; project pages (/realizace/<slug>) are built from src/realizace.js.
+export function pageSeo(route, path = '') {
+  if (route !== 'project') return SEO[route] || SEO.notfound
+  const p = projectBySlug(path.split('/').filter(Boolean)[1])
+  if (!p) return SEO.notfound
+  const desc = (l) => (p.description?.[l] || SEO.work[l].description).replace(/\s+/g, ' ').slice(0, 155)
+  return {
+    path: `/realizace/${p.slug}`, image: p.cover, crumb: p.title.cz, parent: SEO.work,
+    cz: { title: `${p.title.cz} | Naše realizace | AK Interiéry`, description: desc('cz') },
+    en: { title: `${p.title.en || p.title.cz} | Our projects | AK Interiors`, description: desc('en') },
+  }
+}
+
 // Structured data Google understands (company details, breadcrumbs).
-export function jsonLd(route) {
-  const page = SEO[route]
+export function jsonLd(route, path) {
+  const page = pageSeo(route, path)
   const business = {
     '@context': 'https://schema.org',
     '@type': 'HomeAndConstructionBusiness',
@@ -90,14 +144,15 @@ export function jsonLd(route) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Úvod', item: abs('/') },
-      { '@type': 'ListItem', position: 2, name: page.crumb, item: abs(page.path) },
+      ...(page.parent ? [{ '@type': 'ListItem', position: 2, name: page.parent.crumb, item: abs(page.parent.path) }] : []),
+      { '@type': 'ListItem', position: page.parent ? 3 : 2, name: page.crumb, item: abs(page.path) },
     ],
   }]
 }
 
 // <head> tags for the pre-rendered HTML (Czech is the primary language of the site).
-export function headTags(route) {
-  const page = SEO[route] || SEO.notfound
+export function headTags(route, path) {
+  const page = pageSeo(route, path)
   const m = page.cz
   const esc = (s) => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;')
   const tags = [
@@ -112,22 +167,22 @@ export function headTags(route) {
     page.path ? `<meta property="og:url" content="${abs(page.path)}" />` : '',
     `<meta property="og:image" content="${abs(page.image)}" />`,
     `<meta name="twitter:card" content="summary_large_image" />`,
-    ...jsonLd(route).map((d) => `<script type="application/ld+json">${JSON.stringify(d).replace(/</g, '\\u003c')}</script>`),
+    ...jsonLd(route, path).map((d) => `<script type="application/ld+json">${JSON.stringify(d).replace(/</g, '\\u003c')}</script>`),
   ]
   return tags.filter(Boolean).join('\n    ')
 }
 
 // Browser: keep the title and description in sync with the page and language.
-export function useSeo(route) {
+export function useSeo(route, path) {
   const { lang } = useLang()
   useEffect(() => {
-    const m = (SEO[route] || SEO.notfound)[lang]
+    const page = pageSeo(route, path)
+    const m = page[lang]
     document.title = m.title
     const set = (sel, attr, val) => { const el = document.head.querySelector(sel); if (el) el.setAttribute(attr, val) }
     set('meta[name="description"]', 'content', m.description)
     set('meta[property="og:title"]', 'content', m.title)
     set('meta[property="og:description"]', 'content', m.description)
-    const page = SEO[route]
-    if (page?.path) set('link[rel="canonical"]', 'href', abs(page.path))
-  }, [route, lang])
+    if (page.path) set('link[rel="canonical"]', 'href', abs(page.path))
+  }, [route, path, lang])
 }
