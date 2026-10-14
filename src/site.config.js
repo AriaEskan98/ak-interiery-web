@@ -27,9 +27,8 @@ export const sectionTransition = 'none'
 // Text/images rise in as you scroll (tried in v3, switched off). Set to true to bring back.
 export const scrollReveal = false
 
-// The live domain (same primary domain as the former Shopify site; www redirects to it) –
-// used for canonical links, share previews and the sitemap.
-export const siteUrl = 'https://akinteriery.com'
+// The live domain (www.akinteriery.cz redirects to it) – used for canonical links, share previews and the sitemap.
+export const siteUrl = 'https://akinteriery.cz'
 
 // Operator of the website – confirmed by AK (12. 10. 2026). Shown in the footer, on the contact page,
 // in the privacy policy / terms and in the structured data for search engines.

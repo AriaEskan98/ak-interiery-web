@@ -40,7 +40,10 @@ Homepage built from the approved materials: `AK_Interiery_Homepage_KONTROLNI_VZO
 - The homepage section and the /nase-vyroba overview show the five areas from AK_INTERIERY_VYROBA_5_BODU (CZ/EN/DE),
   defined once in `AREAS` (src/pages/production.content.js). Item 03 links to the softforming / vacuum chapter.
 
-## Moving the domain from Shopify (akinteriery.com)
+## Domain
+- Live domain: **akinteriery.cz** (`siteUrl`). In Vercel: akinteriery.cz → Production, www.akinteriery.cz → 308 redirect.
+
+## Moving the domain from Shopify (akinteriery.com) – no longer used
 - `siteUrl` is `https://akinteriery.com` (no www – the same primary domain Shopify used, so search rankings carry over).
   In Vercel add `akinteriery.com` (primary) and `www.akinteriery.com` (redirect → akinteriery.com).
 - In Shopify → Settings → Domains → DNS: A record `@` 23.227.38.65 → the IP Vercel shows (usually 76.76.21.21);
